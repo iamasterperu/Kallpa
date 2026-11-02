@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KALLPA · Apps web y software a medida en 7 días</title>
+  <meta name="description" content="KALLPA crea la app web o el software a medida que tu empresa necesita, listo en 7 días o menos: diseño moderno, programación con IA, probado y documentado. Agenda tu reunión gratis.">
+  <meta name="theme-color" content="#070b18">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:title" content="KALLPA · Apps web y software a medida en 7 días">
+  <meta property="og:description" content="Tu app web funcionando en 7 días o menos. Agenda tu reunión gratis.">
+  <meta property="og:image" content="/img/og.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg transform='rotate(-8 32 32)'%3E%3Crect x='6' y='6' width='52' height='52' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='32' fill='%23fff'%3EK%3C/text%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+
+  <script>
+    /* =========================================================
+       KALLPA · DATOS EDITABLES
+       ========================================================= */
+    window.KALLPA = {
+      whatsapp: '51993895946',
+      email: 'iamasterperu@gmail.com',
+      calendario: ''   // si usas Calendly o Google Calendar, pega aquí el link de agenda
+    };
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070b18; --bg-2: #0e1427; --bg-3: #151c33; --line: #232c4a;
+      --text: #f1f5f9; --muted: #94a3b8; --soft: #cbd5e1;
+      --cyan: #22d3ee; --violet: #8b5cf6;
+      --brand: linear-gradient(135deg, #22d3ee 0%, #8b5cf6 100%);
+      --wa: #25d366;
+    }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Outfit', system-ui, sans-serif; line-height: 1.6; }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { line-height: 1.1; margin: 0 0 14px; }
+    p { margin: 0 0 14px; }
+    .container { width: min(1160px, 100% - 32px); margin-inline: auto; }
+    .grad { background: var(--brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .muted { color: var(--muted); }
+
+    .btn { white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 15px 26px; border-radius: 999px; border: 0; font: inherit; font-weight: 800; font-size: 1.02rem; text-decoration: none; cursor: pointer; transition: transform .15s, filter .15s; }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.08); }
+    .btn--brand { background: var(--brand); color: #fff; box-shadow: 0 18px 40px -16px rgba(139, 92, 246, .9); }
+    .btn--ghost { background: transparent; color: var(--text); border: 1px solid #334066; }
+    .btn--ghost:hover { border-color: var(--cyan); }
+    .btn--block { width: 100%; }
+
+    .header { position: sticky; top: 0; z-index: 50; background: rgba(7, 11, 24, .88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .header__inner { display: flex; align-items: center; gap: 22px; height: 68px; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: .06em; color: #fff; }
+    .logo__mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--brand); font-size: 1.15rem; transform: rotate(-8deg); box-shadow: 0 8px 22px -6px rgba(139, 92, 246, .8); }
+    .nav { display: flex; gap: 4px; margin-left: auto; }
+    .nav a { padding: 8px 14px; border-radius: 999px; text-decoration: none; font-weight: 600; color: var(--soft); }
+    .nav a:hover { color: #fff; background: rgba(255, 255, 255, .06); }
+    .header .btn { padding: 10px 20px; font-size: .95rem; }
+
+    .hero { padding: 56px 0 64px; background: radial-gradient(55% 70% at 85% 0%, rgba(139, 92, 246, .3), transparent 70%), radial-gradient(45% 60% at 0% 100%, rgba(34, 211, 238, .18), transparent 70%); }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1.05fr; gap: 44px; align-items: center; }
+    .pill { display: inline-block; padding: 8px 16px; border-radius: 999px; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .4); color: #a5f3fc; font-weight: 700; font-size: .9rem; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4.8vw, 3.6rem); letter-spacing: -.02em; }
+    .hero__lead { color: var(--soft); font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 22px; }
+    .hero__ticks { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; margin: 0; color: var(--soft); font-weight: 600; font-size: .95rem; }
+    .hero__ticks li::before { content: '✓ '; color: var(--cyan); font-weight: 900; }
+    .video { border-radius: 22px; padding: 4px; background: var(--brand); box-shadow: 0 40px 90px -40px rgba(139, 92, 246, .9); }
+    .video video { width: 100%; border-radius: 18px; background: #000; aspect-ratio: 16 / 9; }
+    .video__cap { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 10px; }
+
+    .section { padding: 84px 0; }
+    .section--alt { background: linear-gradient(180deg, #0a1022 0%, #070b18 100%); border-block: 1px solid #141b33; }
+    .head { text-align: center; max-width: 740px; margin: 0 auto 44px; }
+    .eyebrow { display: inline-block; text-transform: uppercase; letter-spacing: .18em; font-size: .8rem; font-weight: 800; color: var(--cyan); margin-bottom: 10px; }
+    .head h2, .h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.8rem, 3.8vw, 2.6rem); font-weight: 800; letter-spacing: -.02em; }
+
+    .pains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .pain { background: var(--bg-2); border: 1px solid rgba(248, 113, 113, .35); border-radius: 20px; padding: 24px; }
+    .pain b { display: block; font-size: 1.15rem; margin-bottom: 6px; }
+    .pain p { color: var(--muted); margin: 0; }
+    .answer { margin-top: 26px; text-align: center; font-size: 1.2rem; font-weight: 700; }
+
+    .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .card { background: var(--bg-2); border: 1px solid var(--line); border-radius: 22px; padding: 26px; transition: border-color .2s, transform .2s; }
+    .card:hover { border-color: rgba(34, 211, 238, .55); transform: translateY(-3px); }
+    .card__icon { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; background: linear-gradient(135deg, rgba(34, 211, 238, .2), rgba(139, 92, 246, .2)); border: 1px solid rgba(139, 92, 246, .4); font-size: 1.6rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1.2rem; }
+    .card p { color: var(--muted); margin: 0; }
+
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: s; }
+    .step { background: var(--bg-2); border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
+    .step::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: var(--brand); font-weight: 900; font-size: 1.25rem; margin-bottom: 14px; }
+    .step h3 { font-size: 1.15rem; }
+    .step p { color: var(--muted); margin: 0; }
+    .promise { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; list-style: none; padding: 0; }
+    .promise li { padding: 9px 16px; border-radius: 999px; background: var(--bg-3); border: 1px solid var(--line); font-weight: 700; font-size: .92rem; }
+
+    .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .proj { display: flex; flex-direction: column; background: var(--bg-2); border: 1px solid var(--line); border-radius: 22px; padding: 24px; }
+    .proj__tag { align-self: flex-start; font-size: .74rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; background: rgba(139, 92, 246, .15); color: #c4b5fd; border: 1px solid rgba(139, 92, 246, .4); margin-bottom: 12px; }
+    .proj h3 { font-size: 1.2rem; margin-bottom: 6px; }
+    .proj p { color: var(--muted); flex: 1; }
+    .proj a { font-weight: 800; color: var(--cyan); text-decoration: none; }
+    .proj a:hover { text-decoration: underline; }
+
+    .consult { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: center; background: linear-gradient(135deg, #131a36, #0e1427); border: 1px solid rgba(139, 92, 246, .45); border-radius: 26px; padding: 36px; }
+    .consult h2 { font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); }
+    .consult p { color: var(--soft); }
+    .consult__price { text-align: center; }
+    .consult__price strong { display: block; font-family: 'Poppins', sans-serif; font-size: 2.8rem; line-height: 1; }
+    .consult__price span { color: var(--muted); display: block; margin: 6px 0 16px; }
+
+    /* agenda */
+    .book { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .book ul { padding-left: 20px; color: var(--soft); display: grid; gap: 8px; }
+    .form { background: #f8fafc; color: #0f172a; border-radius: 24px; padding: 28px; display: grid; gap: 14px; box-shadow: 0 40px 80px -40px rgba(139, 92, 246, .7); }
+    .form h3 { margin: 0; font-size: 1.25rem; }
+    .field { display: grid; gap: 6px; font-weight: 700; font-size: .93rem; }
+    .field input, .field select, .field textarea { font: inherit; font-weight: 500; color: #0f172a; background: #fff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 12px 13px; width: 100%; }
+    .field textarea { min-height: 96px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--violet); outline-offset: 1px; border-color: transparent; }
+    .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form__note { font-size: .86rem; color: #64748b; margin: 0; text-align: center; }
+    .ok { text-align: center; display: grid; gap: 10px; }
+    .ok .ic { font-size: 3rem; }
+    .ok p { color: #475569; margin: 0; }
+
+    .faq { max-width: 820px; margin: 0 auto; display: grid; gap: 10px; }
+    .faq details { background: var(--bg-2); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; }
+    .faq details[open] { border-color: rgba(34, 211, 238, .5); }
+    .faq summary { cursor: pointer; list-style: none; padding: 14px 28px 14px 0; font-weight: 700; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: '+'; position: absolute; right: 0; top: 10px; font-size: 1.5rem; color: var(--cyan); transition: transform .2s; }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq p { color: var(--muted); }
+
+    .footer { padding: 36px 0 96px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: .9rem; }
+    .footer a { color: var(--text); }
+    .wa-float { position: fixed; right: 16px; bottom: 16px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 14px 30px -10px rgba(37, 211, 102, .7); }
+
+    @media (max-width: 980px) {
+      .hero__inner, .book, .consult { grid-template-columns: 1fr; }
+      .grid4, .steps { grid-template-columns: 1fr 1fr; }
+      .pains, .work { grid-template-columns: 1fr 1fr; }
+      .nav { display: none; }
+      .header .btn { margin-left: auto; }
+    }
+    @media (max-width: 620px) {
+      .grid4, .steps, .pains, .work, .row2 { grid-template-columns: 1fr; }
+      .header .btn { display: none; }
+      .form { padding: 22px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+    @media (forced-colors: active) { * { -webkit-text-fill-color: currentColor !important; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#" aria-label="KALLPA, inicio"><span class="logo__mark">K</span>KALLPA</a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#servicios">Servicios</a>
+        <a href="#proceso">Cómo trabajamos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">Preguntas</a>
+      </nav>
+      <a class="btn btn--brand" href="#agenda">Agenda tu reunión</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="pill">⚡ Software a medida · listo en 7 días o menos</span>
+          <h1>¿Tu proyecto necesita una <span class="grad">app web funcionando</span> ya?</h1>
+          <p class="hero__lead">Diseñamos y programamos la aplicación web que tu empresa necesita: rápida, moderna y lista para usar en 7 días o menos. Te la entregamos probada, documentada y llave en mano.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--brand" href="#agenda">📅 Agenda tu reunión gratis</a>
+            <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
+          </div>
+          <ul class="hero__ticks">
+            <li>Precio cerrado</li>
+            <li>Lista en 7 días o menos</li>
+            <li>Programación con IA</li>
+          </ul>
+        </div>
+        <div>
+          <div class="video">
+            <video src="/video/kallpa-presentacion.mp4" poster="/img/poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+          </div>
+          <p class="video__cap">▶ Mira en 40 segundos cómo trabajamos</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="head">
+          <span class="eyebrow">¿Te pasa esto?</span>
+          <h2>¿Tu sistema lleva meses sin salir?</h2>
+          <p class="muted">Es lo que más nos cuentan los dueños de empresas antes de trabajar con nosotros.</p>
+        </div>
+        <div class="pains">
+          <article class="pain"><b>😩 El proyecto no despega</b><p>Llevas meses con la idea y la app todavía no existe.</p></article>
+          <article class="pain"><b>🐢 Malas experiencias</b><p>Programadores que no entregan, que desaparecen o que cobran de más.</p></article>
+          <article class="pain"><b>🖥️ Un sistema anticuado</b><p>Tu software parece de 1995 y frena a tu equipo y a tus clientes.</p></article>
+        </div>
+        <p class="answer">Imagina tener tu aplicación <span class="grad">lista, moderna y funcionando</span> la próxima semana.</p>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="head">
+          <span class="eyebrow">Servicios</span>
+          <h2>¿Qué podemos crear para tu empresa?</h2>
+          <p class="muted">Aplicaciones web a medida, hechas para tu forma de trabajar y no al revés.</p>
+        </div>
+        <div class="grid4">
+          <article class="card"><div class="card__icon">🚀</div><h3>Tu MVP en 7 días</h3><p>La primera versión de tu idea, lista para validar con clientes reales sin gastar de más.</p></article>
+          <article class="card"><div class="card__icon">🧩</div><h3>Sistemas a medida</h3><p>Ventas, inventario, reservas, matrículas o pedidos: el sistema que tu negocio necesita.</p></article>
+          <article class="card"><div class="card__icon">♻️</div><h3>Moderniza tu software</h3><p>Llevamos tu sistema antiguo a una app web rápida, segura y bonita.</p></article>
+          <article class="card"><div class="card__icon">🤖</div><h3>IA y automatizaciones</h3><p>Asistentes, reportes y tareas que se hacen solas dentro de tu app.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="proceso">
+      <div class="container">
+        <div class="head">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2>¿Cómo es trabajar con KALLPA?</h2>
+          <p class="muted">Un proceso simple, con fechas claras y sin sorpresas.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Reunión de 30 minutos</h3><p>Nos cuentas tu idea y vemos juntos si podemos hacerla.</p></article>
+          <article class="step"><h3>Propuesta cerrada</h3><p>Te enviamos el alcance, el plazo y un precio cerrado.</p></article>
+          <article class="step"><h3>Desarrollo</h3><p>Te mostramos avances cada día para que veas tu app crecer.</p></article>
+          <article class="step"><h3>Entrega llave en mano</h3><p>Probada, documentada y con capacitación para tu equipo.</p></article>
+        </div>
+        <ul class="promise">
+          <li>🎨 Diseño moderno</li><li>✅ 100% probada</li><li>📄 Documentación</li><li>📊 Panel de control</li><li>🔑 El código es tuyo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="head">
+          <span class="eyebrow">Proyectos</span>
+          <h2>¿Qué hemos creado?</h2>
+          <p class="muted">Apps y programas reales, funcionando hoy. Ábrelos y pruébalos.</p>
+        </div>
+        <div class="work">
+          <article class="proj"><span class="proj__tag">Educación</span><h3>ColegIA</h3><p>Asistente con IA para colegios: apoya a docentes, alumnos y padres en el día a día.</p><a href="https://colegia.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
+          <article class="proj"><span class="proj__tag">Orientación</span><h3>RUMBO</h3><p>Test vocacional con IA que recomienda carreras según intereses y fortalezas.</p><a href="https://rumbo.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
+          <article class="proj"><span class="proj__tag">3D</span><h3>TAWA 3D</h3><p>App para crear y explorar mundos y objetos en 3D directo en el navegador.</p><a href="https://tawa-3d.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
+          <article class="proj"><span class="proj__tag">Comercio</span><h3>Catálogos digitales</h3><p>Tiendas tipo app con productos, precios y pedidos por WhatsApp.</p><a href="https://virtualmaster.iamasterperu.workers.dev/catalogos/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
+          <article class="proj"><span class="proj__tag">Software de escritorio</span><h3>Trazo Studio</h3><p>Programa de diseño vectorial para Windows, al estilo de Illustrator.</p><a href="https://github.com/iamasterperu/trazo-studio/releases/download/v1.0.0-build2/TrazoStudio-Instalador-1.0.0.exe">Descargar →</a></article>
+          <article class="proj"><span class="proj__tag">Software de escritorio</span><h3>Pixel Master Studio</h3><p>Programa de edición de imágenes para Windows, al estilo de Photoshop.</p><a href="https://github.com/iamasterperu/pixelmaster-studio/releases/download/v1.0.0-build1/PixelMasterStudio-Instalador-1.0.0.exe">Descargar →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="consult">
+          <div>
+            <span class="eyebrow">¿Aún no sabes qué necesitas?</span>
+            <h2>Consultoría de producto</h2>
+            <p>Si tienes la idea pero no sabes cómo debería funcionar tu app, la diseñamos juntos: pantallas, funciones, prioridades y presupuesto. Si luego desarrollas con nosotros, <b>el costo de la consultoría se descuenta del proyecto</b>.</p>
+          </div>
+          <div class="consult__price">
+            <strong class="grad">S/ 390</strong>
+            <span>Se descuenta del desarrollo</span>
+            <a class="btn btn--brand btn--block" href="#agenda" data-consultoria>Pagar mi consultoría</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="agenda">
+      <div class="container book">
+        <div>
+          <span class="eyebrow">Reunión gratis</span>
+          <h2 class="h2">Agenda tu reunión de 30 minutos</h2>
+          <p class="muted">Cuéntanos tu idea y en la reunión te decimos si podemos hacerla, en cuánto tiempo y cuánto costaría. Sin compromiso.</p>
+          <ul>
+            <li>Elige el día y la hora que más te acomoden.</li>
+            <li>Antes de la reunión, mira el video de arriba: así aprovechamos mejor el tiempo.</li>
+            <li>Si tu idea aún no está clara, te recomendamos la consultoría de producto.</li>
+          </ul>
+        </div>
+        <div class="form">
+          <h3>Elige el día y la hora de tu reunión</h3>
+          <p style="margin:0;color:#475569">Reunión gratis de 30 minutos por videollamada. Verás los horarios libres y confirmas en menos de un minuto.</p>
+          <ul style="margin:0;padding-left:20px;color:#334155;display:grid;gap:6px">
+            <li>📅 Eliges día y hora en el calendario</li>
+            <li>📩 Te llega la confirmación por correo</li>
+            <li>💬 Te escribimos por WhatsApp con el enlace</li>
+          </ul>
+          <a class="btn btn--brand btn--block" href="#agenda" data-agenda>📅 Ver horarios disponibles</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="head">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>¿Tienes dudas?</h2>
+        </div>
+        <div class="faq">
+          <details><summary>¿Cuánto cuesta una app web?</summary><p>Depende de lo que necesites. Después de la reunión te enviamos una propuesta con alcance, plazo y un precio cerrado, para que sepas exactamente cuánto vas a invertir.</p></details>
+          <details><summary>¿De verdad está lista en 7 días?</summary><p>Sí: la primera versión de tu app (MVP) te la entregamos funcionando en 7 días o menos, porque desarrollamos con inteligencia artificial. Los sistemas más grandes se entregan por etapas, con la primera lista en una semana y fechas acordadas desde el inicio.</p></details>
+          <details><summary>¿Qué recibo al final?</summary><p>Tu app publicada y funcionando, probada, con documentación, acceso a un panel de control y una capacitación para tu equipo. El código es tuyo.</p></details>
+          <details><summary>¿Cómo veo el avance?</summary><p>Te mostramos lo construido a diario, para que puedas opinar y ajustar a tiempo.</p></details>
+          <details><summary>¿Trabajan con empresas fuera de Lima?</summary><p>Sí, todo el proceso puede ser 100% remoto, por videollamada y WhatsApp.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><b>KALLPA</b> · Apps web y software a medida</p>
+    <p>WhatsApp <a href="https://wa.me/51993895946" target="_blank" rel="noopener noreferrer">+51 993 895 946</a> · <a href="mailto:iamasterperu@gmail.com">iamasterperu@gmail.com</a></p>
+  </footer>
+
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
+
+  <script>window.IAM_AGENDA = { marca: 'KALLPA' };</script>
+  <script src="https://iamaster.iamasterperu.workers.dev/js/pago.js"></script>
+  <script src="https://iamaster.iamasterperu.workers.dev/js/agenda.js"></script>
+  <script>
+    (function () {
+      var C = window.KALLPA;
+      function wa(t) { return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(t); }
+      document.getElementById('waFloat').href = wa('¡Hola! Vi la web de KALLPA y quiero una app para mi empresa 👋');
+      function agendar(e) {
+        e.preventDefault();
+        IAMAgenda.abrir({ titulo: 'Reunión gratis con KALLPA', motivo: 'Reunión KALLPA', campos: ['empresa', 'tipo', 'idea', 'plazo'] });
+      }
+      document.querySelectorAll('a[href="#agenda"]:not([data-consultoria])').forEach(function (a) { a.addEventListener('click', agendar); });
+      document.querySelectorAll('[data-consultoria]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          IAMPago.abrir({ id: 'kallpa-consultoria', nombre: 'Consultoría de producto KALLPA', precio: 390, detalle: 'Se descuenta del desarrollo' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

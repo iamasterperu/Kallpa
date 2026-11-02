@@ -1,0 +1,6 @@
+// KALLPA · web estática en Cloudflare Workers
+{
+  "name": "kallpa",
+  "compatibility_date": "2026-10-12",
+  "assets": { "directory": "." }
+}

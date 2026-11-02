@@ -1,0 +1,8 @@
+.git
+.git/
+.wrangler
+.assetsignore
+wrangler.jsonc
+ESTRATEGIA.md
+README.md
+node_modules
