@@ -2,5 +2,6 @@
 {
   "name": "kallpa",
   "compatibility_date": "2026-10-12",
+  "preview_urls": false,
   "assets": { "directory": "." }
 }
