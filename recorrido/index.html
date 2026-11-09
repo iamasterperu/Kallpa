@@ -1417,7 +1417,7 @@ $('#mkVideo').addEventListener('click', async () => {
 const PROJ = { name: '', inmo: {} };
 const PANEL = { pid: null, key: null, did: null, depas: [], saving: null, info: {} };
 async function panelApi(path, o = {}) {
-  const headers = { authorization: 'Bearer ' + PANEL.key };
+  const headers = {};
   let body = o.body; if (o.json) { headers['content-type'] = 'application/json'; body = JSON.stringify(o.json); } if (o.type) headers['content-type'] = o.type;
   const r = await fetch('/api/projects/' + PANEL.pid + path, { method: o.method || 'GET', headers, body });
   const d = await r.json().catch(() => ({}));
@@ -1468,7 +1468,7 @@ function renderLinks() {
     <p class="help" style="margin-bottom:4px"><b>Link del proyecto</b> (todos los depas):</p><a href="${pubURL()}" target="_blank" rel="noopener">${pubURL()}</a>
     <p class="help" style="margin:8px 0 4px"><b>Código para pegar en tu web</b> (una sola vez):</p><textarea class="codebox" rows="3" readonly>${esc(iframe(pubURL()))}</textarea>
     ${PANEL.did ? `<p class="help" style="margin:8px 0 4px"><b>Solo este depa</b>:</p><a href="${pubURL(PANEL.did)}" target="_blank" rel="noopener">${pubURL(PANEL.did)}</a><textarea class="codebox" rows="3" readonly>${esc(iframe(pubURL(PANEL.did)))}</textarea>` : ''}
-    <p class="help">El link de tu panel es privado: no lo compartas.</p>`;
+    <p class="help">Para editar, vuelve a entrar a <b>${location.origin}/panel/</b>.</p>`;
 }
 async function openDepa(did) {
   if (PANEL.did) { try { await saveRemote(); } catch (e) { } }
@@ -1483,10 +1483,7 @@ async function openDepa(did) {
 }
 addEventListener('hashchange', () => { if (APP === 'panel' && /^#[a-z0-9]{6,20}\.[a-z0-9]{10,40}$/.test(location.hash)) location.reload(); });
 async function initPanel() {
-  const h = location.hash.slice(1);
-  if (/^[a-z0-9]{6,20}\.[a-z0-9]{10,40}$/.test(h)) { const [pid, key] = h.split('.'); try { localStorage.setItem('k3d-admin', JSON.stringify({ pid, key })); } catch (e) { } PANEL.pid = pid; PANEL.key = key; history.replaceState(null, '', location.pathname); }
-  else { try { const s = JSON.parse(localStorage.getItem('k3d-admin') || 'null'); if (s) { PANEL.pid = s.pid; PANEL.key = s.key; } } catch (e) { } }
-  if (!PANEL.pid) return renderCreate();
+  PANEL.pid = 'main'; PANEL.key = '';
   try {
     const p = await panelApi('');
     Object.assign(PROJ, p); PANEL.depas = p.depas;
@@ -1494,7 +1491,7 @@ async function initPanel() {
     if (!PANEL.depas.length) { const d = await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } }); PANEL.depas.push(d); }
     const last = localStorage.getItem('k3d-depa-' + PANEL.pid);
     await openDepa(PANEL.depas.some(d => d.id === last) ? last : PANEL.depas[0].id);
-  } catch (e) { document.body.classList.add('no-auth'); $('#projBox').innerHTML = `<div class="errbox">⚠ ${esc(e.message)}</div><button class="btn" id="pOut" style="margin-top:10px">Usar otro link o crear un panel</button>`; }
+  } catch (e) { $('#projBox').innerHTML = `<div class="errbox">⚠ ${esc(e.message)}</div><button class="btn" id="pOut" style="margin-top:10px">Reintentar</button>`; }
 }
 function renderCreate() {
   document.body.classList.add('no-auth'); $('#pnameTop').textContent = 'Panel para inmobiliarias'; $('#panelSec h3').textContent = 'KALLPA 3D · Crear panel de inmobiliaria';
@@ -1516,7 +1513,7 @@ $('#projBox').addEventListener('click', async e => {
       $('#projBox').innerHTML = `<p class="help ok">✅ Panel creado. Este es el link privado para la inmobiliaria (guárdalo, no se puede recuperar):</p><textarea class="codebox" rows="3" readonly>${esc(link)}</textarea><a class="btn pri" href="${esc(link)}" style="margin-top:8px;text-decoration:none">Abrir el panel</a>`;
       $('#projBox a.btn').addEventListener('click', () => setTimeout(() => location.reload(), 50));
     }
-    if (id === 'pOut') { localStorage.removeItem('k3d-admin'); location.reload(); }
+    if (id === 'pOut') location.reload();
     if (id === 'dNew') { const n = prompt('Nombre del departamento (ej.: Depa tipo B · 3 dorm.)'); if (!n) return; const d = await panelApi('/depas', { method: 'POST', json: { name: n } }); PANEL.depas.push(d); await openDepa(d.id); }
     if (id === 'dRen') { const d = PANEL.depas.find(x => x.id === PANEL.did); const n = prompt('Nuevo nombre', d.name); if (!n) return; d.name = n.slice(0, 60); P.name = d.name; await panelApi('/depas/' + d.id, { method: 'PUT', json: { name: d.name, data: serverData(), info: { ...depaSummary(), precio: $('#dPrecio').value } } }); renderProj(); renderPanel(); }
     if (id === 'dDel') { const d = PANEL.depas.find(x => x.id === PANEL.did); if (!confirm(`¿Eliminar "${d.name}"? Se borra su plano 3D y su video.`)) return; await panelApi('/depas/' + d.id, { method: 'DELETE' }); PANEL.depas = PANEL.depas.filter(x => x !== d); PANEL.did = null; if (!PANEL.depas.length) PANEL.depas.push(await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } })); await openDepa(PANEL.depas[0].id); }

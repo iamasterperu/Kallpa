@@ -14,11 +14,12 @@ async function sha(s) { const h = await crypto.subtle.digest('SHA-256', new Text
 function safeEq(a, b) { if (a.length !== b.length) return false; let r = 0; for (let i = 0; i < a.length; i++) r |= a.charCodeAt(i) ^ b.charCodeAt(i); return r === 0; }
 const clean = (s, n = 80) => String(s ?? '').replace(/[\u0000-\u001f]/g, '').trim().slice(0, n);
 
-async function getProject(env, pid) { return pid && /^[a-z0-9]{6,20}$/.test(pid) ? env.K3D.get('p:' + pid, 'json') : null; }
+async function getProject(env, pid) { return pid && /^[a-z0-9]{4,20}$/.test(pid) ? env.K3D.get('p:' + pid, 'json') : null; }
+// Cada empresa tiene su propia app con un único proyecto ("main"), sin contraseñas.
 async function authed(req, env, pid) {
-  const p = await getProject(env, pid); if (!p) return null;
-  const key = (req.headers.get('authorization') || '').replace(/^Bearer\s+/i, '');
-  if (!key || !safeEq(await sha(key), p.keyHash)) return null;
+  if (pid !== 'main') return null;
+  let p = await getProject(env, 'main');
+  if (!p) { p = { id: 'main', name: 'Mi proyecto', inmo: { name: '', phone: '', web: '' }, depas: [], created: Date.now(), publishedAt: null }; await env.K3D.put('p:main', JSON.stringify(p)); }
   return p;
 }
 const publicProject = p => ({ id: p.id, name: p.name, inmo: p.inmo || {}, depas: p.depas || [], publishedAt: p.publishedAt || null });
@@ -83,16 +84,6 @@ async function serveMedia(req, env, key) {
 
 async function api(req, env, parts) {
   const method = req.method;
-  // Crear proyecto (solo KALLPA, con código de administrador)
-  if (parts[0] === 'projects' && parts.length === 1 && method === 'POST') {
-    if (!env.ADMIN_CODE) return err('Falta configurar ADMIN_CODE en Cloudflare.', 500);
-    if (!safeEq(await sha(req.headers.get('x-admin') || ''), await sha(env.ADMIN_CODE))) return err('Código de administrador incorrecto.', 401);
-    const b = await req.json().catch(() => ({}));
-    const id = rid(8), key = rid(24);
-    const p = { id, keyHash: await sha(key), name: clean(b.name) || 'Nuevo proyecto', inmo: { name: clean(b.inmo), phone: clean(b.phone, 30), web: clean(b.web, 120) }, depas: [], created: Date.now(), publishedAt: null };
-    await env.K3D.put('p:' + id, JSON.stringify(p));
-    return json({ id, key, panel: `/panel/#${id}.${key}` }, 201);
-  }
   // Página pública
   if (parts[0] === 'pub' && parts[1] && method === 'GET') {
     const pub = await env.K3D.get('pub:' + parts[1], 'json');
@@ -101,7 +92,7 @@ async function api(req, env, parts) {
   }
   if (parts[0] !== 'projects' || !parts[1]) return err('Ruta no encontrada', 404);
   const pid = parts[1], p = await authed(req, env, pid);
-  if (!p) return err('Link de administración no válido.', 401);
+  if (!p) return err('Proyecto no encontrado.', 404);
   const save = () => env.K3D.put('p:' + pid, JSON.stringify(p));
 
   if (parts.length === 2) {
