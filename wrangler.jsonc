@@ -8,7 +8,7 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*", "/media/*", "/p/*", "/panel", "/panel/*"]
+    "run_worker_first": ["/api/*", "/media/*", "/v/*", "/p/*", "/panel", "/panel/*"]
   },
   "kv_namespaces": [{ "binding": "K3D", "id": "7b626d98747c41aebe1afb513e7f81f4" }]
   // Secretos (se configuran en Cloudflare, nunca en el código): ANTHROPIC_API_KEY, ADMIN_CODE

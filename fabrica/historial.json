@@ -1,0 +1,53 @@
+{
+  "publicados": [
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-16",
+      "tema": "Clientes que se pierden en WhatsApp → app de pedidos",
+      "palabra": "PEDIDOS",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-17",
+      "tema": "Excel ya no te alcanza → sistema de inventario",
+      "palabra": "SISTEMA",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-18",
+      "tema": "Sistema antiguo tipo 1995 → modernización a app web",
+      "palabra": "MODERNIZAR",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-19",
+      "tema": "3 errores al contratar un programador",
+      "palabra": "APP",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-20",
+      "tema": "Citas y reservas automáticas para clínicas, salones y consultorios",
+      "palabra": "CITAS",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-21",
+      "tema": "Interactivo: ¿qué app necesita tu rubro?",
+      "palabra": "tu rubro",
+      "programado_en_metricool": false
+    },
+    {
+      "semana": "2026-11-16",
+      "fecha": "2026-11-22",
+      "tema": "De idea a app en 7 días: el proceso",
+      "palabra": "IDEA",
+      "programado_en_metricool": false
+    }
+  ]
+}

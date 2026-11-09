@@ -67,10 +67,10 @@ async function analyzePlan(env, b64, mediaType, hint) {
 }
 
 /* ---------- media en KV con soporte de rango (necesario para video en iPhone) ---------- */
-async function serveMedia(req, env, key) {
+async function serveMedia(req, env, key, fallbackType) {
   const { value, metadata } = await env.K3D.getWithMetadata(key, 'arrayBuffer');
   if (!value) return new Response('No encontrado', { status: 404 });
-  const type = (metadata && metadata.type) || 'application/octet-stream', size = value.byteLength;
+  const type = (metadata && metadata.type) || fallbackType || 'application/octet-stream', size = value.byteLength;
   const base = { 'content-type': type, 'accept-ranges': 'bytes', 'cache-control': 'public, max-age=31536000, immutable' };
   const range = req.headers.get('range'), m = range && /bytes=(\d*)-(\d*)/.exec(range);
   if (m) {
@@ -186,6 +186,12 @@ export default {
         const [, pid, did, kind, stamp] = parts;
         if (!['plan', 'video'].includes(kind) || ![pid, did, stamp].every(s => /^[a-z0-9]{4,24}$/.test(s))) return new Response('No encontrado', { status: 404 });
         return await serveMedia(req, env, `m:${pid}:${did}:${kind}:${stamp}`);
+      }
+      // Videos y portadas para redes sociales (los sube la fábrica de videos semanal)
+      if (parts[0] === 'v' && parts.length === 2 && (req.method === 'GET' || req.method === 'HEAD')) {
+        const m = /^[a-z0-9-]{3,80}\.(mp4|jpg)$/.exec(parts[1]);
+        if (!m) return new Response('No encontrado', { status: 404 });
+        return await serveMedia(req, env, 'soc:' + parts[1], m[1] === 'mp4' ? 'video/mp4' : 'image/jpeg');
       }
       if (parts[0] === 'p' || parts[0] === 'panel') {
         if (parts[0] === 'panel' && url.pathname === '/panel') return Response.redirect(url.origin + '/panel/' + url.search, 301);
