@@ -5,71 +5,71 @@
       "fecha": "2026-11-09",
       "dia": "lunes",
       "hora": "18:15",
-      "video": "2026-11-16-lunes",
+      "video": "2026-11-09-pedidos",
       "tema": "Clientes perdidos en WhatsApp → app de pedidos",
       "palabra": "PEDIDOS",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-16-lunes.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-09-pedidos.mp4"
     },
     {
       "fecha": "2026-11-11",
       "dia": "miércoles",
       "hora": "19:00",
-      "video": "2026-11-17-martes",
+      "video": "2026-11-11-sistema",
       "tema": "Inventario en Excel → sistema a medida",
       "palabra": "SISTEMA",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-17-martes.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-11-sistema.mp4"
     },
     {
       "fecha": "2026-11-13",
       "dia": "viernes",
       "hora": "19:00",
-      "video": "2026-11-18-miercoles",
+      "video": "2026-11-13-modernizar",
       "tema": "Sistema antiguo tipo 1995 → app web",
       "palabra": "MODERNIZAR",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-18-miercoles.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-13-modernizar.mp4"
     },
     {
       "fecha": "2026-11-14",
       "dia": "sábado",
       "hora": "11:00",
-      "video": "2026-11-21-sabado",
+      "video": "2026-11-14-tu-rubro",
       "tema": "Juego: dime tu rubro y te digo qué app",
       "palabra": "tu rubro",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-21-sabado.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-14-tu-rubro.mp4"
     },
     {
       "fecha": "2026-11-15",
       "dia": "domingo",
       "hora": "11:00",
-      "video": "2026-11-22-domingo",
+      "video": "2026-11-15-idea",
       "tema": "De idea a app en 7 días",
       "palabra": "IDEA",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-22-domingo.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-15-idea.mp4"
     },
     {
       "fecha": "2026-11-16",
       "dia": "lunes",
       "hora": "19:00",
-      "video": "2026-11-19-jueves",
+      "video": "2026-11-16-app",
       "tema": "3 errores al contratar una app",
       "palabra": "APP",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-19-jueves.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-16-app.mp4"
     },
     {
       "fecha": "2026-11-18",
       "dia": "miércoles",
       "hora": "19:00",
-      "video": "2026-11-20-viernes",
+      "video": "2026-11-18-citas",
       "tema": "Citas automáticas para clínicas y salones",
       "palabra": "CITAS",
       "programado_en_metricool": true,
-      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-20-viernes.mp4"
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-18-citas.mp4"
     },
     {
       "fecha": "2026-11-20",
