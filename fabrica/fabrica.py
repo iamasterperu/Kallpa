@@ -151,7 +151,7 @@ def escena_html(es, palabra):
         ms = ''.join(f'<div class="msg {"k" if q == "k" else "c"} {"right" if q == "k" else "left"}" style="animation-delay:{.5 + i * .75:.2f}s">{e(x)}</div>' for i, (q, x) in enumerate(es.get('mensajes', [])[:5]))
         return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="chat pop" style="animation-delay:.2s"><div class="top"><div class="av">🤖</div>{e(d("contacto") or "Asistente de tu negocio")}</div>{ms}</div>'
     if t == 'cta':
-        return f'<div class="logo pop"><div class="mk">K</div>KALLPA</div><div class="cta up" style="animation-delay:.4s">Comenta<em>"{e(palabra)}"</em>{e(d("detalle") or "y te escribimos")}</div><div class="bio up" style="animation-delay:1s">👆 Agenda gratis: link en el perfil</div>'
+        return f'<div class="logo pop"><div class="mk">K</div>KALLPA</div><div class="cta up" style="animation-delay:.4s">📅 Agenda tu reunión<em>GRATIS</em></div><div class="bio up" style="animation-delay:.9s">👆 Toca el link de nuestro perfil</div><div class="com up" style="animation-delay:1.4s">💬 o comenta "{e(palabra)}"</div>'
     raise ValueError('Tipo de escena desconocido: ' + t)
 
 

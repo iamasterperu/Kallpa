@@ -1,0 +1,999 @@
+{
+  "semana": "2026-11-20",
+  "videos": [
+    {
+      "archivo": "2026-11-20-viernes",
+      "dia": "viernes",
+      "fecha": "2026-11-20",
+      "hora": "19:00",
+      "tema": "Panel de ventas en tiempo real para el dueño",
+      "palabra": "VENTAS",
+      "resaltar": [
+        "ventas",
+        "celular",
+        "panel"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "📈 Dueños de negocio",
+          "titulo": "¿Sabes cuánto<br>vendiste <span class=\"y\">hoy</span>?",
+          "emoji": "🤷",
+          "sub": "sin llamar a nadie",
+          "voz": "Dueño de negocio: ¿sabes cuánto vendiste hoy, sin tener que llamar a nadie?"
+        },
+        {
+          "tipo": "problema",
+          "titulo": "Si tienes que preguntar…",
+          "items": [
+            "📞 Llamar al encargado",
+            "📓 Esperar el cuadre",
+            "🤔 Decidir a ciegas"
+          ],
+          "voz": "Si tienes que llamar al encargado y esperar el cuadre del día, estás decidiendo a ciegas."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Tu negocio <span class=\"g\">en tu celular</span>",
+          "app": "📊 Mi negocio hoy",
+          "kpis": [
+            [
+              "Ventas hoy",
+              "S/ 4,820"
+            ],
+            [
+              "Tickets",
+              "63"
+            ]
+          ],
+          "filas": [
+            "🏆 Más vendido: Combo 2",
+            "🏪 Tienda Centro +18%",
+            "⚠ Stock bajo: 3 productos"
+          ],
+          "sello": "🔴 En vivo",
+          "voz": "Con tu propio panel ves ventas, productos más vendidos y alertas de stock, en vivo y desde tu celular."
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Decide con datos",
+          "emoji": "🎯",
+          "chips": [
+            "📈 Ventas por día",
+            "🏪 Por local",
+            "👤 Por vendedor",
+            "📦 Stock"
+          ],
+          "voz": "Ventas por día, por local y por vendedor: decide con datos, no con corazonadas."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Sabes cuánto vendió tu negocio hoy… sin llamar a nadie? 📈\n\nSi para saberlo tienes que esperar el cuadre del día, estás decidiendo a ciegas. Con un panel de ventas a medida ves todo en vivo desde tu celular: ventas por local, por vendedor, productos más vendidos y alertas de stock.\n\n⚡ En KALLPA lo creamos en 7 días o menos.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta VENTAS y te escribimos.",
+      "hashtags": [
+        "#paneldeventas",
+        "#dashboard",
+        "#duenosdenegocio",
+        "#pymesperu",
+        "#softwareamedida",
+        "#transformaciondigital",
+        "#emprendedoresperu",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-20-viernes.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-20-viernes.jpg"
+    },
+    {
+      "archivo": "2026-11-21-sabado",
+      "dia": "sábado",
+      "fecha": "2026-11-21",
+      "hora": "11:00",
+      "tema": "Un día sin app vs con app (antes/después)",
+      "palabra": "QUIERO",
+      "resaltar": [
+        "app",
+        "día",
+        "horas"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "⏰ Un día normal",
+          "titulo": "Tu día <span class=\"r\">sin app</span><br>vs. <span class=\"v\">con app</span>",
+          "emoji": "⚖️",
+          "voz": "Así es un día en tu negocio sin aplicación, y así es con una."
+        },
+        {
+          "tipo": "antesdespues",
+          "titulo": "La diferencia",
+          "antes": [
+            "Pedidos en cuaderno",
+            "Llamadas todo el día",
+            "Cuadre a medianoche"
+          ],
+          "despues": [
+            "Pedidos ordenados",
+            "Clientes atendidos 24/7",
+            "Reporte automático"
+          ],
+          "voz": "Sin app: cuaderno, llamadas y cuadre a medianoche. Con app: todo ordenado, clientes atendidos y reportes automáticos."
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Recuperas hasta",
+          "numero": 10,
+          "sufijo": " h",
+          "etiqueta": "a la semana <span class=\"y\">(estimado)</span>",
+          "voz": "Y recuperas hasta diez horas a la semana para hacer crecer tu negocio."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "Tu día sin app vs. tu día con app ⚖️\n\n❌ Sin app: pedidos en cuaderno, llamadas todo el día y cuadre a medianoche.\n✅ Con app: pedidos ordenados, clientes atendidos 24/7 y reportes automáticos.\n\nTiempo que vuelve a ser tuyo. ¿Con cuál te quedas?\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta QUIERO y te escribimos.",
+      "hashtags": [
+        "#antesydespues",
+        "#productividad",
+        "#appsparanegocios",
+        "#emprendedoresperu",
+        "#pymesperu",
+        "#automatizacion",
+        "#negociosperu",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-21-sabado.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-21-sabado.jpg"
+    },
+    {
+      "archivo": "2026-11-22-domingo",
+      "dia": "domingo",
+      "fecha": "2026-11-22",
+      "hora": "11:00",
+      "tema": "Mito: 'Soy muy pequeño para tener una app'",
+      "palabra": "MITO",
+      "resaltar": [
+        "pequeño",
+        "app",
+        "grande"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🧐 Mito o realidad",
+          "titulo": "\"Mi negocio es<br>muy <span class=\"y\">pequeño</span><br>para una app\"",
+          "emoji": "🤏",
+          "voz": "Mito: mi negocio es muy pequeño para tener una aplicación."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Realidad",
+          "items": [
+            [
+              "✅",
+              "Las apps ya no son solo de grandes",
+              "hoy se hacen en días"
+            ],
+            [
+              "✅",
+              "Empiezas con lo esencial",
+              "y creces cuando quieras"
+            ],
+            [
+              "✅",
+              "Te ahorra tiempo desde el día 1",
+              "aunque seas tú solo"
+            ]
+          ],
+          "voz": "Realidad: ya no son solo para empresas grandes. Empiezas con lo esencial, creces cuando quieras, y ahorras tiempo desde el primer día."
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Perfecto para",
+          "emoji": "🚀",
+          "chips": [
+            "🏪 Bodegas",
+            "💇 Salones",
+            "🍔 Restaurantes",
+            "🩺 Consultorios",
+            "🎓 Academias"
+          ],
+          "voz": "Perfecto para bodegas, salones, restaurantes, consultorios y academias."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "\"Mi negocio es muy pequeño para tener una app\" 🤏 ¿Mito o realidad?\n\nMITO. Hoy una app a medida se hace en días, empiezas solo con lo esencial y la haces crecer cuando tu negocio crezca. Desde el día 1 te ahorra tiempo, aunque trabajes tú solo.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta MITO y te escribimos.",
+      "hashtags": [
+        "#mitosyverdades",
+        "#emprendedoresperu",
+        "#pequenosnegocios",
+        "#appsparanegocios",
+        "#pymesperu",
+        "#negociosdigitales",
+        "#transformaciondigital",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-22-domingo.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-22-domingo.jpg"
+    },
+    {
+      "archivo": "2026-11-23-lunes",
+      "dia": "lunes",
+      "fecha": "2026-11-23",
+      "hora": "19:00",
+      "tema": "Matrículas y pagos en línea para colegios y academias",
+      "palabra": "COLEGIO",
+      "resaltar": [
+        "matrículas",
+        "colegio",
+        "academia",
+        "pagos"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🏫 Colegios · 🎓 Academias",
+          "titulo": "¿Matrículas con<br><span class=\"r\">colas</span> y papeles?",
+          "emoji": "📋",
+          "voz": "Colegios y academias: ¿todavía hacen matrículas con colas y montañas de papeles?"
+        },
+        {
+          "tipo": "problema",
+          "titulo": "Cada temporada lo mismo",
+          "items": [
+            "🧾 Fichas en papel",
+            "⏳ Colas de padres",
+            "💸 Pagos sin control"
+          ],
+          "voz": "Fichas en papel, colas de padres y pagos difíciles de controlar. Cada temporada lo mismo."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Matrícula <span class=\"g\">100% en línea</span>",
+          "app": "🎓 Matrículas 2027",
+          "kpis": [
+            [
+              "Inscritos",
+              "312"
+            ],
+            [
+              "Pagados",
+              "96%"
+            ]
+          ],
+          "filas": [
+            "✅ Ficha completada",
+            "✅ Pago confirmado",
+            "📩 Constancia enviada"
+          ],
+          "sello": "📱 Desde casa",
+          "voz": "Con tu propia plataforma, los padres llenan la ficha, pagan y reciben su constancia desde casa."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Y tú controlas todo",
+          "items": [
+            [
+              "📊",
+              "Vacantes por grado",
+              "en tiempo real"
+            ],
+            [
+              "💳",
+              "Pagos y pensiones",
+              "con recordatorios"
+            ],
+            [
+              "📂",
+              "Expedientes digitales",
+              "ordenados y seguros"
+            ]
+          ],
+          "voz": "Y tú controlas vacantes, pagos con recordatorios automáticos y expedientes digitales."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Matrículas con colas, fichas en papel y pagos sin control? 🏫\n\nCon una plataforma de matrículas a medida, los padres completan la ficha, pagan en línea y reciben su constancia desde casa. Tú ves vacantes por grado, pagos y pensiones con recordatorios automáticos y expedientes digitales.\n\nIdeal para colegios, academias, institutos y centros de idiomas.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta COLEGIO y te escribimos.",
+      "hashtags": [
+        "#matriculasonline",
+        "#colegiosperu",
+        "#academias",
+        "#educacion",
+        "#softwareeducativo",
+        "#transformaciondigital",
+        "#pymesperu",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-23-lunes.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-23-lunes.jpg"
+    },
+    {
+      "archivo": "2026-11-25-miercoles",
+      "dia": "miércoles",
+      "fecha": "2026-11-25",
+      "hora": "19:00",
+      "tema": "Cotizaciones automáticas en minutos",
+      "palabra": "COTIZAR",
+      "resaltar": [
+        "cotización",
+        "cotizaciones",
+        "minutos",
+        "PDF"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🔩 Ferreterías · 🏗️ Constructoras · 🖨️ Imprentas",
+          "titulo": "¿Tardas <span class=\"r\">horas</span><br>en hacer una<br>cotización?",
+          "emoji": "🧮",
+          "voz": "¿Tardas horas en armar una cotización? Mientras tanto, tu cliente ya le compró a otro."
+        },
+        {
+          "tipo": "chat",
+          "titulo": "Lo que pasa hoy",
+          "contacto": "Cliente",
+          "mensajes": [
+            [
+              "c",
+              "¿Me cotizas 50 bolsas de cemento y fierro?"
+            ],
+            [
+              "c",
+              "¿Ya está la cotización? 🙏"
+            ],
+            [
+              "c",
+              "Ya me cotizaron en otro lado 😕"
+            ]
+          ],
+          "voz": "El cliente pide precio, espera, y se va con quien le respondió primero."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Cotiza en <span class=\"g\">2 minutos</span>",
+          "app": "🧾 Nueva cotización",
+          "kpis": [
+            [
+              "Productos",
+              "12"
+            ],
+            [
+              "Tiempo",
+              "2 min"
+            ]
+          ],
+          "filas": [
+            "✅ Precios actualizados",
+            "✅ PDF con tu logo",
+            "📲 Enviada por WhatsApp"
+          ],
+          "sello": "⚡ Rápido",
+          "voz": "Con tu propio sistema eliges productos, los precios salen solos y envías un PDF con tu logo por WhatsApp en dos minutos."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Tardas horas en armar una cotización? 🧮\n\nMientras buscas precios y armas el Excel, tu cliente ya le compró a otro. Con un cotizador a medida eliges los productos, los precios salen solos y envías un PDF con tu logo por WhatsApp en 2 minutos.\n\nIdeal para ferreterías, constructoras, imprentas, distribuidoras y servicios técnicos.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta COTIZAR y te escribimos.",
+      "hashtags": [
+        "#cotizaciones",
+        "#ferreteria",
+        "#constructoras",
+        "#ventasb2b",
+        "#softwareamedida",
+        "#pymesperu",
+        "#empresasperu",
+        "#automatizacion"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-25-miercoles.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-25-miercoles.jpg"
+    },
+    {
+      "archivo": "2026-11-27-viernes",
+      "dia": "viernes",
+      "fecha": "2026-11-27",
+      "hora": "19:00",
+      "tema": "Asistente con IA que responde 24/7",
+      "palabra": "IA",
+      "resaltar": [
+        "inteligencia",
+        "artificial",
+        "asistente",
+        "24"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🤖 Inteligencia artificial",
+          "titulo": "Tu negocio responde<br>a las <span class=\"y\">3 a. m.</span>",
+          "emoji": "🌙",
+          "sub": "y tú durmiendo",
+          "voz": "Imagina que tu negocio responde clientes a las tres de la mañana… mientras tú duermes."
+        },
+        {
+          "tipo": "chat",
+          "titulo": "Tu asistente con IA",
+          "contacto": "Asistente de tu negocio",
+          "mensajes": [
+            [
+              "c",
+              "¿Tienen delivery a Surco?"
+            ],
+            [
+              "k",
+              "¡Sí! 🚚 Llega en 40 min. ¿Te ayudo con tu pedido?"
+            ],
+            [
+              "c",
+              "Sí, uno grande por favor 🙌"
+            ]
+          ],
+          "voz": "Un asistente con inteligencia artificial que conoce tus productos, responde dudas y toma pedidos."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Trabaja por ti",
+          "items": [
+            [
+              "⏰",
+              "24 horas, 7 días",
+              "sin descanso"
+            ],
+            [
+              "🎯",
+              "Responde con tu información",
+              "precios, horarios, stock"
+            ],
+            [
+              "👤",
+              "Te pasa los casos importantes",
+              "tú cierras la venta"
+            ]
+          ],
+          "voz": "Trabaja las veinticuatro horas, responde con tu información y te pasa los casos importantes para que cierres la venta."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "Tu negocio respondiendo clientes a las 3 a. m. mientras tú duermes 🌙\n\nUn asistente con inteligencia artificial, entrenado con tus productos, precios y horarios, que responde dudas y toma pedidos 24/7 en tu web o en tu app, y te pasa los casos importantes para que tú cierres la venta.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta IA y te escribimos.",
+      "hashtags": [
+        "#inteligenciaartificial",
+        "#chatbot",
+        "#automatizacion",
+        "#atencionalcliente",
+        "#ia",
+        "#pymesperu",
+        "#emprendedoresperu",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-27-viernes.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-27-viernes.jpg"
+    },
+    {
+      "archivo": "2026-11-28-sabado",
+      "dia": "sábado",
+      "fecha": "2026-11-28",
+      "hora": "11:00",
+      "tema": "Test: ¿cuántas horas pierdes en tareas repetitivas?",
+      "palabra": "HORAS",
+      "resaltar": [
+        "horas",
+        "semana",
+        "repetitivas"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "⏱ Test rápido",
+          "titulo": "¿Cuántas <span class=\"y\">horas</span><br>pierdes a la semana?",
+          "emoji": "⏳",
+          "voz": "Test rápido: ¿cuántas horas pierdes a la semana en tareas que podrían hacerse solas?"
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Suma si haces esto a mano",
+          "emoji": "✍️",
+          "chips": [
+            "📝 Copiar datos",
+            "📞 Confirmar citas",
+            "🧾 Hacer reportes",
+            "💬 Responder lo mismo",
+            "📦 Contar stock"
+          ],
+          "voz": "Copiar datos, confirmar citas, hacer reportes, responder lo mismo una y otra vez, contar stock."
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Si son 2 h al día…",
+          "numero": 40,
+          "sufijo": " h",
+          "etiqueta": "al mes <span class=\"y\">que podrías recuperar</span>",
+          "voz": "Si son dos horas al día, son cuarenta horas al mes que podrías recuperar."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "Test rápido ⏱ ¿Cuántas horas pierdes a la semana en tareas que podrían hacerse solas?\n\n📝 Copiar datos\n📞 Confirmar citas\n🧾 Hacer reportes\n💬 Responder lo mismo\n📦 Contar stock\n\nSi son 2 horas al día, son 40 horas al mes. Cuéntanos en los comentarios cuántas son las tuyas 👇\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta HORAS y te escribimos.",
+      "hashtags": [
+        "#productividad",
+        "#automatizacion",
+        "#tiempo",
+        "#emprendedoresperu",
+        "#pymesperu",
+        "#appsparanegocios",
+        "#negociosperu",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-28-sabado.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-28-sabado.jpg"
+    },
+    {
+      "archivo": "2026-11-29-domingo",
+      "dia": "domingo",
+      "fecha": "2026-11-29",
+      "hora": "11:00",
+      "tema": "Imagina tu negocio en 30 días con tu propia app",
+      "palabra": "FUTURO",
+      "resaltar": [
+        "imagina",
+        "días",
+        "app"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "✨ Cierra los ojos",
+          "titulo": "Tu negocio dentro<br>de <span class=\"g\">30 días</span>",
+          "emoji": "🔮",
+          "voz": "Cierra los ojos e imagina tu negocio dentro de treinta días."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Imagina…",
+          "items": [
+            [
+              "📱",
+              "Tu propia app",
+              "con tu marca y tus colores"
+            ],
+            [
+              "😌",
+              "Menos caos",
+              "todo en un solo lugar"
+            ],
+            [
+              "📈",
+              "Más ventas",
+              "clientes atendidos al instante"
+            ]
+          ],
+          "voz": "Tu propia app con tu marca, menos caos, todo en un solo lugar, y más ventas porque atiendes al instante."
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Y solo te tomó",
+          "numero": 7,
+          "sufijo": " días",
+          "etiqueta": "dar el primer paso",
+          "voz": "Y todo empezó con una reunión. En siete días ya la tenías funcionando."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "Cierra los ojos e imagina tu negocio dentro de 30 días 🔮\n\n📱 Tu propia app, con tu marca y tus colores\n😌 Menos caos: todo en un solo lugar\n📈 Más ventas: clientes atendidos al instante\n\nTodo empieza con una reunión. En 7 días o menos ya la tienes funcionando.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta FUTURO y te escribimos.",
+      "hashtags": [
+        "#motivacionemprendedora",
+        "#emprendedoresperu",
+        "#appsparanegocios",
+        "#crecimiento",
+        "#pymesperu",
+        "#transformaciondigital",
+        "#negociosperu",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-29-domingo.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-29-domingo.jpg"
+    },
+    {
+      "archivo": "2026-11-30-lunes",
+      "dia": "lunes",
+      "fecha": "2026-11-30",
+      "hora": "19:00",
+      "tema": "Catálogo digital con pedidos para tiendas y distribuidoras",
+      "palabra": "CATALOGO",
+      "resaltar": [
+        "catálogo",
+        "pedidos",
+        "PDF"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🛍️ Tiendas · 📦 Distribuidoras",
+          "titulo": "¿Todavía mandas<br>tu catálogo en <span class=\"r\">PDF</span>?",
+          "emoji": "📄",
+          "voz": "¿Todavía mandas tu catálogo en PDF o en fotos por WhatsApp?"
+        },
+        {
+          "tipo": "problema",
+          "titulo": "El problema del PDF",
+          "items": [
+            "🖼️ 50 fotos sueltas",
+            "💲 Precios desactualizados",
+            "❓ Clientes perdidos"
+          ],
+          "voz": "Cincuenta fotos sueltas, precios desactualizados, y clientes que se pierden antes de pedir."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Tu <span class=\"g\">catálogo app</span>",
+          "app": "🛍️ Catálogo de mi tienda",
+          "kpis": [
+            [
+              "Productos",
+              "240"
+            ],
+            [
+              "Pedidos hoy",
+              "19"
+            ]
+          ],
+          "filas": [
+            "🔎 Busca por categoría",
+            "🛒 Agrega al carrito",
+            "📲 Pedido directo a tu WhatsApp"
+          ],
+          "sello": "✨ Con tu marca",
+          "voz": "Con tu catálogo digital, el cliente busca, agrega al carrito y te llega el pedido completo a tu WhatsApp."
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Tú lo actualizas en segundos",
+          "emoji": "⚡",
+          "chips": [
+            "💲 Precios",
+            "📸 Fotos",
+            "📦 Stock",
+            "🏷️ Ofertas"
+          ],
+          "voz": "Y tú actualizas precios, fotos, stock y ofertas en segundos."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Todavía mandas tu catálogo en PDF o en 50 fotos por WhatsApp? 📄\n\nCon un catálogo digital tipo app, tu cliente busca por categoría, agrega al carrito y te llega el pedido completo a tu WhatsApp. Tú actualizas precios, fotos, stock y ofertas en segundos, con tu marca y tus colores.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta CATALOGO y te escribimos.",
+      "hashtags": [
+        "#catalogodigital",
+        "#tiendaonline",
+        "#ventasporwhatsapp",
+        "#distribuidoras",
+        "#emprendedoresperu",
+        "#pymesperu",
+        "#negociosdigitales",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-30-lunes.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-11-30-lunes.jpg"
+    },
+    {
+      "archivo": "2026-12-02-miercoles",
+      "dia": "miércoles",
+      "fecha": "2026-12-02",
+      "hora": "19:00",
+      "tema": "App para tu equipo: asistencia, tareas y reportes",
+      "palabra": "EQUIPO",
+      "resaltar": [
+        "equipo",
+        "tareas",
+        "asistencia"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "👷 Equipos de trabajo",
+          "titulo": "¿Tu equipo trabaja<br>en <span class=\"r\">WhatsApp</span> y Excel?",
+          "emoji": "😵‍💫",
+          "voz": "¿Tu equipo coordina todo por grupos de WhatsApp y hojas de Excel?"
+        },
+        {
+          "tipo": "antesdespues",
+          "titulo": "Ordena a tu equipo",
+          "antes": [
+            "Tareas en chats",
+            "Asistencia en papel",
+            "Sin reportes"
+          ],
+          "despues": [
+            "Tareas asignadas",
+            "Marcación con GPS",
+            "Reporte diario"
+          ],
+          "voz": "Pasa de tareas perdidas en chats y asistencia en papel, a tareas asignadas, marcación con ubicación y reportes diarios."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Todo en <span class=\"g\">una app</span>",
+          "app": "👥 Mi equipo hoy",
+          "kpis": [
+            [
+              "Asistencia",
+              "18/20"
+            ],
+            [
+              "Tareas",
+              "42 ✓"
+            ]
+          ],
+          "filas": [
+            "✅ Juan · Obra San Isidro",
+            "✅ Ana · Visita cliente",
+            "⏰ Pedro · Tarde 10 min"
+          ],
+          "sello": "📍 GPS",
+          "voz": "Sabes quién llegó, dónde está y qué terminó, desde tu celular."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Tu equipo coordina todo por grupos de WhatsApp y hojas de Excel? 😵‍💫\n\nCon una app a medida para tu equipo: tareas asignadas, marcación de asistencia con ubicación y reporte diario automático. Sabes quién llegó, dónde está y qué terminó, desde tu celular.\n\nIdeal para constructoras, servicios técnicos, limpieza, seguridad y equipos de venta en campo.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta EQUIPO y te escribimos.",
+      "hashtags": [
+        "#gestiondeequipos",
+        "#recursoshumanos",
+        "#productividad",
+        "#constructoras",
+        "#softwareamedida",
+        "#empresasperu",
+        "#pymesperu",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-02-miercoles.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-02-miercoles.jpg"
+    },
+    {
+      "archivo": "2026-12-04-viernes",
+      "dia": "viernes",
+      "fecha": "2026-12-04",
+      "hora": "19:00",
+      "tema": "Seguimiento de pedidos y repartos para delivery",
+      "palabra": "DELIVERY",
+      "resaltar": [
+        "delivery",
+        "pedido",
+        "repartidor"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🚚 Delivery · Distribución",
+          "titulo": "\"¿Y mi pedido<br>por dónde <span class=\"y\">va</span>?\"",
+          "emoji": "📦",
+          "voz": "¿Y mi pedido por dónde va? Si escuchas esta pregunta cien veces al día, mira esto."
+        },
+        {
+          "tipo": "chat",
+          "titulo": "Con seguimiento automático",
+          "contacto": "Tu delivery",
+          "mensajes": [
+            [
+              "k",
+              "📦 Tu pedido salió del almacén"
+            ],
+            [
+              "k",
+              "🛵 Carlos está a 5 minutos"
+            ],
+            [
+              "c",
+              "¡Genial, gracias! 🙌"
+            ]
+          ],
+          "voz": "Con tu propia app, el cliente recibe avisos automáticos de su pedido en cada paso."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Y tú controlas",
+          "items": [
+            [
+              "🗺️",
+              "Rutas de reparto",
+              "ordenadas"
+            ],
+            [
+              "🛵",
+              "Cada repartidor",
+              "en tiempo real"
+            ],
+            [
+              "✅",
+              "Entregas confirmadas",
+              "con foto y firma"
+            ]
+          ],
+          "voz": "Y tú controlas rutas, repartidores en tiempo real y entregas confirmadas con foto."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "\"¿Y mi pedido por dónde va?\" 📦 Si escuchas esto 100 veces al día, este video es para ti.\n\nCon una app de seguimiento a medida, tu cliente recibe avisos automáticos en cada paso y tú controlas rutas, repartidores en tiempo real y entregas confirmadas con foto.\n\nIdeal para delivery, distribuidoras, courier y restaurantes.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta DELIVERY y te escribimos.",
+      "hashtags": [
+        "#delivery",
+        "#logistica",
+        "#distribucion",
+        "#seguimientodepedidos",
+        "#appsparanegocios",
+        "#pymesperu",
+        "#emprendedoresperu",
+        "#lima"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-04-viernes.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-04-viernes.jpg"
+    },
+    {
+      "archivo": "2026-12-05-sabado",
+      "dia": "sábado",
+      "fecha": "2026-12-05",
+      "hora": "11:00",
+      "tema": "3 apps que toda pyme peruana debería tener",
+      "palabra": "PYME",
+      "resaltar": [
+        "pyme",
+        "apps",
+        "tres"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🇵🇪 Para pymes peruanas",
+          "titulo": "<span class=\"y\">3 apps</span> que toda<br>pyme debería tener",
+          "emoji": "📲",
+          "voz": "Tres aplicaciones que toda pyme peruana debería tener. Guarda este video."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Toma nota",
+          "items": [
+            [
+              "1️⃣",
+              "Pedidos y ventas",
+              "todo en un solo lugar"
+            ],
+            [
+              "2️⃣",
+              "Inventario",
+              "stock en tiempo real"
+            ],
+            [
+              "3️⃣",
+              "Clientes",
+              "historial y recordatorios"
+            ]
+          ],
+          "voz": "Una de pedidos y ventas, una de inventario con stock en tiempo real, y una de clientes con historial y recordatorios."
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Y lo mejor",
+          "emoji": "🔗",
+          "chips": [
+            "🧩 Las tres conectadas",
+            "📱 En tu celular",
+            "🎨 Con tu marca"
+          ],
+          "voz": "Y lo mejor: pueden estar las tres conectadas en una sola app, con tu marca."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "3 apps que toda pyme peruana debería tener 📲 (guárdalo)\n\n1️⃣ Pedidos y ventas: todo en un solo lugar\n2️⃣ Inventario: stock en tiempo real\n3️⃣ Clientes: historial y recordatorios automáticos\n\nY lo mejor: las tres pueden estar conectadas en una sola app, con tu marca.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta PYME y te escribimos.",
+      "hashtags": [
+        "#pymesperu",
+        "#emprendedoresperu",
+        "#appsparanegocios",
+        "#consejosdenegocio",
+        "#transformaciondigital",
+        "#negociosperu",
+        "#gestiondenegocios",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-05-sabado.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-05-sabado.jpg"
+    },
+    {
+      "archivo": "2026-12-06-domingo",
+      "dia": "domingo",
+      "fecha": "2026-12-06",
+      "hora": "11:00",
+      "tema": "Qué incluye una app 'llave en mano'",
+      "palabra": "LLAVE",
+      "resaltar": [
+        "llave",
+        "mano",
+        "soporte"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "🔑 Llave en mano",
+          "titulo": "¿Qué recibes<br>con tu <span class=\"g\">app</span>?",
+          "emoji": "🔑",
+          "voz": "¿Qué significa recibir tu aplicación llave en mano? Te lo explico rápido."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Todo esto incluido",
+          "items": [
+            [
+              "🎨",
+              "Diseño a tu medida",
+              "con tu marca"
+            ],
+            [
+              "✅",
+              "Probada al 100%",
+              "antes de entregar"
+            ],
+            [
+              "👥",
+              "Capacitación",
+              "para tu equipo"
+            ],
+            [
+              "🛟",
+              "Soporte",
+              "después de la entrega"
+            ]
+          ],
+          "voz": "Diseño con tu marca, pruebas completas antes de entregar, capacitación para tu equipo y soporte después."
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Lista en",
+          "numero": 7,
+          "sufijo": " días",
+          "etiqueta": "o menos, <span class=\"y\">precio cerrado</span>",
+          "voz": "Lista en siete días o menos, y con precio cerrado, sin sorpresas."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Qué significa recibir tu app \"llave en mano\"? 🔑\n\n🎨 Diseño a tu medida, con tu marca\n✅ Probada al 100% antes de entregar\n👥 Capacitación para tu equipo\n🛟 Soporte después de la entrega\n\nLista en 7 días o menos y con precio cerrado, sin sorpresas.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta LLAVE y te escribimos.",
+      "hashtags": [
+        "#llaveenmano",
+        "#desarrolloweb",
+        "#softwareamedida",
+        "#appsparaempresas",
+        "#emprendedoresperu",
+        "#pymesperu",
+        "#transformaciondigital",
+        "#kallpa"
+      ],
+      "video_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-06-domingo.mp4",
+      "portada_url": "https://kallpa.iamasterperu.workers.dev/v/2026-12-06-domingo.jpg"
+    }
+  ]
+}
