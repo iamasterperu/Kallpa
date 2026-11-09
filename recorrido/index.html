@@ -92,6 +92,10 @@
   #planImgBox img { max-width: 100%; max-height: 100%; object-fit: contain; }
   .novid { color: var(--mut); text-align: center; padding: 24px; }
   .m-viewer .stage[data-mode=video] .badge3d, .m-viewer .stage[data-mode=walk] .badge3d { display: none !important; }
+  body.no-auth .app { grid-template-columns: 1fr; place-items: center; overflow: auto; padding: 24px 16px; }
+  body.no-auth .panel { border: 0; background: none; width: min(460px, 100%); overflow: visible; }
+  body.no-auth .panel > :not(#panelSec), body.no-auth .stage, body.no-auth .modes, body.no-auth .acts { display: none !important; }
+  .errbox { background: rgba(255,120,120,.12); border: 1px solid rgba(255,120,120,.5); color: #ffd0d0; border-radius: 10px; padding: 10px 12px; font-size: .84rem; margin-top: 10px; }
   .planbtn { position: absolute; left: 12px; top: 12px; z-index: 3; }
   .badge3d { position: absolute; left: 12px; bottom: 12px; font-size: .7rem; color: #cfd8f2; background: rgba(10,16,32,.7); padding: 5px 10px; border-radius: 999px; text-decoration: none; z-index: 2; }
   #rec { position: fixed; inset: 0; z-index: 60; background: rgba(5,8,15,.92); display: grid; place-items: center; padding: 16px; }
@@ -1490,22 +1494,24 @@ async function initPanel() {
     if (!PANEL.depas.length) { const d = await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } }); PANEL.depas.push(d); }
     const last = localStorage.getItem('k3d-depa-' + PANEL.pid);
     await openDepa(PANEL.depas.some(d => d.id === last) ? last : PANEL.depas[0].id);
-  } catch (e) { $('#projBox').innerHTML = `<p class="msg warn">${esc(e.message)}</p><button class="btn" id="pOut">Usar otro link</button>`; }
+  } catch (e) { document.body.classList.add('no-auth'); $('#projBox').innerHTML = `<div class="errbox">⚠ ${esc(e.message)}</div><button class="btn" id="pOut" style="margin-top:10px">Usar otro link o crear un panel</button>`; }
 }
 function renderCreate() {
-  $('#projBox').innerHTML = `<p class="help">Crea el panel para una inmobiliaria. Necesitas el código de administrador de KALLPA.</p>
+  document.body.classList.add('no-auth'); $('#pnameTop').textContent = 'Panel para inmobiliarias'; $('#panelSec h3').textContent = 'KALLPA 3D · Crear panel de inmobiliaria';
+  $('#projBox').innerHTML = `<p class="help">Crea el panel para una inmobiliaria. Necesitas el código de administrador de KALLPA. Si ya tienes el link privado de tu panel, solo ábrelo.</p>
     <label>Código de administrador <input id="cAdmin" type="password" autocomplete="off"></label>
     <label>Nombre del proyecto <input id="cName" maxlength="80" placeholder="Ej.: Residencial Los Olivos"></label>
     <label>Inmobiliaria <input id="cInmo" maxlength="80"></label>
     <div class="grid2"><label>Teléfono <input id="cPhone" maxlength="30"></label><label>Web <input id="cWeb" maxlength="120"></label></div>
-    <button class="btn pri" id="cGo">Crear panel</button><p class="msg" id="cMsg"></p>`;
+    <button class="btn pri" id="cGo">Crear panel</button><div id="cMsg"></div>`;
 }
 $('#projBox').addEventListener('click', async e => {
   const id = e.target.id;
   try {
     if (id === 'cGo') {
+      if (!$('#cAdmin').value.trim()) throw new Error('Escribe el código de administrador.');
       const r = await fetch('/api/projects', { method: 'POST', headers: { 'content-type': 'application/json', 'x-admin': $('#cAdmin').value }, body: JSON.stringify({ name: $('#cName').value, inmo: $('#cInmo').value, phone: $('#cPhone').value, web: $('#cWeb').value }) });
-      const d = await r.json(); if (!r.ok) throw new Error(d.error);
+      const d = await r.json().catch(() => ({})); if (!r.ok) throw new Error(d.error || 'No se pudo crear (error ' + r.status + ').');
       const link = location.origin + d.panel;
       $('#projBox').innerHTML = `<p class="help ok">✅ Panel creado. Este es el link privado para la inmobiliaria (guárdalo, no se puede recuperar):</p><textarea class="codebox" rows="3" readonly>${esc(link)}</textarea><a class="btn pri" href="${esc(link)}" style="margin-top:8px;text-decoration:none">Abrir el panel</a>`;
       $('#projBox a.btn').addEventListener('click', () => setTimeout(() => location.reload(), 50));
@@ -1515,7 +1521,7 @@ $('#projBox').addEventListener('click', async e => {
     if (id === 'dRen') { const d = PANEL.depas.find(x => x.id === PANEL.did); const n = prompt('Nuevo nombre', d.name); if (!n) return; d.name = n.slice(0, 60); P.name = d.name; await panelApi('/depas/' + d.id, { method: 'PUT', json: { name: d.name, data: serverData(), info: { ...depaSummary(), precio: $('#dPrecio').value } } }); renderProj(); renderPanel(); }
     if (id === 'dDel') { const d = PANEL.depas.find(x => x.id === PANEL.did); if (!confirm(`¿Eliminar "${d.name}"? Se borra su plano 3D y su video.`)) return; await panelApi('/depas/' + d.id, { method: 'DELETE' }); PANEL.depas = PANEL.depas.filter(x => x !== d); PANEL.did = null; if (!PANEL.depas.length) PANEL.depas.push(await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } })); await openDepa(PANEL.depas[0].id); }
     if (id === 'pPublish') { setStatus('Publicando…'); await saveRemote(); const r = await panelApi('/publish', { method: 'POST' }); PROJ.publishedAt = r.publishedAt; renderLinks(); setStatus(`✅ Publicado (${r.count} depa${r.count > 1 ? 's' : ''}). Tu web ya muestra la nueva versión.`); toast('¡Publicado!'); }
-  } catch (err) { setStatus('⚠ ' + err.message, true); const m = $('#cMsg'); if (m) m.textContent = err.message; }
+  } catch (err) { setStatus('⚠ ' + err.message, true); const m = $('#cMsg'); if (m) m.innerHTML = `<div class="errbox">⚠ ${esc(err.message)}</div>`; }
 });
 $('#projBox').addEventListener('change', async e => {
   if (e.target.id === 'dSel') await openDepa(e.target.value);
