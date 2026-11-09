@@ -34,7 +34,7 @@ Nada de cursos, Full Day ni IAMASTER en estos videos. **No poner precios en sole
 
 Todas llevan `voz` (lo que dice la voz; los números escritos en letras). En `titulo`, `sub` y `etiqueta` se puede usar
 `<br>` y `<span class="y|g|r|v">` (amarillo, degradado, rojo, verde). Ejemplo completo: `semanas/2026-11-16.json`.
-Cada video lleva además: archivo (`AAAA-MM-DD-dia`), dia, fecha, hora (Lima), tema, palabra, resaltar[], caption, hashtags[8].
+Cada video lleva además: archivo (`AAAA-MM-DD-palabra`, único: fecha de publicación + palabra, sin tildes ni espacios), dia, fecha, hora (Lima), tema, palabra, resaltar[], caption, hashtags[8].
 
 ## Pasos de cada sábado
 1. `pip install piper-tts numpy` (si falta) · Playwright y ffmpeg ya vienen en el entorno.
