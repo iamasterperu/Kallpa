@@ -76,6 +76,32 @@
   .fbtns { display: flex; gap: 6px; }
   .fbtns button { width: auto; padding: 0 12px; font-size: .8rem; }
   .nogl { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 24px; color: var(--mut); }
+  .only-panel, .only-viewer { display: none !important; }
+  .m-panel .only-panel { display: block !important; }
+  .m-viewer .only-viewer { display: flex !important; }
+  .m-viewer .not-viewer, .m-panel .not-panel { display: none !important; }
+  .m-viewer .app { grid-template-columns: 1fr; }
+  .m-viewer .panel { display: none; }
+  .m-viewer .modes [data-m="walk"] { order: 1; } .m-viewer .modes [data-m="video"] { order: 2; } .m-viewer .modes [data-m="3d"] { order: 3; } .m-viewer .modes [data-m="2d"] { order: 4; }
+  .depasel { width: auto; margin: 0; max-width: 220px; padding: 7px 10px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { font-size: .75rem; padding: 4px 9px; border-radius: 999px; background: rgba(34,211,238,.12); color: #bdefff; border: 1px solid rgba(34,211,238,.3); }
+  #videoBox, #planImgBox { position: absolute; inset: 0; display: grid; place-items: center; background: #05080f; }
+  #videoBox video { max-width: 100%; max-height: 100%; width: 100%; height: 100%; object-fit: contain; background: #000; }
+  #planImgBox { background: #fff; overflow: auto; }
+  #planImgBox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .novid { color: var(--mut); text-align: center; padding: 24px; }
+  .m-viewer .stage[data-mode=video] .badge3d, .m-viewer .stage[data-mode=walk] .badge3d { display: none !important; }
+  .planbtn { position: absolute; left: 12px; top: 12px; z-index: 3; }
+  .badge3d { position: absolute; left: 12px; bottom: 12px; font-size: .7rem; color: #cfd8f2; background: rgba(10,16,32,.7); padding: 5px 10px; border-radius: 999px; text-decoration: none; z-index: 2; }
+  #rec { position: fixed; inset: 0; z-index: 60; background: rgba(5,8,15,.92); display: grid; place-items: center; padding: 16px; }
+  .rec__box { width: min(760px, 100%); display: grid; gap: 12px; justify-items: center; text-align: center; }
+  .rec__box canvas { max-width: 100%; max-height: 62vh; border-radius: 12px; border: 1px solid var(--line); background: #000; }
+  .bar { width: 100%; height: 8px; border-radius: 99px; background: #1b2442; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--c1), var(--c2)); }
+  .codebox { width: 100%; font: .72rem/1.4 ui-monospace, monospace; background: #0a1020; color: #bfe9ff; border: 1px solid var(--line); border-radius: 9px; padding: 8px; resize: none; }
+  .links a { word-break: break-all; font-size: .8rem; }
+  .ok { color: #9ae6b4; } .warn { color: #fbd38d; }
   .toast { position: fixed; left: 50%; top: 70px; transform: translateX(-50%); background: #1b2442; border: 1px solid var(--c1); color: #fff; padding: 9px 16px; border-radius: 12px; font-size: .85rem; z-index: 50; opacity: 0; transition: opacity .25s; pointer-events: none; }
   .toast.show { opacity: 1; }
   @media (max-width: 860px) {
@@ -88,6 +114,9 @@
     .acts { margin-left: auto; }
     .pname { display: none; }
     .hud { bottom: 50px; right: 10px; }
+    body.m-viewer { height: 100vh; height: 100dvh; }
+    .m-viewer .app { flex: 1; min-height: 0; }
+    .m-viewer .stage { height: auto; flex: 1; }
   }
 </style>
 <script type="importmap">
@@ -101,19 +130,34 @@
 <header class="top">
   <a class="logo" href="/" aria-label="KALLPA, inicio"><span class="logo__mark">K</span>KALLPA <small>3D</small></a>
   <span class="pname" id="pnameTop"></span>
+  <select id="depaSel" class="depasel only-viewer" aria-label="Elige el departamento"></select>
   <nav class="modes" aria-label="Vista">
     <button data-m="2d" class="on">📐 Plano</button>
     <button data-m="3d">🏠 Maqueta 3D</button>
     <button data-m="walk">🚶 Recorrido</button>
+    <button data-m="video" id="mVideo" hidden>🎬 Video</button>
   </nav>
   <div class="acts">
     <button class="btn" id="share" title="Copiar link para enviar al cliente">🔗 Compartir</button>
-    <button class="btn" id="shot" title="Descargar imagen de la vista actual">📸 Imagen</button>
+    <button class="btn not-viewer" id="shot" title="Descargar imagen de la vista actual">📸 Imagen</button>
   </div>
 </header>
 
 <div class="app">
   <aside class="panel">
+    <section class="sec only-panel" id="panelSec">
+      <h3>Tu proyecto</h3>
+      <div id="projBox"><p class="help">Cargando…</p></div>
+    </section>
+
+    <section class="sec only-panel">
+      <h3>✨ Sube el plano y la IA lo arma</h3>
+      <p class="help">Sube la foto, imagen o captura del plano (2D o 3D) de este departamento. La IA detecta los ambientes y sus medidas, y arma el depa en 3D.</p>
+      <label>Dato opcional para la IA <input id="aiHint" maxlength="200" placeholder="Ej.: el ancho total del depa es 12 m"></label>
+      <label class="btn pri" style="margin:0">📤 Subir plano<input type="file" id="aiFile" accept="image/jpeg,image/png,image/webp" hidden></label>
+      <p class="msg" id="aiMsg"></p>
+    </section>
+
     <section class="sec">
       <h3>1 · Arma el depa con medidas</h3>
       <label>Empieza con una plantilla
@@ -147,6 +191,16 @@
     </section>
 
     <section class="sec">
+      <h3>🎬 Video del recorrido</h3>
+      <p class="help">La app graba sola un recorrido por todo el depa: vista de la maqueta, sala, cocina, dormitorios y baños, con el nombre y los m² de cada ambiente.</p>
+      <label>Formato
+        <select id="vidFmt"><option value="h">Horizontal 16:9 (página web, YouTube)</option><option value="v">Vertical 9:16 (Reels, TikTok, estados)</option></select>
+      </label>
+      <button class="btn pri" id="mkVideo">🎬 Generar video</button>
+      <p class="msg" id="vidMsg"></p>
+    </section>
+
+    <section class="sec not-panel">
       <h3>Proyecto</h3>
       <label>Nombre del proyecto <input id="pName" maxlength="60"></label>
       <label>Altura del techo (m) <input id="pH" type="number" step="0.05" min="2.2" max="4"></label>
@@ -177,10 +231,15 @@
         <button data-mv="r" aria-label="Girar a la derecha">▶</button>
       </div>
     </div>
+    <div id="videoBox" hidden><video id="vid" controls playsinline preload="metadata"></video><p class="novid" id="noVid" hidden>Este departamento todavía no tiene video.</p></div>
+    <div id="planImgBox" hidden><img id="planImg" alt="Plano original del departamento"></div>
+    <button class="btn planbtn" id="planToggle" hidden>🗺 Ver plano original</button>
+    <a class="badge3d only-viewer" href="/" target="_blank" rel="noopener">Recorrido virtual hecho con KALLPA 3D</a>
     <div class="tip" id="tip"></div>
   </main>
 </div>
 <div class="toast" id="toast"></div>
+<div id="rec" hidden><div class="rec__box"><b>🎬 Grabando el video del recorrido…</b><div id="recPrev"></div><div class="bar"><i id="recBar"></i></div><p class="help" id="recTxt">No cambies de pestaña ni apagues la pantalla mientras se graba.</p><button class="btn" id="recStop">Cancelar</button></div></div>
 
 <script type="module">
 import * as THREE from 'three';
@@ -189,6 +248,8 @@ import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.j
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const $ = s => document.querySelector(s);
+const APP = location.pathname.startsWith('/panel') ? 'panel' : location.pathname.startsWith('/p/') ? 'viewer' : 'demo';
+document.body.classList.add('m-' + APP);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const rd = v => Math.round(v * 100) / 100;
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -403,7 +464,7 @@ function sanitize(o) {
   nextId = id; return out;
 }
 function serial(withBg) { return JSON.stringify({ name: P.name, h: P.h, spec: P.spec, floors: P.floors.map(f => ({ name: f.name, rooms: f.rooms.map(({ id, ...r }) => r), ...(withBg && f.bg ? { bg: f.bg } : {}) })) }); }
-function save() { try { localStorage.setItem('kallpa3d', serial(true)); } catch (e) { try { localStorage.setItem('kallpa3d', serial(false)); } catch (_) { } } }
+function save() { if (APP === 'panel') return scheduleRemote(); if (APP !== 'demo') return; try { localStorage.setItem('kallpa3d', serial(true)); } catch (e) { try { localStorage.setItem('kallpa3d', serial(false)); } catch (_) { } } }
 const enc = s => btoa(unescape(encodeURIComponent(s))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const dec = s => decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4))));
 function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast.k); toast.k = setTimeout(() => el.classList.remove('show'), 2400); }
@@ -421,7 +482,7 @@ function generate(text) {
 
 /* ---------- Panel ---------- */
 function renderPanel() {
-  $('#pnameTop').textContent = P.name;
+  $('#pnameTop').textContent = APP === 'demo' ? P.name : (PROJ.name || P.name);
   $('#pName').value = P.name; $('#pH').value = P.h;
   $('#floors').innerHTML = P.floors.map((f, i) => `<button data-f="${i}" class="${i === cur ? 'on' : ''}">${esc(f.name)}</button>`).join('') +
     `<button data-f="add">+ Piso</button>` + (P.floors.length > 1 ? `<button data-f="del" title="Quitar este piso">🗑</button>` : '');
@@ -503,7 +564,8 @@ $('#pH').addEventListener('change', e => { P.h = clamp(parseFloat(e.target.value
 
 /* plano de fondo */
 const bgImg = new Image(); bgImg.onload = () => draw();
-function loadBg() { const b = fl().bg; if (b) { if (bgImg.src !== b.src) bgImg.src = b.src; } }
+const absSrc = u => new URL(u, location.href).href;
+function loadBg() { const b = fl().bg; if (b) { if (bgImg.src !== absSrc(b.src)) bgImg.src = b.src; } }
 $('#bgFile').addEventListener('change', e => {
   const file = e.target.files[0]; if (!file) return;
   const rdr = new FileReader();
@@ -514,6 +576,7 @@ $('#bgFile').addEventListener('change', e => {
       c.width = Math.round(im.width * k); c.height = Math.round(im.height * k);
       const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height);
       fl().bg = { src: c.toDataURL('image/jpeg', 0.8), wm: 10, op: 0.5, x: 0, y: 0 };
+      if (APP === 'panel' && PANEL.did) { const fb = fl().bg; c.toBlob(b => panelApi(`/depas/${PANEL.did}/plan`, { method: 'PUT', body: b, type: 'image/jpeg' }).then(r => { fb.src = r.url; loadBg(); save(); }).catch(e => toast('No se pudo guardar el plano: ' + e.message)), 'image/jpeg', 0.8); }
       loadBg(); renderBg(); save(); fit2d(); draw(); toast('Plano cargado. Ajusta su ancho real en metros.');
     };
     im.src = rdr.result;
@@ -542,7 +605,7 @@ $('#openFile').addEventListener('change', e => {
   e.target.value = '';
 });
 $('#share').addEventListener('click', async () => {
-  const url = location.origin + location.pathname + '#p=' + enc(serial(false));
+  const url = APP === 'viewer' ? location.href : APP === 'panel' && PROJ.publishedAt ? pubURL(PANEL.did) : location.origin + '/recorrido/#p=' + enc(serial(false));
   try {
     if (navigator.share && matchMedia('(pointer:coarse)').matches) { await navigator.share({ title: P.name + ' · KALLPA 3D', text: 'Mira el depa en 3D:', url }); return; }
     await navigator.clipboard.writeText(url); toast('Link copiado. Envíalo por WhatsApp a tu cliente.');
@@ -581,7 +644,7 @@ function draw() {
   if (mode !== '2d') return;
   const W = cv.clientWidth, H = cv.clientHeight, f = fl();
   ctx.clearRect(0, 0, W, H); ctx.fillStyle = '#0c1222'; ctx.fillRect(0, 0, W, H);
-  if (f.bg && bgImg.naturalWidth && bgImg.src === f.bg.src) {
+  if (f.bg && bgImg.naturalWidth && bgImg.src === absSrc(f.bg.src)) {
     ctx.globalAlpha = f.bg.op; const ih = f.bg.wm * bgImg.naturalHeight / bgImg.naturalWidth;
     ctx.drawImage(bgImg, sx(f.bg.x), sy(f.bg.y), f.bg.wm * V.s, ih * V.s); ctx.globalAlpha = 1;
   }
@@ -662,6 +725,7 @@ cv.addEventListener('pointerdown', e => {
   cv.setPointerCapture(e.pointerId); ptrs.set(e.pointerId, { x: e.offsetX, y: e.offsetY });
   if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; const cx = (a.x + b.x) / 2, cy = (a.y + b.y) / 2; pinch = { d: dist(a, b), s: V.s, wx: wx(cx), wy: wy(cy) }; drag = null; return; }
   const X = e.offsetX, Y = e.offsetY, p = { x: wx(X), y: wy(Y) }, f = fl();
+  if (APP === 'viewer') { drag = { k: 'pan', X, Y, ox: V.ox, oy: V.oy, moved: true }; return; }
   const s = f.rooms.find(r => r.id === sel);
   if (s && Math.abs(X - sx(s.x + s.w)) < 16 && Math.abs(Y - sy(s.y + s.d)) < 16) { drag = { k: 'size', r: s }; return; }
   const hit = [...f.rooms].reverse().find(r => p.x >= r.x && p.x <= r.x + r.w && p.y >= r.y && p.y <= r.y + r.d);
@@ -1145,14 +1209,20 @@ const TIPS = {
   '2d': 'Arrastra un ambiente para moverlo · usa la esquina blanca para cambiar su tamaño · se pegan solos',
   '3d': 'Arrastra para girar · pellizca o usa la rueda para acercar · elige el piso en el panel',
   walk: 'Toca el piso para caminar ahí · arrastra para mirar · usa las flechas',
+  video: 'Recorrido grabado del departamento',
 };
+if (APP === 'viewer') TIPS['2d'] = 'Plano del departamento con sus medidas · pellizca o usa + y − para acercar';
 function setMode(m) {
-  mode = m;
+  mode = m; $('#stage').dataset.mode = m;
   document.querySelectorAll('.modes button').forEach(b => b.classList.toggle('on', b.dataset.m === m));
+  if (m !== 'video') { const v = $('#vid'); if (v && !v.paused) v.pause(); }
+  $('#videoBox').hidden = m !== 'video'; $('#planImgBox').hidden = true;
+  $('#planToggle').hidden = !(m === '2d' && $('#planToggle').dataset.on); $('#planToggle').textContent = '🗺 Ver plano original';
   cv.hidden = m !== '2d'; $('#tools2d').hidden = m !== '2d'; $('#tools3d').hidden = m !== '3d';
-  view.hidden = m === '2d'; $('#hud').hidden = m !== 'walk'; $('#where').hidden = true; lastWhere = '';
+  view.hidden = m === '2d' || m === 'video'; $('#hud').hidden = m !== 'walk'; $('#where').hidden = true; lastWhere = '';
   const tip = $('#tip'); tip.textContent = TIPS[m]; tip.hidden = false; clearTimeout(setMode.k); setMode.k = setTimeout(() => { tip.hidden = true; }, 6000);
   if (m === '2d') { resize2d(); if (needFit) { fit2d(); draw(); } return; }
+  if (m === 'video') return;
   if (!renderer) return;
   if (dirty) build();
   placeSun(); resize3d(); applyVis();
@@ -1166,14 +1236,367 @@ let last = performance.now();
 function loop(t) {
   requestAnimationFrame(loop);
   const dt = Math.min(0.05, (t - last) / 1000); last = t;
-  if (mode === '2d' || !renderer) return;
+  if (mode === '2d' || mode === 'video' || !renderer || recording) return;
   if (mode === 'walk') updateWalk(dt); else controls.update();
   renderer.render(scene, camera);
 }
 
+/* ---------- Video del recorrido ---------- */
+let recording = null;
+const roomInfo = r => `${fmt(r.w * r.d)} m²`;
+function depaSummary() {
+  let m2 = 0, dorms = 0, banos = 0;
+  P.floors.forEach(f => f.rooms.forEach(r => { if (r.type !== 'terraza') m2 += r.w * r.d; if (r.type === 'dormitorio' || r.type === 'dormitorio2') dorms++; if (r.type === 'bano') banos++; }));
+  return { m2: Math.round(m2), dorms, banos };
+}
+function tourFrames(fps, fmtV) {
+  const f = fl(), segs = wallsFor(cur), adj = new Map(f.rooms.map(r => [r.id, []]));
+  const center = r => ({ x: r.x + r.w / 2, z: r.y + r.d / 2 });
+  segs.forEach(s => {
+    if (s.owners.length < 2) return;
+    const o = s.ops.find(o => ['door', 'open', 'slide'].includes(o.kind)); if (!o) return;
+    const L = s.b - s.a; let a = o.s, b = o.e;
+    if (o.kind === 'open') { a = 0; b = L; } else if (o.kind === 'slide') a = (o.s + o.e) / 2;
+    const t = s.a + (a + b) / 2, p = s.o === 'h' ? { x: t, z: s.c } : { x: s.c, z: t }, n = s.o === 'h' ? { x: 0, z: 1 } : { x: 1, z: 0 };
+    const [r1, r2] = s.owners; adj.get(r1.id).push({ to: r2, p, n }); adj.get(r2.id).push({ to: r1, p, n });
+  });
+  const inward = (e, r) => { const c = center(r), sg = Math.sign((c.x - e.p.x) * e.n.x + (c.z - e.p.z) * e.n.z) || 1; return { x: e.n.x * sg, z: e.n.z * sg }; };
+  const PRI = ['sala', 'comedor', 'cocina', 'terraza', 'dormitorio', 'dormitorio2', 'estudio', 'bano', 'lavanderia'];
+  const start = f.rooms.find(r => r.type === 'sala') || f.rooms.find(r => !['pasillo', 'escalera'].includes(r.type)) || f.rooms[0];
+  const targets = f.rooms.filter(r => r !== start && PRI.includes(r.type)).sort((a, b) => PRI.indexOf(a.type) - PRI.indexOf(b.type) || b.w * b.d - a.w * a.d);
+  let banos = 0; const chosen = targets.filter(r => r.type !== 'bano' || banos++ < 2).slice(0, 9);
+  // ruta: lista de pasos { pts, look } y paneos
+  const steps = []; let curRoom = start, pos = center(start);
+  steps.push({ pan: true, at: pos, room: start });
+  for (const T of chosen) {
+    const prev = new Map([[curRoom.id, null]]), q = [curRoom];
+    while (q.length) { const r = q.shift(); if (r === T) break; for (const e of adj.get(r.id)) if (!prev.has(e.to.id)) { prev.set(e.to.id, { from: r, e }); q.push(e.to); } }
+    if (!prev.has(T.id)) continue;
+    const chain = []; for (let r = T; prev.get(r.id); r = prev.get(r.id).from) chain.unshift({ ...prev.get(r.id), to: r });
+    const pts = [pos];
+    chain.forEach(({ from, e, to }) => { const nf = inward(e, from), nt = inward(e, to); pts.push({ x: e.p.x + nf.x * 0.45, z: e.p.z + nf.z * 0.45 }, { x: e.p.x, z: e.p.z }, { x: e.p.x + nt.x * 0.45, z: e.p.z + nt.z * 0.45 }); });
+    const last = chain[chain.length - 1], nin = inward(last.e, T), depth = Math.abs(nin.x) ? T.w : T.d, go = clamp(depth * 0.35, 0.5, 1.2);
+    const view = { x: last.e.p.x + nin.x * go, z: last.e.p.z + nin.z * go };
+    pts.push(view); steps.push({ pts, room: T }); steps.push({ pan: true, at: view, room: T, yaw: Math.atan2(-nin.x, -nin.z) });
+    pos = view; curRoom = T;
+  }
+  // fotogramas
+  const frames = [], b = bounds(cur), y0 = cur * FH(), dt = 1 / fps, spd = 1.15;
+  const orbit = (sec, a0, a1, kind) => { const n = Math.round(sec * fps), R = b.s * (fmtV ? 0.95 : 0.58) + 1.5; for (let k = 0; k < n; k++) { const a = a0 + (a1 - a0) * k / n; frames.push({ kind, orbit: true, cx: b.cx + Math.sin(a) * R, cy: y0 + b.s * (fmtV ? 0.8 : 0.55) + 2, cz: b.cz + Math.cos(a) * R, tx: b.cx, ty: y0, tz: b.cz }); } };
+  orbit(4.5, -0.5, 0.15, 'intro');
+  let yaw = 0, x = steps[0].at.x, z = steps[0].at.z;
+  { let best = 0, far = -1; for (let k = 0; k < 16; k++) { const a = k / 16 * Math.PI * 2, ux = -Math.sin(a), uz = -Math.cos(a); let t = 0; while (t < 12 && !blocked(x + ux * t, z + uz * t)) t += 0.15; if (t > far) { far = t; best = a; } } yaw = best; }
+  const push = room => frames.push({ kind: 'walk', x, z, yaw, room });
+  const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  for (const st of steps) {
+    if (st.pan) {
+      const base = st.yaw ?? yaw, n = Math.round((st === steps[0] ? 3.2 : 2.8) * fps), y1 = yaw;
+      for (let k = 0; k < n; k++) { const t = k / (n - 1); yaw = t < 0.5 ? y1 + (base - 0.7 - y1) * ease(t * 2) : base - 0.7 + 1.1 * ease((t - 0.5) * 2); push(st.room); }
+      yaw = base + 0.4; continue;
+    }
+    for (let i = 1; i < st.pts.length; i++) {
+      const A = { x, z }, Bp = st.pts[i], L = Math.hypot(Bp.x - A.x, Bp.z - A.z), n = Math.max(1, Math.round(L / spd * fps));
+      for (let k = 1; k <= n; k++) {
+        x = A.x + (Bp.x - A.x) * k / n; z = A.z + (Bp.z - A.z) * k / n;
+        const want = Math.atan2(-(Bp.x - A.x), -(Bp.z - A.z)); let dy = want - yaw; while (dy > Math.PI) dy -= 2 * Math.PI; while (dy < -Math.PI) dy += 2 * Math.PI;
+        yaw += dy * Math.min(1, dt * 3.2); push(roomAt(x, z) || st.room);
+      }
+    }
+  }
+  orbit(4.5, 0.15, 0.8, 'outro');
+  return frames;
+}
+function drawOverlay(g, W, H, fr, i, n, fps) {
+  const u = Math.min(W, H) / 720, pad = 28 * u;
+  const font = (w, px) => `${w} ${Math.round(px * u)}px Poppins, sans-serif`;
+  const t = i / fps, total = n / fps, info = depaSummary();
+  const fade = Math.min(1, 0.35 + t / 0.5, (total - t) / 0.6);
+  let cut = 1; for (let k = Math.max(0, i - 6); k <= Math.min(n - 1, i + 6); k++) if (k !== i && (recording.frames[k].orbit !== fr.orbit)) cut = Math.min(cut, Math.abs(k - i) / 6);
+  const dark = 1 - Math.min(fade, cut);
+  if (fr.kind === 'intro' && t < 4.2) {
+    const a = Math.min(1, t / 0.6, (4.2 - t) / 0.5); g.globalAlpha = a;
+    const grd = g.createLinearGradient(0, H * 0.55, 0, H); grd.addColorStop(0, 'rgba(5,8,15,0)'); grd.addColorStop(1, 'rgba(5,8,15,.85)'); g.fillStyle = grd; g.fillRect(0, H * 0.55, W, H * 0.45);
+    g.fillStyle = '#fff'; g.font = font(800, 46); g.textAlign = 'left'; g.fillText(PROJ.name || P.name, pad, H - pad - 70 * u);
+    g.font = font(600, 26); g.fillStyle = '#d8e6ff'; g.fillText(`${P.name} · ${info.m2} m² · ${info.dorms} dorm. · ${info.banos} baño${info.banos === 1 ? '' : 's'}`, pad, H - pad - 28 * u);
+    g.globalAlpha = 1;
+  }
+  if (fr.kind === 'walk' && fr.room) {
+    const txt = fr.room.name, sub = `${fmt(fr.room.w)} × ${fmt(fr.room.d)} m · ${roomInfo(fr.room)}`;
+    g.font = font(700, 30); const w1 = g.measureText(txt).width; g.font = font(400, 20); const w2 = g.measureText(sub).width;
+    const bw = Math.max(w1, w2) + 36 * u, bh = 82 * u, bx0 = pad, by0 = H - pad - bh;
+    g.fillStyle = 'rgba(10,16,32,.78)'; g.beginPath(); g.roundRect(bx0, by0, bw, bh, 16 * u); g.fill();
+    g.fillStyle = TYPES[fr.room.type].c; g.fillRect(bx0, by0 + 14 * u, 5 * u, bh - 28 * u);
+    g.fillStyle = '#fff'; g.textAlign = 'left'; g.font = font(700, 30); g.fillText(txt, bx0 + 20 * u, by0 + 36 * u);
+    g.fillStyle = '#c9d2ea'; g.font = font(400, 20); g.fillText(sub, bx0 + 20 * u, by0 + 64 * u);
+  }
+  if (fr.kind === 'outro') {
+    const a = Math.min(1, (t - (total - 4.5)) / 0.6); g.globalAlpha = Math.max(0, a);
+    g.fillStyle = 'rgba(5,8,15,.72)'; g.fillRect(0, 0, W, H); g.textAlign = 'center'; g.fillStyle = '#fff';
+    g.font = font(800, 44); g.fillText(PROJ.name || P.name, W / 2, H / 2 - 40 * u);
+    g.font = font(600, 28); g.fillStyle = '#9ff0ff'; g.fillText('Agenda tu visita', W / 2, H / 2 + 10 * u);
+    const c = [PROJ.inmo && PROJ.inmo.phone ? '📞 ' + PROJ.inmo.phone : '', PROJ.inmo && PROJ.inmo.web ? PROJ.inmo.web : ''].filter(Boolean).join('   ·   ');
+    if (c) { g.font = font(500, 24); g.fillStyle = '#e8ecf8'; g.fillText(c, W / 2, H / 2 + 56 * u); }
+    g.globalAlpha = 1;
+  }
+  g.textAlign = 'right'; g.font = font(600, 15); g.fillStyle = 'rgba(255,255,255,.75)'; g.fillText('KALLPA 3D', W - 18 * u, 30 * u);
+  if (dark > 0) { g.fillStyle = `rgba(0,0,0,${dark})`; g.fillRect(0, 0, W, H); }
+}
+function pickMime() {
+  const c = ['video/mp4;codecs=avc1.42E01F', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+  return c.find(m => window.MediaRecorder && MediaRecorder.isTypeSupported(m)) || '';
+}
+function makeVideo(fmtV) {
+  return new Promise((resolve, reject) => {
+    if (!renderer || !window.MediaRecorder) return reject(new Error('Este navegador no puede grabar video. Usa Chrome o Edge en computadora.'));
+    if (!fl().rooms.length) return reject(new Error('Primero arma el depa.'));
+    if (dirty) build();
+    const fps = 30, W = fmtV ? 720 : 1280, H = fmtV ? 1280 : 720;
+    const frames = tourFrames(fps, fmtV);
+    const comp = document.createElement('canvas'); comp.width = W; comp.height = H; const g = comp.getContext('2d');
+    const mime = pickMime(), stream = comp.captureStream(fps);
+    const mr = new MediaRecorder(stream, mime ? { mimeType: mime, videoBitsPerSecond: 1_800_000 } : { videoBitsPerSecond: 1_800_000 });
+    const chunks = []; mr.ondataavailable = e => e.data.size && chunks.push(e.data);
+    const prevMode = mode, prevLabels = showLabels;
+    recording = { frames, cancel: false };
+    $('#recPrev').innerHTML = ''; comp.style.width = fmtV ? 'auto' : '100%'; comp.style.height = fmtV ? '60vh' : 'auto'; $('#recPrev').appendChild(comp);
+    $('#rec').hidden = false; $('#recBar').style.width = '0%';
+    renderer.setPixelRatio(1); renderer.setSize(W, H, false); camera.aspect = W / H; camera.fov = fmtV ? 75 : 62; camera.updateProjectionMatrix();
+    showLabels = false; placeSun();
+    const finish = () => {
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); recording = null; $('#rec').hidden = true; showLabels = prevLabels;
+      setMode(prevMode === 'video' ? 'video' : prevMode);
+    };
+    mr.onstop = () => { const cancelled = recording && recording.cancel; finish(); if (cancelled) return reject(new Error('Grabación cancelada.')); resolve(new Blob(chunks, { type: (mime || 'video/webm').split(';')[0] })); };
+    mr.start(1000);
+    const t0 = performance.now();
+    const tick = () => {
+      if (!recording) return;
+      const i = Math.floor((performance.now() - t0) / 1000 * fps);
+      if (recording.cancel || i >= frames.length) { mr.stop(); return; }
+      const fr = frames[i];
+      floorsG.forEach((gr, k) => gr.visible = k <= cur); labelG.forEach(l => l.visible = false);
+      ceilG.forEach((c, k) => c.visible = !fr.orbit && k === cur);
+      if (fr.orbit) { camera.position.set(fr.cx, fr.cy, fr.cz); camera.lookAt(fr.tx, fr.ty, fr.tz); }
+      else { camera.position.set(fr.x, cur * FH() + 1.55, fr.z); camera.rotation.set(-0.06, fr.yaw, 0, 'YXZ'); }
+      renderer.render(scene, camera);
+      g.drawImage(renderer.domElement, 0, 0, W, H); drawOverlay(g, W, H, fr, i, frames.length, fps);
+      $('#recBar').style.width = (i / frames.length * 100).toFixed(1) + '%';
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}
+$('#recStop').addEventListener('click', () => { if (recording) recording.cancel = true; });
+let videoURL = null;
+function showVideo(url) {
+  videoURL = url; $('#mVideo').hidden = !url && APP !== 'viewer';
+  const v = $('#vid'); if (url) { url = url.startsWith('blob:') ? url : url + '#t=0.8'; if (v.src !== absSrc(url)) v.src = url; v.hidden = false; $('#noVid').hidden = true; } else { v.removeAttribute('src'); v.hidden = true; $('#noVid').hidden = false; }
+}
+$('#mkVideo').addEventListener('click', async () => {
+  const msg = $('#vidMsg'); msg.className = 'msg'; msg.textContent = '';
+  try {
+    const blob = await makeVideo($('#vidFmt').value === 'v');
+    const ext = blob.type.includes('mp4') ? 'mp4' : 'webm', name = (P.name || 'depa').replace(/[^\w\- ]+/g, '').trim().replace(/\s+/g, '-') + '-recorrido.' + ext;
+    const local = URL.createObjectURL(blob); showVideo(local); setMode('video');
+    const a = document.createElement('a'); a.href = local; a.download = name;
+    msg.innerHTML = `Video listo (${(blob.size / 1048576).toFixed(1)} MB). `; msg.appendChild(Object.assign(a, { textContent: '⬇ Descargar video' }));
+    if (APP === 'panel' && PANEL.did) {
+      if (blob.size > 24 * 1048576) { msg.append(' · Pesa más de 24 MB: no se puede publicar. Prueba el formato horizontal.'); return; }
+      msg.append(' · Subiendo…');
+      const r = await panelApi(`/depas/${PANEL.did}/video`, { method: 'PUT', body: blob, type: blob.type });
+      showVideo(r.url); msg.lastChild.textContent = ' · ✅ Guardado. Se verá en tu web al publicar.';
+    }
+  } catch (e) { msg.className = 'msg warn'; msg.textContent = e.message; }
+});
+
+/* ---------- Panel de la inmobiliaria ---------- */
+const PROJ = { name: '', inmo: {} };
+const PANEL = { pid: null, key: null, did: null, depas: [], saving: null, info: {} };
+async function panelApi(path, o = {}) {
+  const headers = { authorization: 'Bearer ' + PANEL.key };
+  let body = o.body; if (o.json) { headers['content-type'] = 'application/json'; body = JSON.stringify(o.json); } if (o.type) headers['content-type'] = o.type;
+  const r = await fetch('/api/projects/' + PANEL.pid + path, { method: o.method || 'GET', headers, body });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.error || 'Error ' + r.status);
+  return d;
+}
+function serverData() {
+  const d = JSON.parse(serial(false));
+  const fi = P.floors.findIndex(f => f.bg); if (fi >= 0) { const b = P.floors[fi].bg; d.bgMeta = { floor: fi, wm: b.wm, op: b.op, x: b.x, y: b.y }; }
+  return d;
+}
+function scheduleRemote() {
+  if (APP !== 'panel' || !PANEL.did) return;
+  setStatus('Guardando…'); clearTimeout(PANEL.t); PANEL.t = setTimeout(saveRemote, 1200);
+}
+async function saveRemote() {
+  clearTimeout(PANEL.t); if (!PANEL.did) return;
+  const info = { ...depaSummary(), precio: ($('#dPrecio') || {}).value || '' };
+  try { await panelApi('/depas/' + PANEL.did, { method: 'PUT', json: { data: serverData(), info } }); setStatus('✅ Guardado'); }
+  catch (e) { setStatus('⚠ ' + e.message, true); throw e; }
+}
+function setStatus(t, bad) { const el = $('#pStatus'); if (el) { el.textContent = t; el.className = 'tot ' + (bad ? 'warn' : 'ok'); } }
+const pubURL = d => location.origin + '/p/' + PANEL.pid + (d ? '/' + d : '');
+const iframe = u => `<iframe src="${u}" width="100%" height="620" style="border:0;border-radius:12px" allow="fullscreen" loading="lazy" title="Recorrido virtual 3D"></iframe>`;
+function renderProj() {
+  const d = PANEL.depas.find(x => x.id === PANEL.did);
+  $('#projBox').innerHTML = `
+    <label>Nombre del proyecto <input id="prName" maxlength="80" value="${esc(PROJ.name)}"></label>
+    <div class="grid2">
+      <label>Inmobiliaria <input id="prInmo" maxlength="80" value="${esc(PROJ.inmo.name || '')}"></label>
+      <label>Teléfono / WhatsApp <input id="prPhone" maxlength="30" value="${esc(PROJ.inmo.phone || '')}"></label>
+    </div>
+    <label>Web de la inmobiliaria <input id="prWeb" maxlength="120" value="${esc(PROJ.inmo.web || '')}"></label>
+    <label>Departamento que estás editando
+      <select id="dSel">${PANEL.depas.map(x => `<option value="${x.id}" ${x.id === PANEL.did ? 'selected' : ''}>${esc(x.name)}</option>`).join('')}</select>
+    </label>
+    <div class="row" style="margin-top:0"><button class="btn" id="dNew">+ Nuevo depa</button><button class="btn" id="dRen">✏ Renombrar</button><button class="btn danger" id="dDel">🗑</button></div>
+    ${d ? `<label style="margin-top:8px">Precio (opcional, se muestra en la web) <input id="dPrecio" maxlength="40" value="${esc(PANEL.info.precio || '')}" placeholder="Ej.: Desde S/ 389,000"></label>` : '<p class="help">Crea tu primer departamento con "+ Nuevo depa".</p>'}
+    <p class="tot ok" id="pStatus"></p>
+    <button class="btn pri" id="pPublish">🚀 Publicar en mi web</button>
+    <div id="pLinks" class="links" style="margin-top:10px"></div>`;
+  renderLinks();
+}
+function renderLinks() {
+  const el = $('#pLinks'); if (!el) return;
+  if (!PROJ.publishedAt) { el.innerHTML = '<p class="help">Cuando publiques, aquí aparecerán el link y el código para tu web.</p>'; return; }
+  el.innerHTML = `<p class="help">Publicado el ${new Date(PROJ.publishedAt).toLocaleString('es-PE')}. Cada vez que publiques, tu web se actualiza sola.</p>
+    <p class="help" style="margin-bottom:4px"><b>Link del proyecto</b> (todos los depas):</p><a href="${pubURL()}" target="_blank" rel="noopener">${pubURL()}</a>
+    <p class="help" style="margin:8px 0 4px"><b>Código para pegar en tu web</b> (una sola vez):</p><textarea class="codebox" rows="3" readonly>${esc(iframe(pubURL()))}</textarea>
+    ${PANEL.did ? `<p class="help" style="margin:8px 0 4px"><b>Solo este depa</b>:</p><a href="${pubURL(PANEL.did)}" target="_blank" rel="noopener">${pubURL(PANEL.did)}</a><textarea class="codebox" rows="3" readonly>${esc(iframe(pubURL(PANEL.did)))}</textarea>` : ''}
+    <p class="help">El link de tu panel es privado: no lo compartas.</p>`;
+}
+async function openDepa(did) {
+  if (PANEL.did) { try { await saveRemote(); } catch (e) { } }
+  PANEL.did = did; localStorage.setItem('k3d-depa-' + PANEL.pid, did);
+  const dr = await panelApi('/depas/' + did);
+  PANEL.info = dr.info || {};
+  if (dr.data && dr.data.floors) { const meta = dr.data.bgMeta; P = sanitize(dr.data); if (meta && dr.plan && P.floors[meta.floor]) P.floors[meta.floor].bg = { src: `/media/${PANEL.pid}/${did}/plan/${dr.plan}`, wm: meta.wm, op: meta.op, x: meta.x || 0, y: meta.y || 0 }; }
+  else { P = { name: dr.name, h: 2.5, spec: '', floors: [{ name: 'Piso 1', rooms: [], bg: null }] }; }
+  P.name = dr.name; cur = 0; sel = null; dirty = true;
+  $('#spec').value = P.spec || ''; showVideo(dr.video ? `/media/${PANEL.pid}/${did}/video/${dr.video}` : null);
+  loadBg(); renderProj(); renderPanel(); fit2d(); setMode(P.floors[0].rooms.length ? '3d' : '2d'); setStatus(P.floors[0].rooms.length ? '✅ Guardado' : 'Sube el plano o arma el depa con medidas.');
+}
+addEventListener('hashchange', () => { if (APP === 'panel' && /^#[a-z0-9]{6,20}\.[a-z0-9]{10,40}$/.test(location.hash)) location.reload(); });
+async function initPanel() {
+  const h = location.hash.slice(1);
+  if (/^[a-z0-9]{6,20}\.[a-z0-9]{10,40}$/.test(h)) { const [pid, key] = h.split('.'); try { localStorage.setItem('k3d-admin', JSON.stringify({ pid, key })); } catch (e) { } PANEL.pid = pid; PANEL.key = key; history.replaceState(null, '', location.pathname); }
+  else { try { const s = JSON.parse(localStorage.getItem('k3d-admin') || 'null'); if (s) { PANEL.pid = s.pid; PANEL.key = s.key; } } catch (e) { } }
+  if (!PANEL.pid) return renderCreate();
+  try {
+    const p = await panelApi('');
+    Object.assign(PROJ, p); PANEL.depas = p.depas;
+    $('#pnameTop').textContent = p.name;
+    if (!PANEL.depas.length) { const d = await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } }); PANEL.depas.push(d); }
+    const last = localStorage.getItem('k3d-depa-' + PANEL.pid);
+    await openDepa(PANEL.depas.some(d => d.id === last) ? last : PANEL.depas[0].id);
+  } catch (e) { $('#projBox').innerHTML = `<p class="msg warn">${esc(e.message)}</p><button class="btn" id="pOut">Usar otro link</button>`; }
+}
+function renderCreate() {
+  $('#projBox').innerHTML = `<p class="help">Crea el panel para una inmobiliaria. Necesitas el código de administrador de KALLPA.</p>
+    <label>Código de administrador <input id="cAdmin" type="password" autocomplete="off"></label>
+    <label>Nombre del proyecto <input id="cName" maxlength="80" placeholder="Ej.: Residencial Los Olivos"></label>
+    <label>Inmobiliaria <input id="cInmo" maxlength="80"></label>
+    <div class="grid2"><label>Teléfono <input id="cPhone" maxlength="30"></label><label>Web <input id="cWeb" maxlength="120"></label></div>
+    <button class="btn pri" id="cGo">Crear panel</button><p class="msg" id="cMsg"></p>`;
+}
+$('#projBox').addEventListener('click', async e => {
+  const id = e.target.id;
+  try {
+    if (id === 'cGo') {
+      const r = await fetch('/api/projects', { method: 'POST', headers: { 'content-type': 'application/json', 'x-admin': $('#cAdmin').value }, body: JSON.stringify({ name: $('#cName').value, inmo: $('#cInmo').value, phone: $('#cPhone').value, web: $('#cWeb').value }) });
+      const d = await r.json(); if (!r.ok) throw new Error(d.error);
+      const link = location.origin + d.panel;
+      $('#projBox').innerHTML = `<p class="help ok">✅ Panel creado. Este es el link privado para la inmobiliaria (guárdalo, no se puede recuperar):</p><textarea class="codebox" rows="3" readonly>${esc(link)}</textarea><a class="btn pri" href="${esc(link)}" style="margin-top:8px;text-decoration:none">Abrir el panel</a>`;
+      $('#projBox a.btn').addEventListener('click', () => setTimeout(() => location.reload(), 50));
+    }
+    if (id === 'pOut') { localStorage.removeItem('k3d-admin'); location.reload(); }
+    if (id === 'dNew') { const n = prompt('Nombre del departamento (ej.: Depa tipo B · 3 dorm.)'); if (!n) return; const d = await panelApi('/depas', { method: 'POST', json: { name: n } }); PANEL.depas.push(d); await openDepa(d.id); }
+    if (id === 'dRen') { const d = PANEL.depas.find(x => x.id === PANEL.did); const n = prompt('Nuevo nombre', d.name); if (!n) return; d.name = n.slice(0, 60); P.name = d.name; await panelApi('/depas/' + d.id, { method: 'PUT', json: { name: d.name, data: serverData(), info: { ...depaSummary(), precio: $('#dPrecio').value } } }); renderProj(); renderPanel(); }
+    if (id === 'dDel') { const d = PANEL.depas.find(x => x.id === PANEL.did); if (!confirm(`¿Eliminar "${d.name}"? Se borra su plano 3D y su video.`)) return; await panelApi('/depas/' + d.id, { method: 'DELETE' }); PANEL.depas = PANEL.depas.filter(x => x !== d); PANEL.did = null; if (!PANEL.depas.length) PANEL.depas.push(await panelApi('/depas', { method: 'POST', json: { name: 'Depa tipo A' } })); await openDepa(PANEL.depas[0].id); }
+    if (id === 'pPublish') { setStatus('Publicando…'); await saveRemote(); const r = await panelApi('/publish', { method: 'POST' }); PROJ.publishedAt = r.publishedAt; renderLinks(); setStatus(`✅ Publicado (${r.count} depa${r.count > 1 ? 's' : ''}). Tu web ya muestra la nueva versión.`); toast('¡Publicado!'); }
+  } catch (err) { setStatus('⚠ ' + err.message, true); const m = $('#cMsg'); if (m) m.textContent = err.message; }
+});
+$('#projBox').addEventListener('change', async e => {
+  if (e.target.id === 'dSel') await openDepa(e.target.value);
+  if (['prName', 'prInmo', 'prPhone', 'prWeb'].includes(e.target.id)) {
+    PROJ.name = $('#prName').value; PROJ.inmo = { name: $('#prInmo').value, phone: $('#prPhone').value, web: $('#prWeb').value };
+    $('#pnameTop').textContent = PROJ.name;
+    try { await panelApi('', { method: 'PUT', json: { name: PROJ.name, inmo: PROJ.inmo } }); setStatus('✅ Guardado'); } catch (err) { setStatus('⚠ ' + err.message, true); }
+  }
+  if (e.target.id === 'dPrecio') { PANEL.info.precio = e.target.value; scheduleRemote(); }
+});
+$('#projBox').addEventListener('focusin', e => { if (e.target.classList.contains('codebox')) e.target.select(); });
+function fileToJpeg(file, max = 1600) {
+  return new Promise((res, rej) => {
+    const im = new Image(), url = URL.createObjectURL(file);
+    im.onload = () => { const k = Math.min(1, max / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k); const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, c.width, c.height); g.drawImage(im, 0, 0, c.width, c.height); URL.revokeObjectURL(url); c.toBlob(b => res({ blob: b, dataURL: c.toDataURL('image/jpeg', 0.85), w: c.width, h: c.height }), 'image/jpeg', 0.85); };
+    im.onerror = () => rej(new Error('No se pudo leer la imagen.')); im.src = url;
+  });
+}
+function normalizeRooms(list) {
+  const rooms = list.filter(a => TYPES[a.tipo] && a.ancho > 0.3 && a.largo > 0.3).map(a => ({ id: nextId++, type: a.tipo, name: String(a.nombre || TYPES[a.tipo].n).slice(0, 40), x: a.x, y: a.y, w: Math.max(0.6, a.ancho), d: Math.max(0.6, a.largo) }));
+  const snapAxis = (getA, getB, setA, setB) => {      // une bordes casi iguales para que las paredes coincidan
+    const vals = rooms.flatMap(r => [getA(r), getB(r)]).sort((a, b) => a - b), groups = [];
+    vals.forEach(v => { const g = groups[groups.length - 1]; if (g && v - g[g.length - 1] < 0.15) g.push(v); else groups.push([v]); });
+    const snap = v => { const g = groups.find(g => v >= g[0] - 1e-9 && v <= g[g.length - 1] + 1e-9); const m = g.reduce((a, b) => a + b, 0) / g.length; return Math.round(m / SNAP) * SNAP; };
+    rooms.forEach(r => { const a = snap(getA(r)), b = snap(getB(r)); setA(r, a); setB(r, Math.max(a + 0.6, b)); });
+  };
+  snapAxis(r => r.x, r => r.x + r.w, (r, v) => r.x = v, (r, v) => r.w = rd(v - r.x));
+  snapAxis(r => r.y, r => r.y + r.d, (r, v) => r.y = v, (r, v) => r.d = rd(v - r.y));
+  rooms.forEach(r => { r.x = rd(r.x); r.y = rd(r.y); });
+  return rooms;
+}
+$('#aiFile').addEventListener('change', async e => {
+  const file = e.target.files[0]; e.target.value = ''; if (!file) return;
+  const msg = $('#aiMsg'); msg.className = 'msg'; msg.textContent = '⏳ Preparando la imagen…';
+  try {
+    const img = await fileToJpeg(file);
+    msg.textContent = '🤖 La IA está leyendo tu plano. Puede tardar entre 30 segundos y 2 minutos…';
+    const planUp = panelApi(`/depas/${PANEL.did}/plan`, { method: 'PUT', body: img.blob, type: 'image/jpeg' }).catch(() => null);
+    const res = await panelApi(`/depas/${PANEL.did}/analyze`, { method: 'POST', json: { image: img.dataURL.split(',')[1], media_type: 'image/jpeg', hint: $('#aiHint').value } });
+    const rooms = normalizeRooms(res.ambientes || []);
+    if (!rooms.length) throw new Error('La IA no encontró ambientes. Prueba con una imagen más clara.');
+    const up = await planUp;
+    P.floors[cur].rooms = rooms; P.spec = ''; $('#spec').value = '';
+    P.floors[cur].bg = { src: up ? up.url : img.dataURL, wm: clamp(+res.imagen_ancho_m || 10, 1, 200), op: 0.45, x: 0, y: 0 };
+    sel = null; loadBg(); changed(true); fit2d(); draw();
+    msg.className = 'msg ok'; msg.textContent = `✅ Listo: ${rooms.length} ambientes. ${res.notas || ''} Revisa el plano (está encima del original) y mira la Maqueta 3D.`;
+  } catch (err) { msg.className = 'msg warn'; msg.textContent = '⚠ ' + err.message + ' También puedes armarlo con medidas en la sección 1.'; }
+});
+
+/* ---------- Página pública ---------- */
+let PUB = null;
+async function initViewer() {
+  const [, , pid, did] = location.pathname.split('/');
+  try {
+    const r = await fetch('/api/pub/' + encodeURIComponent(pid || '')); const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'No encontrado');
+    PUB = d; Object.assign(PROJ, d);
+    $('#pnameTop').textContent = d.name; document.title = d.name + ' · Recorrido virtual 3D';
+    $('#depaSel').innerHTML = d.depas.map(x => `<option value="${x.id}">${esc(x.name)}${x.info && x.info.m2 ? ` · ${x.info.m2} m²` : ''}${x.info && x.info.precio ? ` · ${esc(x.info.precio)}` : ''}</option>`).join('');
+    if (d.depas.length < 2) $('#depaSel').style.display = 'none';
+    loadPub(d.depas.find(x => x.id === did) || d.depas[0]);
+  } catch (e) { $('#stage').innerHTML = `<div class="nogl">${esc(e.message)}</div>`; }
+}
+function loadPub(x) {
+  $('#depaSel').value = x.id;
+  P = sanitize(x.data); P.name = x.name; cur = 0; sel = null; dirty = true;
+  const pl = x.plan ? `/media/${PUB.id}/${x.id}/plan/${x.plan}` : null;
+  $('#planImg').src = pl || ''; $('#planToggle').hidden = true; $('#planToggle').dataset.on = pl ? '1' : '';
+  showVideo(x.video ? `/media/${PUB.id}/${x.id}/video/${x.video}` : null);
+  $('#mVideo').hidden = !x.video;
+  needFit = true; setMode(x.video && location.hash === '#video' ? 'video' : '3d');
+}
+$('#depaSel').addEventListener('change', e => { const x = PUB.depas.find(d => d.id === e.target.value); if (x) { history.replaceState(null, '', '/p/' + PUB.id + '/' + x.id); loadPub(x); } });
+$('#planToggle').addEventListener('click', () => { const b = $('#planImgBox'); b.hidden = !b.hidden; $('#planToggle').textContent = b.hidden ? '🗺 Ver plano original' : '📐 Ver plano dibujado'; });
+
 /* ---------- Inicio ---------- */
 (function init() {
   P = { name: 'Mi proyecto', h: 2.5, spec: '', floors: [{ name: 'Piso 1', rooms: [], bg: null }] };
+  requestAnimationFrame(loop);
+  if (APP === 'panel') { $('#spec').value = ''; renderPanel(); resize2d(); initPanel(); return; }
+  if (APP === 'viewer') { renderPanel(); resize2d(); initViewer(); return; }
   let loaded = false;
   if (location.hash.startsWith('#p=')) {
     try { P = sanitize(JSON.parse(dec(location.hash.slice(3)))); loaded = 'link'; } catch (e) { toast('El link del proyecto no es válido'); }
@@ -1183,7 +1606,6 @@ function loop(t) {
   if (!loaded || !P.floors.some(f => f.rooms.length)) { P.name = 'Depa modelo'; const k = 'Depa 3 dormitorios'; $('#tpl').value = k; generate(TPL[k]); }
   $('#spec').value = P.spec || TPL['Depa 3 dormitorios'];
   loadBg(); renderPanel(); resize2d(); fit2d(); draw();
-  requestAnimationFrame(loop);
   if (loaded === 'link') setMode('3d');
 })();
 </script>

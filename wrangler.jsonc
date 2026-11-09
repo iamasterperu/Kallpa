@@ -1,7 +1,15 @@
-// KALLPA · web estática en Cloudflare Workers
+// KALLPA · web en Cloudflare Workers (archivos estáticos + API de KALLPA 3D)
 {
   "name": "kallpa",
+  "main": "src/worker.js",
   "compatibility_date": "2026-10-12",
+  "compatibility_flags": ["nodejs_compat"],
   "preview_urls": false,
-  "assets": { "directory": "." }
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/media/*", "/p/*", "/panel", "/panel/*"]
+  },
+  "kv_namespaces": [{ "binding": "K3D", "id": "7b626d98747c41aebe1afb513e7f81f4" }]
+  // Secretos (se configuran en Cloudflare, nunca en el código): ANTHROPIC_API_KEY, ADMIN_CODE
 }
