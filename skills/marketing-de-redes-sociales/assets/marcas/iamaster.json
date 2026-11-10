@@ -8,7 +8,7 @@
   "acento": "#FFC93C",
   "tema": "oscuro",
   "correo": "iamasterperu@gmail.com",
-  "rubro": "Enseña inteligencia artificial práctica a emprendedores y trabajadores peruanos",
+  "rubro": "Enseña inteligencia artificial y comparte tips de IA (NO es KALLPA: KALLPA hace apps para empresas)",
   "publico": "Emprendedores, docentes y trabajadores peruanos que quieren usar IA",
   "oferta": "Asesorías 1 a 1, Full Day de IA y recursos gratis",
   "cta_principal": "Link en el perfil",
@@ -25,7 +25,12 @@
     "cuenta": "Cuenta de Metricool SEPARADA de KALLPA (no es la de iamasterperu@gmail.com). No usar el blogId 7425657, que es de KALLPA."
   },
   "hosting": {
-    "tipo": "ninguno"
+    "tipo": "cloudflare_kv",
+    "cuenta": "e00bb6696bb9104516496040a6d2a999",
+    "kv": "7b626d98747c41aebe1afb513e7f81f4",
+    "prefijo": "soc:",
+    "base_url": "https://kallpa.iamasterperu.workers.dev/v/",
+    "nota": "Mismo KV que KALLPA solo como hosting temporal; los archivos de IAMASTER empiezan con iam- para no chocar."
   },
   "mascotas": "assets/mascotas/iamaster",
   "cta_boton": "💬 Comenta",
@@ -46,5 +51,6 @@
     "script": "scripts/render_panorama.cjs",
     "css": "scripts/plantilla_panorama.css"
   },
-  "cta_em": "#FFFFFF"
+  "cta_em": "#FFFFFF",
+  "primer_comentario": "👉 Más tips de IA y cursos en el link del perfil @iamaster_oficial"
 }

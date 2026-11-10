@@ -157,7 +157,7 @@ def escena_base(es, palabra):
         return f'{tag}<h1 class="h t1 pop">{rico(d("titulo"))}</h1>{emo}' + \
                (f'<div class="sub up" style="animation-delay:.9s">{rico(d("sub"))}</div>' if d('sub') else '')
     if t == 'problema':
-        items = ''.join(f'<div class="ls left" style="animation-delay:{.4 + i * .55:.2f}s">{e(x)} <i>-S/</i></div>' for i, x in enumerate(es.get('items', [])[:4]))
+        items = ''.join(f'<div class="ls left" style="animation-delay:{.4 + i * .55:.2f}s">{e(x)} <i>{e(es.get("marca_item", "-S/"))}</i></div>' for i, x in enumerate(es.get('items', [])[:4]))
         cont = f'<div class="money pop" style="animation-delay:{.4 + len(es.get("items", [])) * .55:.2f}s"><span class="count" data-to="{int(es.get("contador", 0))}" data-pre="-S/ " data-at="{.6 + len(es.get("items", [])) * .55:.2f}">-S/ 0</span><small>{e(d("etiqueta"))}</small></div>' if es.get('contador') else ''
         return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="loss">{items}</div>{cont}'
     if t == 'telefono':
@@ -172,7 +172,7 @@ def escena_base(es, palabra):
     if t == 'antesdespues':
         a = ''.join(f'<div class="left" style="animation-delay:{.5 + i * .35:.2f}s">❌ {e(x)}</div>' for i, x in enumerate(es.get('antes', [])[:4]))
         b = ''.join(f'<div class="right" style="animation-delay:{1.6 + i * .35:.2f}s">✅ {e(x)}</div>' for i, x in enumerate(es.get('despues', [])[:4]))
-        return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="ad"><div class="col antes pop" style="animation-delay:.3s"><h3 class="r">Antes</h3>{a}</div><div class="col despues pop" style="animation-delay:1.3s"><h3 class="v">Con tu app</h3>{b}</div></div>'
+        return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="ad"><div class="col antes pop" style="animation-delay:.3s"><h3 class="r">{e(es.get("antes_titulo", "Antes"))}</h3>{a}</div><div class="col despues pop" style="animation-delay:1.3s"><h3 class="v">{e(es.get("despues_titulo", "Con tu app"))}</h3>{b}</div></div>'
     if t == 'numero':
         return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="big g pop" style="animation-delay:.4s"><span class="count" data-to="{int(es.get("numero", 0))}" data-pre="{e(d("prefijo"))}" data-at="0.5">0</span><small>{e(d("sufijo"))}</small></div><div class="lbl up" style="animation-delay:1s">{rico(d("etiqueta"))}</div>'
     if t == 'chips':

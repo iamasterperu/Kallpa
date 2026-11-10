@@ -24,6 +24,7 @@ Cada negocio tiene un archivo `assets/marcas/<id>.json`. Los scripts lo leen con
 3. Busca su marca en Metricool con `getBrandSettings` y guarda el blogId.
 4. Haz una pieza de prueba (un video y un carrusel) y muéstrasela antes de programar en serie.
 
-## Marcas actuales
+## Marcas actuales (¡no mezclar!)
+KALLPA = apps y software para EMPRESAS. IAMASTER = ENSEÑAR IA y dar tips de IA. Cada una tiene su cuenta de Metricool, su Instagram y su estilo.
 - **kallpa**: apps web y software a medida para empresas. Oferta: reunión y demo gratis; si le gusta, la compra. CTA: link del perfil. Sin precios, sin cursos.
 - **iamaster**: enseñanza de IA práctica para emprendedores peruanos. Sin precios en carruseles ni descripciones.

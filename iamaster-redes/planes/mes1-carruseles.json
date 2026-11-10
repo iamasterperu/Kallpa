@@ -1,0 +1,561 @@
+{
+ "marca": "iamaster",
+ "carruseles": [
+  {
+   "archivo": "iam-2026-11-14-prompt",
+   "dia": "sábado",
+   "fecha": "2026-11-14",
+   "hora": "11:00",
+   "tema": "Juego: ¿prompt bueno o malo?",
+   "palabra": "PROMPT",
+   "tema_visual": "noche",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Juego de sábado",
+     "titulo": "¿Sabes pedirle|cosas a la IA?",
+     "acento": "Ponte a prueba.",
+     "texto": "4 prompts. Tú decides: *¿bueno o malo?* Al final, las respuestas.",
+     "mascota": "senala"
+    },
+    {
+     "tipo": "juego",
+     "over": "Vota en tu mente",
+     "titulo": "¿Bueno",
+     "acento": "o malo?",
+     "opciones": [
+      "“Hazme un post.”",
+      "“Escribe un post para Instagram de mi panadería en Arequipa, tono alegre, con 3 emojis y una pregunta al final.”",
+      "“Dame ideas.”",
+      "“Actúa como chef y dame 5 postres fáciles de vender, con insumos baratos.”"
+     ]
+    },
+    {
+     "tipo": "lista",
+     "over": "Las respuestas",
+     "titulo": "1 y 3 son",
+     "acento": "muy cortos.",
+     "items": [
+      [
+       "✕",
+       "El 1 y el 3: malos",
+       "la IA no sabe quién eres ni qué necesitas"
+      ],
+      [
+       "✓",
+       "El 2 y el 4: buenos",
+       "dicen quién, qué, para quién y cómo"
+      ],
+      [
+       "💡",
+       "La regla de oro",
+       "más contexto = mejor respuesta"
+      ]
+     ]
+    },
+    {
+     "tipo": "cta",
+     "over": "¿Quieres la plantilla?",
+     "titulo": "El prompt|que",
+     "acento": "nunca falla.",
+     "regalo": "la plantilla",
+     "pregunta": "¿Cuántas acertaste? Comenta 0, 1, 2, 3 o 4 👇"
+    }
+   ],
+   "caption": "¿Sabes pedirle cosas a la IA? 🤖 Juego de sábado: 4 prompts, ¿cuáles son buenos y cuáles malos?\n\nLa regla de oro: mientras más contexto le das (quién eres, qué quieres, para quién y cómo), mejor te responde.\n\n💬 Comenta PROMPT y te paso la plantilla que nunca falla.\n👉 Más tips y cursos en el link del perfil.",
+   "hashtags": [
+    "#inteligenciaartificial",
+    "#chatgpt",
+    "#prompts",
+    "#emprendedoresperu",
+    "#tipsdeia"
+   ]
+  },
+  {
+   "archivo": "iam-2026-11-19-ias",
+   "dia": "jueves",
+   "fecha": "2026-11-19",
+   "hora": "19:00",
+   "tema": "5 IA gratis para tu negocio",
+   "palabra": "IAS",
+   "tema_visual": "crema",
+   "cruza": {
+    "img": "senala-derecha",
+    "entre": 3,
+    "alto": 420,
+    "arriba": 700
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Guárdalo",
+     "titulo": "5 IA gratis|que tu negocio",
+     "acento": "necesita ya.",
+     "texto": "No tienes que pagar para empezar. Estas cinco hacen *gran parte del trabajo*.",
+     "mascota": "laptop",
+     "nota": [
+      "Post de hoy ✗",
+      "Logo ✗",
+      "Video ✗",
+      "¿Por dónde empiezo?"
+     ]
+    },
+    {
+     "tipo": "lista",
+     "over": "Para escribir y pensar",
+     "titulo": "Tu asistente",
+     "acento": "de bolsillo.",
+     "items": [
+      [
+       "1",
+       "ChatGPT",
+       "textos, ideas y respuestas a clientes"
+      ],
+      [
+       "2",
+       "Gemini",
+       "busca y resume con Google"
+      ],
+      [
+       "3",
+       "Claude",
+       "documentos largos y textos con buen tono"
+      ]
+     ]
+    },
+    {
+     "tipo": "lista",
+     "over": "Para diseñar y editar",
+     "titulo": "Tu equipo",
+     "acento": "de diseño.",
+     "items": [
+      [
+       "4",
+       "Canva",
+       "posts, logos y flyers con IA"
+      ],
+      [
+       "5",
+       "CapCut",
+       "videos con subtítulos automáticos"
+      ],
+      [
+       "⭐",
+       "El truco",
+       "texto en ChatGPT + diseño en Canva"
+      ]
+     ]
+    },
+    {
+     "tipo": "cta",
+     "over": "Y si quieres ir más allá…",
+     "titulo": "Aprende a crear|tu",
+     "acento": "propia web.",
+     "regalo": "la lista con links",
+     "pregunta": "¿Cuál ya usas? Comenta el número 👇"
+    }
+   ],
+   "caption": "5 inteligencias artificiales GRATIS que tu negocio necesita ya 🚀\n\n1️⃣ ChatGPT: textos e ideas\n2️⃣ Gemini: busca y resume\n3️⃣ Claude: documentos largos\n4️⃣ Canva: diseños con IA\n5️⃣ CapCut: videos con subtítulos\n\nGuárdalo para no perderlo 📌\n💬 Comenta IAS y te paso la lista con links.\n👉 Cursos en el link del perfil.",
+   "hashtags": [
+    "#inteligenciaartificial",
+    "#herramientasia",
+    "#emprendedoresperu",
+    "#canva",
+    "#chatgpt"
+   ]
+  },
+  {
+   "archivo": "iam-2026-11-21-nivel",
+   "dia": "sábado",
+   "fecha": "2026-11-21",
+   "hora": "11:00",
+   "tema": "Test: ¿qué tan IA eres?",
+   "palabra": "NIVEL",
+   "tema_visual": "noche",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Juego de sábado",
+     "titulo": "¿Qué tan|IA eres?",
+     "acento": "Descúbrelo.",
+     "texto": "Cuenta en tu mente *cuántas de estas* ya hiciste.",
+     "mascota": "salta"
+    },
+    {
+     "tipo": "juego",
+     "over": "Marca las tuyas",
+     "titulo": "¿Ya hiciste…",
+     "tam": 84,
+     "opciones": [
+      "Un post o caption con IA",
+      "Responder a un cliente con ayuda de la IA",
+      "Resumir un PDF o un audio largo",
+      "Crear una imagen o un logo con IA",
+      "Armar un Excel o un presupuesto con IA",
+      "Automatizar algo de tu negocio"
+     ]
+    },
+    {
+     "tipo": "lista",
+     "over": "Tu resultado",
+     "titulo": "Tu nivel",
+     "acento": "de IA.",
+     "items": [
+      [
+       "0-1",
+       "Curioso",
+       "empieza hoy con un prompt sencillo"
+      ],
+      [
+       "2-4",
+       "Aprendiz",
+       "ya ahorras horas: ve por más"
+      ],
+      [
+       "5-6",
+       "IA Master",
+       "¡te toca automatizar tu negocio!"
+      ]
+     ]
+    },
+    {
+     "tipo": "cta",
+     "over": "Sube de nivel",
+     "titulo": "Aprende a tu|ritmo, desde",
+     "acento": "cero.",
+     "regalo": "tu ruta para subir de nivel",
+     "pregunta": "¿Cuántas marcaste? Comenta tu número 👇"
+    }
+   ],
+   "caption": "Test de sábado: ¿qué tan IA eres? 🤖\n\nCuenta cuántas de estas 6 cosas ya hiciste con inteligencia artificial y mira tu nivel en el slide 3.\n\n💬 Comenta tu número… o comenta NIVEL y te paso tu ruta para subir de nivel.\n👉 Cursos a tu ritmo en el link del perfil.",
+   "hashtags": [
+    "#inteligenciaartificial",
+    "#test",
+    "#emprendedoresperu",
+    "#tipsdeia",
+    "#aprendeia"
+   ]
+  },
+  {
+   "archivo": "iam-2026-11-26-formula",
+   "dia": "jueves",
+   "fecha": "2026-11-26",
+   "hora": "19:00",
+   "tema": "La fórmula del prompt perfecto",
+   "palabra": "FORMULA",
+   "tema_visual": "vibrante",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Guárdalo",
+     "titulo": "La fórmula|del prompt",
+     "acento": "perfecto.",
+     "texto": "4 piezas. Úsalas siempre y la IA te responde *como un experto*.",
+     "mascota": "sentado-ia"
+    },
+    {
+     "tipo": "lista",
+     "over": "La fórmula R·T·C·F",
+     "titulo": "Rol, tarea,",
+     "acento": "contexto, formato.",
+     "tam": 86,
+     "items": [
+      [
+       "R",
+       "Rol",
+       "“Actúa como experto en ventas…”"
+      ],
+      [
+       "T",
+       "Tarea",
+       "“Escribe un mensaje para…”"
+      ],
+      [
+       "C",
+       "Contexto",
+       "quién eres, a quién le hablas, qué vendes"
+      ],
+      [
+       "F",
+       "Formato",
+       "“en 5 viñetas”, “máximo 80 palabras”"
+      ]
+     ]
+    },
+    {
+     "tipo": "prompt",
+     "over": "Así queda",
+     "titulo": "Listo",
+     "acento": "para copiar.",
+     "prompts": [
+      {
+       "titulo": "Prompt completo",
+       "texto": "Actúa como experto en ventas por WhatsApp. Escribe un mensaje para ofrecer [tu producto] a clientes que ya me compraron. Soy [tu negocio] en [tu ciudad] y mi tono es cercano. Máximo 60 palabras, con 1 emoji y una pregunta al final."
+      }
+     ],
+     "tip": "Cambia solo lo que está entre corchetes."
+    },
+    {
+     "tipo": "cta",
+     "over": "Y ahora…",
+     "titulo": "Haz que|la IA",
+     "acento": "trabaje por ti.",
+     "regalo": "5 ejemplos más",
+     "pregunta": "¿Para qué la vas a usar primero? 👇"
+    }
+   ],
+   "caption": "La fórmula del prompt perfecto: R·T·C·F ✨\n\nRol + Tarea + Contexto + Formato. Con estas 4 piezas la IA deja de darte respuestas genéricas y te responde como un experto.\n\n📌 Guárdalo y úsalo hoy.\n💬 Comenta FORMULA y te paso 5 ejemplos más.\n👉 Cursos en el link del perfil.",
+   "hashtags": [
+    "#prompts",
+    "#chatgpt",
+    "#inteligenciaartificial",
+    "#emprendedoresperu",
+    "#tipsdeia"
+   ]
+  },
+  {
+   "archivo": "iam-2026-11-28-navidad",
+   "dia": "sábado",
+   "fecha": "2026-11-28",
+   "hora": "11:00",
+   "tema": "Prepara tus ventas de Navidad con IA",
+   "palabra": "NAVIDAD",
+   "tema_visual": "crema",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Se viene diciembre",
+     "titulo": "Tus ventas|de Navidad,",
+     "acento": "con IA.",
+     "texto": "4 prompts para preparar tu campaña *en una tarde*.",
+     "mascota": "senala",
+     "nota": [
+      "Promo navidad ???",
+      "Post del 24 ???",
+      "¿Qué regalo vendo?",
+      "Sin ideas 😩"
+     ]
+    },
+    {
+     "tipo": "prompt",
+     "over": "Ideas y calendario",
+     "titulo": "Planifica",
+     "acento": "la campaña.",
+     "prompts": [
+      {
+       "titulo": "Ideas de promo",
+       "texto": "Dame 10 ideas de promociones navideñas para [tu negocio] que no bajen mucho mi ganancia. Ordénalas de la más fácil a la más difícil."
+      },
+      {
+       "titulo": "Calendario",
+       "texto": "Arma un calendario de publicaciones del 1 al 24 de diciembre para [tu negocio]: qué publicar cada día y a qué hora."
+      }
+     ]
+    },
+    {
+     "tipo": "prompt",
+     "over": "Textos que venden",
+     "titulo": "Escribe",
+     "acento": "los mensajes.",
+     "prompts": [
+      {
+       "titulo": "Post navideño",
+       "texto": "Escribe 3 captions navideños para vender [tu producto], tono cálido y peruano, con una llamada a la acción a WhatsApp."
+      },
+      {
+       "titulo": "Aviso a clientes",
+       "texto": "Escribe un mensaje corto de WhatsApp para avisar a mis clientes de [tu promo], sin que suene a spam."
+      }
+     ]
+    },
+    {
+     "tipo": "cta",
+     "over": "Que este diciembre…",
+     "titulo": "Sea tu",
+     "acento": "mejor mes.",
+     "regalo": "los 4 prompts",
+     "pregunta": "¿Qué vendes en Navidad? Te leo 👇"
+    }
+   ],
+   "caption": "Diciembre llega rápido 🎄 Prepara tu campaña de Navidad con IA en una tarde:\n\n✅ Ideas de promociones\n✅ Calendario del 1 al 24\n✅ Captions navideños\n✅ Aviso a tus clientes\n\n📌 Guárdalo.\n💬 Comenta NAVIDAD y te paso los 4 prompts.\n👉 Cursos en el link del perfil.",
+   "hashtags": [
+    "#navidad",
+    "#ventasnavidenas",
+    "#inteligenciaartificial",
+    "#emprendedoresperu",
+    "#marketingdigital"
+   ]
+  },
+  {
+   "archivo": "iam-2026-12-03-asistente",
+   "dia": "jueves",
+   "fecha": "2026-12-03",
+   "hora": "19:00",
+   "tema": "No uses la IA como Google",
+   "palabra": "ASISTENTE",
+   "tema_visual": "crema",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Error número 1",
+     "titulo": "¿Usas la IA|como si fuera",
+     "acento": "Google?",
+     "texto": "Ese es el error más común. *Mira la diferencia.*",
+     "mascota": "piensa",
+     "nota": [
+      "“tortas fáciles”",
+      "“ideas negocio”",
+      "“post bonito”",
+      "…y nada sirve 😕"
+     ]
+    },
+    {
+     "tipo": "comparacion",
+     "over": "La diferencia",
+     "titulo": "Así no.",
+     "acento": "Así sí.",
+     "antes": {
+      "titulo": "Como Google",
+      "items": [
+       "Dos palabras: “tortas fáciles”",
+       "Una pregunta y te vas",
+       "Copias sin revisar"
+      ]
+     },
+     "despues": {
+      "titulo": "Como asistente",
+      "items": [
+       "Le cuentas tu caso y tu meta",
+       "Le pides cambios: “más corto”, “más peruano”",
+       "Revisas y lo haces tuyo"
+      ]
+     }
+    },
+    {
+     "tipo": "prompt",
+     "over": "Pruébalo hoy",
+     "titulo": "Conversa,",
+     "acento": "no busques.",
+     "prompts": [
+      {
+       "titulo": "Primer mensaje",
+       "texto": "Quiero vender [tu producto] en [tu ciudad]. Antes de darme ideas, hazme 5 preguntas sobre mi negocio."
+      }
+     ],
+     "tip": "Cuando la IA te pregunta primero, sus respuestas mejoran muchísimo."
+    },
+    {
+     "tipo": "cta",
+     "over": "Y si quieres ir más allá…",
+     "titulo": "Tu propio",
+     "acento": "asistente con IA.",
+     "regalo": "más prompts así",
+     "pregunta": "¿Hasta hoy la usabas como Google? 👇"
+    }
+   ],
+   "caption": "¿Usas la IA como si fuera Google? 🤔 Es el error número 1.\n\nGoogle busca. La IA conversa: cuéntale tu caso, tu meta y pídele cambios hasta que quede perfecto.\n\nTruco: pídele que te haga 5 preguntas antes de responder.\n💬 Comenta ASISTENTE y te paso más prompts así.\n👉 Cursos en el link del perfil.",
+   "hashtags": [
+    "#inteligenciaartificial",
+    "#chatgpt",
+    "#tipsdeia",
+    "#emprendedoresperu",
+    "#prompts"
+   ]
+  },
+  {
+   "archivo": "iam-2026-12-05-reto",
+   "dia": "sábado",
+   "fecha": "2026-12-05",
+   "hora": "11:00",
+   "tema": "Reto de 7 días con IA",
+   "palabra": "RETO",
+   "tema_visual": "noche",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 3,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Reto de sábado",
+     "titulo": "7 días,|7 tareas",
+     "acento": "con IA.",
+     "texto": "Haz una al día y en una semana *trabajas el doble de rápido*.",
+     "mascota": "salta"
+    },
+    {
+     "tipo": "juego",
+     "over": "Tu semana",
+     "titulo": "El reto",
+     "acento": "empieza.",
+     "opciones": [
+      "Lunes: escribe tu post con IA",
+      "Martes: responde un correo difícil",
+      "Miércoles: resume un PDF largo",
+      "Jueves: arma un Excel de ventas"
+     ]
+    },
+    {
+     "tipo": "juego",
+     "over": "Y para cerrar",
+     "titulo": "La recta",
+     "acento": "final.",
+     "inicio": 5,
+     "opciones": [
+      "Viernes: crea una imagen para tu marca",
+      "Sábado: ordena tu menú o catálogo",
+      "Domingo: planifica tu semana con un prompt"
+     ]
+    },
+    {
+     "tipo": "cta",
+     "over": "¿Te animas?",
+     "titulo": "Empezamos",
+     "acento": "el lunes.",
+     "regalo": "los prompts del reto",
+     "pregunta": "¿Lo haces conmigo? Comenta RETO 💪"
+    }
+   ],
+   "caption": "Reto de 7 días con IA 💪 Una tarea al día:\n\nLunes post · Martes correo difícil · Miércoles resumir un PDF · Jueves Excel de ventas · Viernes imagen de marca · Sábado menú o catálogo · Domingo planificar la semana.\n\n💬 Comenta RETO y te paso los prompts de cada día.\n👉 Cursos en el link del perfil.",
+   "hashtags": [
+    "#retoia",
+    "#inteligenciaartificial",
+    "#emprendedoresperu",
+    "#productividad",
+    "#tipsdeia"
+   ]
+  }
+ ]
+}
