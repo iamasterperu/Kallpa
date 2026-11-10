@@ -1,7 +1,7 @@
 {
   "nombre": "IAMASTER",
   "inicial": "IA",
-  "usuario": "@iamaster.oficial",
+  "usuario": "@iamaster_oficial",
   "color1": "#FF3D7F",
   "color2": "#FF8A00",
   "fondo": "#1E1433",
@@ -18,9 +18,11 @@
     "Precios en carruseles y descripciones"
   ],
   "metricool": {
-    "blogId": "",
-    "red": "tiktok",
-    "zona": "America/Lima"
+    "blogId": "8008294",
+    "userId": "6286667",
+    "red": "instagram",
+    "zona": "America/Lima",
+    "cuenta": "Cuenta de Metricool SEPARADA de KALLPA (no es la de iamasterperu@gmail.com). No usar el blogId 7425657, que es de KALLPA."
   },
   "hosting": {
     "tipo": "ninguno"

@@ -22,7 +22,8 @@
   "metricool": {
     "blogId": "7425657",
     "red": "instagram",
-    "zona": "America/Lima"
+    "zona": "America/Lima",
+    "cuenta": "Cuenta de Metricool de iamasterperu@gmail.com (userId 5770953). Solo para KALLPA."
   },
   "hosting": {
     "tipo": "cloudflare_kv",
