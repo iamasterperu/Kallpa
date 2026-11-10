@@ -128,15 +128,33 @@ def e(s):  # texto plano escapado
 
 def rico(s):  # permite <span class="y|g|r|v"> y <br> en títulos que escribimos nosotros
     s = html.escape(str(s))
-    s = re.sub(r'&lt;span class=&quot;(y|g|r|v)&quot;&gt;', r'<span class="\1">', s)
+    s = re.sub(r'&lt;span class=&quot;(y|g|r|v|it)&quot;&gt;', r'<span class="\1">', s)
     return s.replace('&lt;/span&gt;', '</span>').replace('&lt;br&gt;', '<br>')
 
 
+def mascota_html(es):
+    """Personaje de la marca (PNG sin fondo en marca.mascotas/<nombre>.png). "mascota": "salta" o {"img","lado","alto","arriba"}."""
+    m = es.get('mascota')
+    if not m or not MARCA.get('mascotas'):
+        return ''
+    if isinstance(m, str): m = {'img': m}
+    carpeta = MARCA['mascotas'] if os.path.isabs(MARCA['mascotas']) else os.path.join(AQUI, '..', MARCA['mascotas'])
+    src = 'file://' + os.path.abspath(os.path.join(carpeta, m['img'] + '.png'))
+    lado = m.get('lado', 'der'); alto = int(m.get('alto', 430)); arriba = int(m.get('arriba', 1300 - alto))
+    pos = {'der': 'right:30px', 'izq': 'left:30px', 'centro': f'left:calc(50% - {alto // 3}px)'}[lado]
+    return (f'<img class="masc pop" style="{pos};top:{arriba}px;height:{alto}px;animation-delay:{m.get("delay", .5)}s" src="{html.escape(src)}" alt="">')
+
+
 def escena_html(es, palabra):
+    return escena_base(es, palabra) + mascota_html(es)
+
+
+def escena_base(es, palabra):
     t = es['tipo']; d = lambda k: es.get(k, '')
     if t == 'gancho':
         tag = f'<div class="tag pop">{e(d("etiqueta"))}</div>' if d('etiqueta') else ''
-        return f'{tag}<h1 class="h t1 pop">{rico(d("titulo"))}</h1><div class="emo pop float" style="animation-delay:.35s,1s">{e(d("emoji") or "🚀")}</div>' + \
+        emo = '' if es.get('mascota') else f'<div class="emo pop float" style="animation-delay:.35s,1s">{e(d("emoji") or "🚀")}</div>'
+        return f'{tag}<h1 class="h t1 pop">{rico(d("titulo"))}</h1>{emo}' + \
                (f'<div class="sub up" style="animation-delay:.9s">{rico(d("sub"))}</div>' if d('sub') else '')
     if t == 'problema':
         items = ''.join(f'<div class="ls left" style="animation-delay:{.4 + i * .55:.2f}s">{e(x)} <i>-S/</i></div>' for i, x in enumerate(es.get('items', [])[:4]))
@@ -172,8 +190,8 @@ def escena_html(es, palabra):
                 f'<div class="mail pop" style="animation-delay:2.2s"><b>📩 {e(MARCA.get("correo") or "Confirmación")}</b><span>{e(d("mensaje") or "🎉 ¡Listo! Tu cita con " + MARCA["nombre"] + " está agendada")}</span></div>')
     if t == 'cta':
         bio = es.get('bio') or '👆 Toca el link de nuestro perfil'
-        com = f'<div class="com up" style="animation-delay:1.4s">💬 o comenta "{e(palabra)}"</div>' if palabra else ''
-        return f'<div class="logo pop">{logo_html(True)}{e(MARCA["nombre"])}</div><div class="cta up" style="animation-delay:.4s">📅 Agenda tu reunión<em>GRATIS</em></div><div class="bio up" style="animation-delay:.9s">{e(bio)}</div>{com}'
+        com = f'<div class="com up" style="animation-delay:1.4s">💬 o comenta "{e(palabra)}"</div>' if palabra and palabra.lower() not in (es.get('boton2') or '').lower() else ''
+        return f'<div class="logo pop">{logo_html(True)}{e(MARCA["nombre"])}</div><div class="cta up" style="animation-delay:.4s">{e(es.get("boton") or MARCA.get("cta_boton") or "📅 Agenda tu reunión")}<em>{e(es.get("boton2") or MARCA.get("cta_boton2") or "GRATIS")}</em></div><div class="bio up" style="animation-delay:.9s">{e(bio)}</div>{com}'
     raise ValueError('Tipo de escena desconocido: ' + t)
 
 
@@ -199,9 +217,12 @@ def armar_html(v, total, capdivs):
         ds = [float(x) for x in re.findall(r'animation-delay:([\d.]+)s', h)]
         k = min(1.0, dur * 0.55 / max(ds)) if ds and max(ds) > 0 else 1.0
         return re.sub(r'animation-delay:([\d.]+)s', lambda m: f'animation-delay:{float(m.group(1)) * k:.2f}s', h)
-    secs = ''.join(f'<section class="scene" data-start="{s["ini"]}" data-end="{s["fin"]}">{ajustar(escena_html(s, v["palabra"]), s["fin"] - s["ini"])}</section>\n' for s in v['escenas'])
+    def abajo(s):  # con la mascota al centro, el texto sube y ella queda debajo
+        m = s.get('mascota')
+        return ' conmasc' if isinstance(m, dict) and m.get('lado') == 'centro' else ''
+    secs = ''.join(f'<section class="scene{abajo(s)}" data-start="{s["ini"]}" data-end="{s["fin"]}">{ajustar(escena_html(s, v["palabra"]), s["fin"] - s["ini"])}</section>\n' for s in v['escenas'])
     return f'''<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="plantilla_video.css"></head><body>
-<div class="bg"></div><div class="grid"></div><div class="bar" id="bar"></div><style>:root{{--c1:{MARCA['color1']};--c2:{MARCA['color2']};--bg:{MARCA['fondo']};--acento:{MARCA['acento']}}}</style>
+<div class="bg"></div><div class="grid"></div><div class="bar" id="bar"></div><style>:root{{--c1:{MARCA['color1']};--c2:{MARCA['color2']};--bg:{MARCA['fondo']};--acento:{MARCA['acento']};--ctaem:{MARCA.get('cta_em') or MARCA['acento']}}}</style>
 <div class="brand">{logo_html(False)}{e(MARCA['nombre'])}</div>
 {secs}{capdivs}
 <script>

@@ -1,0 +1,103 @@
+{
+ "marca": "iamaster",
+ "videos": [
+  {
+   "archivo": "2026-11-11-precio",
+   "dia": "miércoles",
+   "fecha": "2026-11-11",
+   "hora": "19:00",
+   "tema": "Calcula el precio de tu producto con IA",
+   "palabra": "PRECIO",
+   "resaltar": [
+    "precio",
+    "costos",
+    "ganancia",
+    "IA",
+    "prompt",
+    "plata"
+   ],
+   "escenas": [
+    {
+     "tipo": "gancho",
+     "etiqueta": "💸 Si vendes algo",
+     "titulo": "¿Pones tus precios<br><span class=\"it\">al ojo?</span>",
+     "mascota": {
+      "img": "piensa",
+      "lado": "centro",
+      "alto": 500,
+      "arriba": 800
+     },
+     "voz": "¿Le pones precio a tus productos al ojo? Puede que estés perdiendo plata sin darte cuenta."
+    },
+    {
+     "tipo": "problema",
+     "titulo": "Lo que <span class=\"it\">olvidas</span> sumar",
+     "items": [
+      "📦 Empaque y delivery",
+      "📱 Comisión del POS",
+      "⏰ Tu propio tiempo"
+     ],
+     "voz": "Casi siempre olvidamos sumar el empaque, el delivery, la comisión y, sobre todo, tu tiempo."
+    },
+    {
+     "tipo": "chat",
+     "titulo": "Pregúntale <span class=\"it\">a la IA</span>",
+     "contacto": "Tu asistente de IA",
+     "mensajes": [
+      [
+       "k",
+       "Vendo tortas. Insumos S/ 28, empaque S/ 3 y me toma 2 horas. ¿A cuánto la vendo?"
+      ],
+      [
+       "c",
+       "Tu costo real, contando tu tiempo, es S/ 47. Con 40% de ganancia: véndela a S/ 66 💡"
+      ]
+     ],
+     "voz": "Pásale tus costos a la IA, como en este chat, y te calcula tu costo real y un precio con ganancia."
+    },
+    {
+     "tipo": "lista",
+     "titulo": "El prompt <span class=\"it\">en 3 datos</span>",
+     "items": [
+      [
+       "1",
+       "Tus costos",
+       "insumos, empaque, delivery"
+      ],
+      [
+       "2",
+       "Tu tiempo",
+       "cuántas horas te toma"
+      ],
+      [
+       "3",
+       "Tu ganancia",
+       "cuánto quieres ganar"
+      ]
+     ],
+     "mascota": {
+      "img": "laptop",
+      "lado": "der",
+      "alto": 330,
+      "arriba": 1000
+     },
+     "voz": "Solo dale tres datos: tus costos, cuánto tiempo te toma y cuánto quieres ganar."
+    },
+    {
+     "tipo": "cta",
+     "boton": "💬 Comenta",
+     "boton2": "PRECIO",
+     "bio": "y te paso el prompt completo 🎁",
+     "mascota": {
+      "img": "celebra",
+      "lado": "centro",
+      "alto": 400,
+      "arriba": 900,
+      "delay": 1.0
+     },
+     "voz": "Comenta precio y te paso el prompt completo. ¡Guárdalo y compártelo con alguien que vende!"
+    }
+   ]
+  }
+ ]
+}

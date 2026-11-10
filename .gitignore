@@ -1,3 +1,6 @@
 node_modules/
 .wrangler/
 .dev.vars
+iamaster-redes/pruebas/*.mp4
+iamaster-redes/pruebas/*.jpg
+iamaster-redes/pruebas/*.srt

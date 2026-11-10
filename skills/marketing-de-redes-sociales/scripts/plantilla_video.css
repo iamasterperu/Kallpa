@@ -80,7 +80,7 @@ body{font-family:O,sans-serif;color:#fff;position:relative;background:var(--bg)}
 .logo{display:flex;align-items:center;gap:30px;font-family:P;font-weight:800;font-size:120px;letter-spacing:.06em;margin-top:60px}
 .logo .mk{width:170px;height:170px;border-radius:46px;font-size:100px}
 .cta{margin-top:70px;font-family:P;font-weight:800;font-size:72px;padding:40px 70px;border-radius:40px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 30px 70px -20px color-mix(in srgb,var(--c2) 90%,transparent);animation:pulse 1.2s ease-in-out infinite;line-height:1.1}
-.cta em{font-style:normal;color:var(--acento);display:block;font-size:110px}
+.cta em{font-style:normal;color:var(--ctaem,var(--acento));text-shadow:0 6px 18px rgba(0,0,0,.25);display:block;font-size:110px}
 @keyframes pulse{50%{transform:scale(1.05)}}
 .bio{margin-top:50px;font-size:54px;font-weight:800;color:#a5f3fc}
 .com{margin-top:24px;font-size:40px;font-weight:600;color:#cbd5e1}
@@ -98,3 +98,8 @@ body{font-family:O,sans-serif;color:#fff;position:relative;background:var(--bg)}
 .hs.on{background:linear-gradient(135deg,var(--c1),var(--c2));border-color:transparent}
 .mail{margin-top:30px;background:#fff;color:#0f172a;border-radius:26px;padding:22px 28px;text-align:left;display:grid;gap:6px;box-shadow:0 30px 60px -10px rgba(0,0,0,.5);width:820px}
 .mail b{font-size:28px;color:#64748b}.mail span{font-size:36px;font-weight:800}
+/* acento en serif cursiva (estilo IAMASTER) y personaje de la marca */
+@font-face{font-family:LO;font-style:italic;font-weight:600;src:url(../assets/fuentes/lora-latin-600-italic.woff2)}
+.it{font-family:LO;font-style:italic;font-weight:600;letter-spacing:-.01em;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.masc{position:absolute;z-index:4;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.scene.conmasc{padding-bottom:1020px;padding-top:220px}

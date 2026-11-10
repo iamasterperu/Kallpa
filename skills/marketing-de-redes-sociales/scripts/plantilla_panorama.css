@@ -1,0 +1,57 @@
+/* Carrusel CONTINUO (panorámico) 3:4: un lienzo de N×1080 por 1440 que se corta en N slides.
+   Diseño de IAMASTER: crema + rosa/naranja, Inter Display Black + Lora Italic, mascota 3D, tarjetas de prompt. */
+@font-face{font-family:ID;font-weight:900;src:url(../assets/fuentes/InterDisplay-Black.otf)}
+@font-face{font-family:ID;font-weight:800;src:url(../assets/fuentes/InterDisplay-ExtraBold.otf)}
+@font-face{font-family:IN;font-weight:600;src:url(../assets/fuentes/Inter-SemiBold.otf)}
+@font-face{font-family:IN;font-weight:700;src:url(../assets/fuentes/Inter-Bold.otf)}
+@font-face{font-family:LO;font-style:italic;font-weight:600;src:url(../assets/fuentes/lora-latin-600-italic.woff2)}
+@font-face{font-family:PO;font-weight:700;src:url(../assets/fuentes/poppins-latin-700-normal.woff2)}
+:root{--c1:#FF3D7F;--c2:#FF8A00;--noche:#1E1433;--crema:#FFF4EE;--tx:#1E1433;--soft:#6B5B73;--W:1080px;--H:1440px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000}
+body{font-family:IN,sans-serif;color:var(--tx)}
+#lienzo{position:relative;height:var(--H);overflow:hidden;background:var(--crema)}
+#lienzo.noche{--tx:#fff;--soft:#CBBFD9;background:var(--noche)}
+.abs{position:absolute}
+/* fondo: luces difusas */
+.luz{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;z-index:0}
+.luz.r{background:var(--c1)}.luz.n{background:var(--c2)}.luz.y{background:#FFC93C}.luz.m{background:#8B5CF6}
+/* cabecera de cada slide */
+.cab{position:absolute;top:56px;height:64px;width:calc(var(--W) - 140px);display:flex;justify-content:space-between;align-items:center;z-index:20}
+.marca{display:flex;align-items:center;gap:14px;font-family:PO;font-weight:700;font-size:30px;letter-spacing:.04em;color:var(--tx)}
+.mk{width:56px;height:56px;border-radius:15px;background:linear-gradient(135deg,var(--c1),var(--c2));transform:rotate(-8deg);display:grid;place-items:center;color:#fff;font-size:26px;box-shadow:0 10px 24px -8px rgba(255,61,127,.6)}
+.cont{font-family:IN;font-weight:700;font-size:24px;padding:8px 18px;border-radius:999px;background:var(--noche);color:#fff;letter-spacing:.06em}
+.noche .cont{background:rgba(255,255,255,.12)}
+/* textos */
+.tag{display:inline-block;font-family:IN;font-weight:700;font-size:24px;letter-spacing:.08em;text-transform:uppercase;padding:10px 22px;border-radius:999px;background:var(--noche);color:#fff}
+.tag.c{background:linear-gradient(90deg,var(--c1),var(--c2))}
+.over{font-family:IN;font-weight:700;font-size:24px;letter-spacing:.12em;text-transform:uppercase;color:var(--c1)}
+.h{font-family:ID;font-weight:900;line-height:.98;letter-spacing:-.035em;color:var(--tx)}
+.it{font-family:LO;font-style:italic;font-weight:600;letter-spacing:-.02em;line-height:1;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.08em}
+.p{font-family:IN;font-weight:600;font-size:32px;line-height:1.35;color:var(--soft)}
+.p b{color:var(--tx)}
+/* tarjeta de prompt (oscura, con COPIAR) */
+.prompt{background:var(--noche);color:#fff;border-radius:30px;padding:30px 34px;box-shadow:0 40px 80px -30px rgba(30,20,51,.55);z-index:5}
+.prompt .ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.prompt .ph span{font-family:IN;font-weight:700;font-size:20px;letter-spacing:.12em;color:#FFB36B}
+.prompt .ph i{font-style:normal;font-family:IN;font-weight:700;font-size:18px;padding:7px 16px;border-radius:999px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.prompt h4{font-family:ID;font-weight:800;font-size:34px;margin-bottom:10px}
+.prompt p{font-family:IN;font-weight:600;font-size:27px;line-height:1.42;color:#E9E1F2}
+.prompt p u{text-decoration:none;color:#FFC93C}
+/* tarjeta blanca */
+.card{background:#fff;border-radius:28px;box-shadow:0 30px 70px -30px rgba(30,20,51,.35);z-index:5}
+/* pasos */
+.paso{display:flex;gap:18px;align-items:center;font-family:IN;font-weight:700;font-size:28px}
+.paso b{flex:none;width:56px;height:56px;border-radius:16px;display:grid;place-items:center;color:#fff;font-family:ID;font-size:30px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+/* oferta / cursos */
+.oferta{background:var(--noche);color:#fff;border-radius:32px;padding:30px 32px;z-index:5}
+.oferta .ot{font-family:IN;font-weight:700;font-size:19px;letter-spacing:.12em;color:#FFB36B;margin-bottom:18px}
+.curso{display:flex;align-items:center;gap:14px;font-family:IN;font-weight:700;font-size:27px;padding:16px 20px;border-radius:18px;background:rgba(255,255,255,.08);margin-top:12px}
+.curso.on{background:linear-gradient(90deg,var(--c1),var(--c2))}
+.curso i{font-style:normal;width:26px;height:26px;border-radius:50%;background:#fff;color:var(--c1);display:grid;place-items:center;font-size:16px}
+.pill{display:inline-block;font-family:ID;font-weight:800;font-size:32px;padding:22px 34px;border-radius:999px;color:#fff;background:linear-gradient(90deg,var(--c1),var(--c2));box-shadow:0 24px 50px -18px rgba(255,61,127,.8)}
+.pregunta{font-family:IN;font-weight:700;font-size:26px;color:var(--soft)}
+.desliza{font-family:IN;font-weight:700;font-size:26px;color:var(--tx);display:flex;align-items:center;gap:10px}
+.desliza b{font-size:34px;color:var(--c1)}
+.masc{position:absolute;z-index:8;filter:drop-shadow(0 30px 30px rgba(30,20,51,.28))}
+.sombra{position:absolute;border-radius:50%;background:rgba(30,20,51,.18);filter:blur(14px);z-index:4}

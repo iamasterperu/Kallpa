@@ -26,5 +26,25 @@
   },
   "hosting": {
     "tipo": "ninguno"
-  }
+  },
+  "mascotas": "assets/mascotas/iamaster",
+  "cta_boton": "💬 Comenta",
+  "cta_boton2": "la palabra",
+  "calendario": {
+    "reels": [
+      "miércoles 19:00",
+      "viernes 19:00",
+      "domingo 11:00"
+    ],
+    "carruseles": [
+      "jueves 19:00",
+      "sábado 11:00"
+    ]
+  },
+  "carrusel": {
+    "formato": "3:4 continuo (1080x1440)",
+    "script": "scripts/render_panorama.cjs",
+    "css": "scripts/plantilla_panorama.css"
+  },
+  "cta_em": "#FFFFFF"
 }
