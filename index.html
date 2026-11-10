@@ -64,7 +64,7 @@
     .header .btn { padding: 10px 20px; font-size: .95rem; }
 
     .hero { padding: 56px 0 64px; background: radial-gradient(55% 70% at 85% 0%, rgba(139, 92, 246, .3), transparent 70%), radial-gradient(45% 60% at 0% 100%, rgba(34, 211, 238, .18), transparent 70%); }
-    .hero__inner { display: grid; grid-template-columns: 1fr 1.05fr; gap: 44px; align-items: center; }
+    .hero__inner { display: grid; grid-template-columns: minmax(280px, 400px) 1fr; gap: 52px; align-items: center; }
     .pill { display: inline-block; padding: 8px 16px; border-radius: 999px; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .4); color: #a5f3fc; font-weight: 700; font-size: .9rem; margin-bottom: 18px; }
     .hero h1 { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: clamp(2.2rem, 4.8vw, 3.6rem); letter-spacing: -.02em; }
     .hero__lead { color: var(--soft); font-size: clamp(1.05rem, 1.6vw, 1.2rem); }
@@ -72,7 +72,14 @@
     .hero__ticks { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; padding: 0; margin: 0; color: var(--soft); font-weight: 600; font-size: .95rem; }
     .hero__ticks li::before { content: '✓ '; color: var(--cyan); font-weight: 900; }
     .video { border-radius: 22px; padding: 4px; background: var(--brand); box-shadow: 0 40px 90px -40px rgba(139, 92, 246, .9); }
-    .video video { width: 100%; border-radius: 18px; background: #000; aspect-ratio: 16 / 9; }
+    .video { position: relative; }
+    .video video { display: block; width: 100%; border-radius: 18px; background: #000; aspect-ratio: 9 / 16; max-height: 78vh; object-fit: cover; }
+    .sound { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); border: 0; cursor: pointer; font: 800 1rem 'Poppins', sans-serif; color: #0b1020; background: #facc15; padding: 13px 22px; border-radius: 999px; box-shadow: 0 14px 30px -8px rgba(0,0,0,.6); white-space: nowrap; animation: latido 1.4s ease-in-out infinite; }
+    .sound[hidden] { display: none; }
+    @keyframes latido { 50% { transform: translateX(-50%) scale(1.06); } }
+    .free { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .free li { font-weight: 700; font-size: .92rem; padding: 8px 14px; border-radius: 999px; background: rgba(34, 211, 238, .1); border: 1px solid rgba(34, 211, 238, .4); }
+    .proj__links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
     .video__cap { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 10px; }
 
     .section { padding: 84px 0; }
@@ -147,6 +154,7 @@
 
     @media (max-width: 980px) {
       .hero__inner, .book, .consult { grid-template-columns: 1fr; }
+      .video { max-width: 420px; margin: 0 auto; width: 100%; }
       .grid4, .steps { grid-template-columns: 1fr 1fr; }
       .pains, .work { grid-template-columns: 1fr 1fr; }
       .nav { display: none; }
@@ -179,24 +187,30 @@
     <section class="hero">
       <div class="container hero__inner">
         <div>
+          <div class="video">
+            <video id="presVideo" src="/video/presentacion.mp4" poster="/img/presentacion.jpg" autoplay muted playsinline preload="auto" aria-label="Video de presentación de KALLPA"></video>
+            <button class="sound" id="soundBtn" type="button">🔊 Toca para escuchar</button>
+          </div>
+          <p class="video__cap">▶ Conoce KALLPA en 40 segundos</p>
+        </div>
+        <div>
           <span class="pill">⚡ Software a medida · listo en 7 días o menos</span>
-          <h1>¿Tu proyecto necesita una <span class="grad">app web funcionando</span> ya?</h1>
-          <p class="hero__lead">Diseñamos y programamos la aplicación web que tu empresa necesita: rápida, moderna y lista para usar en 7 días o menos. Te la entregamos probada, documentada y llave en mano.</p>
+          <h1>Apps, programas y <span class="grad">software a medida</span> para tu empresa</h1>
+          <p class="hero__lead">Creamos la aplicación, el programa o el sistema que tu empresa necesita, <b>incluyendo automatizaciones con inteligencia artificial</b>. Rápido, moderno y llave en mano.</p>
+          <ul class="free">
+            <li>☕ Reunión GRATIS</li>
+            <li>🎁 Demo de tu app GRATIS</li>
+            <li>✅ Si te gusta, recién la compras</li>
+          </ul>
           <div class="hero__ctas">
             <a class="btn btn--brand" href="#agenda">📅 Agenda tu reunión gratis</a>
-            <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#proyectos">🧭 Revisar proyectos</a>
           </div>
           <ul class="hero__ticks">
             <li>Precio cerrado</li>
             <li>Lista en 7 días o menos</li>
             <li>Programación con IA</li>
           </ul>
-        </div>
-        <div>
-          <div class="video">
-            <video src="/video/kallpa-presentacion.mp4" poster="/img/poster.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
-          </div>
-          <p class="video__cap">▶ Mira en 40 segundos cómo trabajamos</p>
         </div>
       </div>
     </section>
@@ -226,9 +240,9 @@
         </div>
         <div class="grid4">
           <article class="card"><div class="card__icon">🚀</div><h3>Tu MVP en 7 días</h3><p>La primera versión de tu idea, lista para validar con clientes reales sin gastar de más.</p></article>
-          <article class="card"><div class="card__icon">🧩</div><h3>Sistemas a medida</h3><p>Ventas, inventario, reservas, matrículas o pedidos: el sistema que tu negocio necesita.</p></article>
+          <article class="card"><div class="card__icon">🧩</div><h3>Software y programas a medida</h3><p>Ventas, inventario, reservas, matrículas o pedidos: el sistema o programa que tu empresa necesita, web o de escritorio.</p></article>
           <article class="card"><div class="card__icon">♻️</div><h3>Moderniza tu software</h3><p>Llevamos tu sistema antiguo a una app web rápida, segura y bonita.</p></article>
-          <article class="card"><div class="card__icon">🤖</div><h3>IA y automatizaciones</h3><p>Asistentes, reportes y tareas que se hacen solas dentro de tu app.</p></article>
+          <article class="card"><div class="card__icon">🤖</div><h3>Automatizaciones con IA</h3><p>Asistentes, correos, reportes y tareas repetitivas que se hacen solas, para que tu equipo gane horas cada semana.</p></article>
         </div>
       </div>
     </section>
@@ -238,13 +252,13 @@
         <div class="head">
           <span class="eyebrow">Cómo trabajamos</span>
           <h2>¿Cómo es trabajar con KALLPA?</h2>
-          <p class="muted">Un proceso simple, con fechas claras y sin sorpresas.</p>
+          <p class="muted">La reunión y la demo son gratis. Si te gusta, recién la compras.</p>
         </div>
         <div class="steps">
-          <article class="step"><h3>Reunión de 30 minutos</h3><p>Nos cuentas tu idea y vemos juntos si podemos hacerla.</p></article>
-          <article class="step"><h3>Propuesta cerrada</h3><p>Te enviamos el alcance, el plazo y un precio cerrado.</p></article>
-          <article class="step"><h3>Desarrollo</h3><p>Te mostramos avances cada día para que veas tu app crecer.</p></article>
-          <article class="step"><h3>Entrega llave en mano</h3><p>Probada, documentada y con capacitación para tu equipo.</p></article>
+          <article class="step"><h3>Reunión gratis</h3><p>30 minutos por videollamada: nos cuentas tu idea y revisamos tu proyecto.</p></article>
+          <article class="step"><h3>Demo gratis</h3><p>Te mostramos una demo de tu aplicación o programa, sin pagar nada.</p></article>
+          <article class="step"><h3>¿Te gusta? La compras</h3><p>Solo si te convence, avanzamos con un precio cerrado y sin sorpresas.</p></article>
+          <article class="step"><h3>Entrega llave en mano</h3><p>En 7 días o menos: probada, documentada y con capacitación para tu equipo.</p></article>
         </div>
         <ul class="promise">
           <li>🎨 Diseño moderno</li><li>✅ 100% probada</li><li>📄 Documentación</li><li>📊 Panel de control</li><li>🔑 El código es tuyo</li>
@@ -257,16 +271,20 @@
         <div class="head">
           <span class="eyebrow">Proyectos</span>
           <h2>¿Qué hemos creado?</h2>
-          <p class="muted">Apps y programas reales, funcionando hoy. Ábrelos y pruébalos.</p>
+          <p class="muted">Apps, programas y sistemas reales, funcionando hoy. Cada uno tiene su link: ábrelos y pruébalos.</p>
         </div>
         <div class="work">
-          <article class="proj"><span class="proj__tag">Inmobiliarias · 3D</span><h3>KALLPA 3D: recorrido virtual</h3><p>Escribe las medidas de cada ambiente y el depa aparece en 3D, listo para recorrerlo desde el celular.</p><a href="/recorrido/">Probar demo →</a></article>
-          <article class="proj"><span class="proj__tag">Educación</span><h3>ColegIA</h3><p>Asistente con IA para colegios: apoya a docentes, alumnos y padres en el día a día.</p><a href="https://colegia.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
-          <article class="proj"><span class="proj__tag">Orientación</span><h3>RUMBO</h3><p>Test vocacional con IA que recomienda carreras según intereses y fortalezas.</p><a href="https://rumbo.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
-          <article class="proj"><span class="proj__tag">3D</span><h3>TAWA 3D</h3><p>App para crear y explorar mundos y objetos en 3D directo en el navegador.</p><a href="https://tawa-3d.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
-          <article class="proj"><span class="proj__tag">Comercio</span><h3>Catálogos digitales</h3><p>Tiendas tipo app con productos, precios y pedidos por WhatsApp.</p><a href="https://virtualmaster.iamasterperu.workers.dev/catalogos/" target="_blank" rel="noopener noreferrer">Ver proyecto →</a></article>
-          <article class="proj"><span class="proj__tag">Software de escritorio</span><h3>Trazo Studio</h3><p>Programa de diseño vectorial para Windows, al estilo de Illustrator.</p><a href="https://github.com/iamasterperu/trazo-studio/releases/download/v1.0.0-build2/TrazoStudio-Instalador-1.0.0.exe">Descargar →</a></article>
-          <article class="proj"><span class="proj__tag">Software de escritorio</span><h3>Pixel Master Studio</h3><p>Programa de edición de imágenes para Windows, al estilo de Photoshop.</p><a href="https://github.com/iamasterperu/pixelmaster-studio/releases/download/v1.0.0-build1/PixelMasterStudio-Instalador-1.0.0.exe">Descargar →</a></article>
+          <article class="proj"><span class="proj__tag">Inmobiliarias · 3D</span><h3>KALLPA 3D: recorrido virtual</h3><p>Sube el plano y el depa aparece en 3D, con recorrido virtual y video, listo para la web de la inmobiliaria.</p><a href="/recorrido/">Probar demo →</a></article>
+          <article class="proj"><span class="proj__tag">Educación</span><h3>ColegIA</h3><p>Asistente con IA para colegios: apoya a docentes, alumnos y padres en el día a día escolar.</p><a href="https://colegia.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Abrir ColegIA →</a></article>
+          <article class="proj"><span class="proj__tag">Orientación vocacional</span><h3>RUMBO</h3><p>Test vocacional con IA: descubre qué carrera va contigo según tus intereses y fortalezas.</p><a href="https://rumbo.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Abrir RUMBO →</a></article>
+          <article class="proj"><span class="proj__tag">3D</span><h3>TAWA 3D</h3><p>App para crear y explorar mundos y objetos en 3D con ayuda de la IA, directo en el navegador.</p><a href="https://tawa-3d.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Abrir TAWA 3D →</a></article>
+          <article class="proj"><span class="proj__tag">App móvil · Ubicación</span><h3>Cerquita</h3><p>Comparte tu ubicación en tiempo real con tu pareja, familia o amigos y recibe avisos con voz cuando alguien está cerca.</p><a href="https://cerquita.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Abrir Cerquita →</a></article>
+          <article class="proj"><span class="proj__tag">Software de escritorio · Video</span><h3>CutMaster Studio</h3><p>Editor de video para Windows y Mac, en español: reels, TikTok, YouTube y anuncios, con subtítulos y exportación en 4K.</p><a href="https://github.com/iamasterperu/cutmaster-studio/releases/latest" target="_blank" rel="noopener noreferrer">Descargar CutMaster →</a></article>
+          <article class="proj"><span class="proj__tag">Software de escritorio · Diseño</span><h3>Trazo Studio</h3><p>Programa de diseño vectorial para Windows, al estilo de Illustrator: logos, ilustraciones y piezas gráficas.</p><a href="https://github.com/iamasterperu/trazo-studio/releases/download/v1.0.0-build2/TrazoStudio-Instalador-1.0.0.exe" target="_blank" rel="noopener noreferrer">Descargar Trazo Studio →</a></article>
+          <article class="proj"><span class="proj__tag">Software de escritorio · Fotos</span><h3>Pixel Master Studio</h3><p>Programa de edición de fotos para Windows, al estilo de Photoshop: retoca, recorta y crea tus diseños.</p><a href="https://github.com/iamasterperu/pixelmaster-studio/releases/download/v1.0.0-build1/PixelMasterStudio-Instalador-1.0.0.exe" target="_blank" rel="noopener noreferrer">Descargar Pixel Master →</a></article>
+          <article class="proj"><span class="proj__tag">Páginas web</span><h3>Tu MiniWeb gratis</h3><p>Crea gratis una mini página web para tu negocio en minutos, lista para compartir.</p><a href="https://web.iamasterperu.workers.dev/" target="_blank" rel="noopener noreferrer">Abrir Tu MiniWeb →</a></article>
+          <article class="proj"><span class="proj__tag">Comercio</span><h3>Catálogos digitales</h3><p>Tu tienda en un catálogo online tipo app: productos, precios y pedidos por WhatsApp.</p><a href="https://virtualmaster.iamasterperu.workers.dev/catalogos/" target="_blank" rel="noopener noreferrer">Abrir Catálogos →</a></article>
+          <article class="proj"><span class="proj__tag">Regalos digitales</span><h3>Mensajes digitales</h3><p>Mensajes digitales personalizados para regalar en fechas especiales.</p><a href="https://virtualmaster.iamasterperu.workers.dev/mensajes/" target="_blank" rel="noopener noreferrer">Abrir Mensajes →</a></article>
         </div>
       </div>
     </section>
@@ -293,10 +311,10 @@
         <div>
           <span class="eyebrow">Reunión gratis</span>
           <h2 class="h2">Agenda tu reunión de 30 minutos</h2>
-          <p class="muted">Cuéntanos tu idea y en la reunión te decimos si podemos hacerla, en cuánto tiempo y cuánto costaría. Sin compromiso.</p>
+          <p class="muted">La reunión es gratis y la demo de tu aplicación o programa también es gratis. Si te gusta, recién la compras. Sin compromiso.</p>
           <ul>
             <li>Elige el día y la hora que más te acomoden.</li>
-            <li>Antes de la reunión, mira el video de arriba: así aprovechamos mejor el tiempo.</li>
+            <li>Revisamos juntos tu proyecto y te preparamos una demo gratis.</li>
             <li>Si tu idea aún no está clara, te recomendamos la consultoría de producto.</li>
           </ul>
         </div>
@@ -304,8 +322,8 @@
           <h3>Elige el día y la hora de tu reunión</h3>
           <p style="margin:0;color:#475569">Reunión gratis de 30 minutos por videollamada. Verás los horarios libres y confirmas en menos de un minuto.</p>
           <ul style="margin:0;padding-left:20px;color:#334155;display:grid;gap:6px">
-            <li>📅 Eliges día y hora en el calendario</li>
-            <li>📩 Te llega la confirmación por correo</li>
+            <li>📅 Eliges la fecha en el calendario del mes y luego la hora</li>
+            <li>📩 Te llega al instante un correo de confirmación</li>
             <li>💬 Te escribimos por WhatsApp con el enlace</li>
           </ul>
           <a class="btn btn--brand btn--block" href="#agenda" data-agenda>📅 Ver horarios disponibles</a>
@@ -346,6 +364,14 @@
     (function () {
       var C = window.KALLPA;
       function wa(t) { return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(t); }
+      var v = document.getElementById('presVideo'), sb = document.getElementById('soundBtn');
+      if (v && sb) {
+        var conSonido = function () { v.muted = false; v.currentTime = 0; v.controls = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); sb.hidden = true; };
+        sb.addEventListener('click', conSonido);
+        v.addEventListener('click', function () { if (v.muted) conSonido(); });
+        v.addEventListener('ended', function () { if (v.muted) { v.currentTime = 0; v.play(); } });
+        var p0 = v.play(); if (p0 && p0.catch) p0.catch(function () { sb.textContent = '▶ Ver video con sonido'; });
+      }
       document.getElementById('waFloat').href = wa('¡Hola! Vi la web de KALLPA y quiero una app para mi empresa 👋');
       function agendar(e) {
         e.preventDefault();

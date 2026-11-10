@@ -83,3 +83,17 @@ body{font-family:O,sans-serif;color:#fff;position:relative;background:#070b18}
 @keyframes pulse{50%{transform:scale(1.05)}}
 .bio{margin-top:50px;font-size:54px;font-weight:800;color:#a5f3fc}
 .com{margin-top:24px;font-size:40px;font-weight:600;color:#cbd5e1}
+/* agenda */
+.agcard{margin-top:40px;width:760px;background:#f8fafc;color:#0f172a;border-radius:36px;padding:28px 30px;box-shadow:0 40px 90px -20px rgba(34,211,238,.6)}
+.agh{font-family:P;font-weight:800;font-size:44px;text-align:left;margin-bottom:14px}
+.agw,.agg{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;text-align:center}
+.agw span{font-size:26px;font-weight:800;color:#64748b}
+.cd{font-size:32px;font-weight:800;padding:12px 0;border-radius:16px;background:#e2e8f0}
+.cd.off{background:none;color:#cbd5e1}
+.cd.on{background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#fff;animation:pick .5s 1s both}
+@keyframes pick{from{transform:scale(1)}50%{transform:scale(1.35)}to{transform:scale(1)}}
+.aghs{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+.hs{font-size:34px;font-weight:800;padding:16px 22px;border-radius:18px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.2)}
+.hs.on{background:linear-gradient(135deg,#22d3ee,#8b5cf6);border-color:transparent}
+.mail{margin-top:30px;background:#fff;color:#0f172a;border-radius:26px;padding:22px 28px;text-align:left;display:grid;gap:6px;box-shadow:0 30px 60px -10px rgba(0,0,0,.5);width:820px}
+.mail b{font-size:28px;color:#64748b}.mail span{font-size:36px;font-weight:800}

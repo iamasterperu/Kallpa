@@ -1,0 +1,22 @@
+{"semana": "presentacion", "videos": [{
+  "archivo": "presentacion-kallpa", "dia": "web", "fecha": "2026-11-10", "hora": "00:00",
+  "tema": "Video de presentación de KALLPA para la web", "palabra": "",
+  "resaltar": ["software", "programas", "automatizaciones", "gratis", "demo", "compras", "correo", "fecha", "hora", "reunión"],
+  "escenas": [
+    {"tipo": "gancho", "etiqueta": "🏢 Para empresas y emprendedores", "titulo": "Tu empresa merece<br>su <span class=\"g\">propio software</span>", "emoji": "💻",
+     "voz": "¿Tu empresa todavía funciona con Excel, cuadernos y mensajes de WhatsApp? Tu empresa merece su propio software."},
+    {"tipo": "chips", "titulo": "Lo creamos <span class=\"g\">a tu medida</span>", "emoji": "🧩", "chips": ["📱 Apps web", "💻 Programas", "🏢 Sistemas", "⚙️ Automatizaciones", "🤖 Inteligencia artificial"],
+     "voz": "En Kallpa creamos aplicaciones, programas y sistemas personalizados para tu empresa, incluyendo automatizaciones con inteligencia artificial."},
+    {"tipo": "chips", "titulo": "Proyectos <span class=\"y\">reales</span>", "emoji": "🚀", "chips": ["🏫 ColegIA", "🧭 RUMBO", "🧊 TAWA 3D", "📍 Cerquita", "🎬 CutMaster Studio", "✏️ Trazo Studio"],
+     "voz": "Ya creamos ColegIA, RUMBO, TAWA tres D, Cerquita, CutMaster Studio, Trazo Studio y mucho más."},
+    {"tipo": "lista", "titulo": "Así de fácil", "items": [["☕", "Reunión GRATIS", "revisamos tu proyecto"], ["🎁", "Demo GRATIS", "de tu app o programa"], ["✅", "¿Te gusta?", "recién la compras"]],
+     "voz": "Primero, una reunión gratis donde revisamos tu proyecto. Luego te mostramos una demo gratis de tu aplicación o programa. ¡Y si te gusta, recién la compras!"},
+    {"tipo": "numero", "titulo": "Lista en", "numero": 7, "sufijo": " días", "etiqueta": "o menos, <span class=\"y\">llave en mano</span>",
+     "voz": "Y la tienes lista en siete días o menos, llave en mano."},
+    {"tipo": "agenda", "titulo": "Agenda en <span class=\"g\">1 minuto</span>", "mes": "Noviembre",
+     "voz": "Agendar es muy fácil: eliges la fecha en el calendario, eliges la hora, y te llega un correo de confirmación al instante."},
+    {"tipo": "cta", "bio": "👇 Elige tu fecha aquí abajo",
+     "voz": "¡Agenda hoy tu reunión gratis! Tu gran proyecto empieza aquí."}
+  ],
+  "caption": "", "hashtags": []
+}]}

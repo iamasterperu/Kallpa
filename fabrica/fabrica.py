@@ -150,8 +150,17 @@ def escena_html(es, palabra):
     if t == 'chat':
         ms = ''.join(f'<div class="msg {"k" if q == "k" else "c"} {"right" if q == "k" else "left"}" style="animation-delay:{.5 + i * .75:.2f}s">{e(x)}</div>' for i, (q, x) in enumerate(es.get('mensajes', [])[:5]))
         return f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="chat pop" style="animation-delay:.2s"><div class="top"><div class="av">🤖</div>{e(d("contacto") or "Asistente de tu negocio")}</div>{ms}</div>'
+    if t == 'agenda':
+        dias = ''.join(f'<div class="cd{" on" if dd == 18 else ""}{" off" if (dd + 5) % 7 in (0,) else ""}">{dd}</div>' for dd in range(1, 31))
+        horas = ''.join(f'<div class="hs{" on" if h == "10:00 a. m." else ""}">{h}</div>' for h in ['9:00 a. m.', '10:00 a. m.', '11:30 a. m.', '3:00 p. m.'])
+        return (f'<h2 class="h t2 up">{rico(d("titulo"))}</h2><div class="agcard pop" style="animation-delay:.3s"><div class="agh">📅 {e(d("mes") or "Noviembre")}</div>'
+                f'<div class="agw"><span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span></div><div class="agg">{dias}</div></div>'
+                f'<div class="aghs up" style="animation-delay:1.2s">{horas}</div>'
+                f'<div class="mail pop" style="animation-delay:2.2s"><b>📩 iamasterperu@gmail.com</b><span>🎉 ¡Felicitaciones! Tu reunión con KALLPA está agendada</span></div>')
     if t == 'cta':
-        return f'<div class="logo pop"><div class="mk">K</div>KALLPA</div><div class="cta up" style="animation-delay:.4s">📅 Agenda tu reunión<em>GRATIS</em></div><div class="bio up" style="animation-delay:.9s">👆 Toca el link de nuestro perfil</div><div class="com up" style="animation-delay:1.4s">💬 o comenta "{e(palabra)}"</div>'
+        bio = es.get('bio') or '👆 Toca el link de nuestro perfil'
+        com = f'<div class="com up" style="animation-delay:1.4s">💬 o comenta "{e(palabra)}"</div>' if palabra else ''
+        return f'<div class="logo pop"><div class="mk">K</div>KALLPA</div><div class="cta up" style="animation-delay:.4s">📅 Agenda tu reunión<em>GRATIS</em></div><div class="bio up" style="animation-delay:.9s">{e(bio)}</div>{com}'
     raise ValueError('Tipo de escena desconocido: ' + t)
 
 
