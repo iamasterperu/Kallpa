@@ -1,0 +1,85 @@
+{
+  "marca": "(se reemplaza con assets/marcas/kallpa.json)",
+  "carruseles": [
+    {
+      "archivo": "2026-11-17-errores-app",
+      "fecha": "2026-11-17",
+      "hora": "13:00",
+      "red": "instagram",
+      "tema": "5 errores al crear la app de tu empresa",
+      "palabra": "APP",
+      "slides": [
+        {
+          "tipo": "portada",
+          "etiqueta": "🚫 Evítalos",
+          "titulo": "5 errores que te hacen <span class=\"r\">perder miles</span> al crear tu app",
+          "emoji": "💸",
+          "sub": "El #3 lo comete casi todo el mundo"
+        },
+        {
+          "tipo": "punto",
+          "numero": 1,
+          "titulo": "Pagar todo por adelantado",
+          "emoji": "💰",
+          "texto": "Sin ver avances no sabes qué estás comprando. Exige entregas parciales."
+        },
+        {
+          "tipo": "lista",
+          "titulo": "Antes de empezar, define:",
+          "items": [
+            [
+              "🎯",
+              "Qué problema resuelve"
+            ],
+            [
+              "👥",
+              "Quién la va a usar"
+            ],
+            [
+              "📱",
+              "Lo mínimo para lanzar"
+            ],
+            [
+              "📅",
+              "Fecha de entrega"
+            ]
+          ]
+        },
+        {
+          "tipo": "comparacion",
+          "titulo": "El más barato vs. el correcto",
+          "antes": [
+            "Sin pruebas",
+            "Sin manual",
+            "Desaparece"
+          ],
+          "despues": [
+            "Probada al 100%",
+            "Capacitación",
+            "Soporte"
+          ],
+          "etiqueta_antes": "Barato",
+          "etiqueta_despues": "Correcto"
+        },
+        {
+          "tipo": "dato",
+          "titulo": "Con IA, una app sale en",
+          "numero": "7 días",
+          "etiqueta": "o menos, llave en mano"
+        },
+        {
+          "tipo": "cta",
+          "titulo": "¿Quieres tu app <span class=\"g\">sin estos errores</span>?",
+          "boton": "📅 Agenda GRATIS",
+          "sub": "👆 Link en nuestro perfil · demo gratis",
+          "palabra": "APP"
+        }
+      ],
+      "caption": "5 errores que te hacen perder miles al crear la app de tu empresa 💸 (guárdalo)\n\n...",
+      "hashtags": [
+        "#appsparaempresas",
+        "#pymesperu"
+      ]
+    }
+  ]
+}

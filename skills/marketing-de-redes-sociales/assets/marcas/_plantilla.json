@@ -1,0 +1,35 @@
+{
+  "nombre": "NOMBRE DEL NEGOCIO",
+  "inicial": "N",
+  "usuario": "@usuario",
+  "color1": "#hex",
+  "color2": "#hex",
+  "fondo": "#hex oscuro o claro",
+  "acento": "#hex",
+  "tema": "oscuro | claro",
+  "logo": "(opcional) ruta o URL de un PNG cuadrado",
+  "correo": "",
+  "rubro": "qué vende",
+  "publico": "a quién le vende",
+  "oferta": "la oferta irresistible (gratis, demo, descuento, garantía…)",
+  "cta_principal": "qué debe hacer la persona (link en el perfil, WhatsApp, comentar…)",
+  "link": "",
+  "tono": "",
+  "prohibido": [],
+  "metricool": {
+    "blogId": "",
+    "red": "instagram",
+    "zona": "America/Lima"
+  },
+  "hosting": {
+    "tipo": "cloudflare_kv | drive | url_publica | ninguno"
+  },
+  "calendario": {
+    "videos": {
+      "lunes": "19:00"
+    },
+    "carruseles": {
+      "martes": "13:00"
+    }
+  }
+}

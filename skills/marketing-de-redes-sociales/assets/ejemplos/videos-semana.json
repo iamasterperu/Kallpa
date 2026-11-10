@@ -1,0 +1,148 @@
+{
+  "marca": "(se reemplaza con assets/marcas/kallpa.json)",
+  "semana": "ejemplo",
+  "videos": [
+    {
+      "archivo": "2026-11-20-viernes",
+      "dia": "viernes",
+      "fecha": "2026-11-20",
+      "hora": "19:00",
+      "tema": "Panel de ventas en tiempo real para el dueño",
+      "palabra": "VENTAS",
+      "resaltar": [
+        "ventas",
+        "celular",
+        "panel"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "📈 Dueños de negocio",
+          "titulo": "¿Sabes cuánto<br>vendiste <span class=\"y\">hoy</span>?",
+          "emoji": "🤷",
+          "sub": "sin llamar a nadie",
+          "voz": "Dueño de negocio: ¿sabes cuánto vendiste hoy, sin tener que llamar a nadie?"
+        },
+        {
+          "tipo": "problema",
+          "titulo": "Si tienes que preguntar…",
+          "items": [
+            "📞 Llamar al encargado",
+            "📓 Esperar el cuadre",
+            "🤔 Decidir a ciegas"
+          ],
+          "voz": "Si tienes que llamar al encargado y esperar el cuadre del día, estás decidiendo a ciegas."
+        },
+        {
+          "tipo": "telefono",
+          "titulo": "Tu negocio <span class=\"g\">en tu celular</span>",
+          "app": "📊 Mi negocio hoy",
+          "kpis": [
+            [
+              "Ventas hoy",
+              "S/ 4,820"
+            ],
+            [
+              "Tickets",
+              "63"
+            ]
+          ],
+          "filas": [
+            "🏆 Más vendido: Combo 2",
+            "🏪 Tienda Centro +18%",
+            "⚠ Stock bajo: 3 productos"
+          ],
+          "sello": "🔴 En vivo",
+          "voz": "Con tu propio panel ves ventas, productos más vendidos y alertas de stock, en vivo y desde tu celular."
+        },
+        {
+          "tipo": "chips",
+          "titulo": "Decide con datos",
+          "emoji": "🎯",
+          "chips": [
+            "📈 Ventas por día",
+            "🏪 Por local",
+            "👤 Por vendedor",
+            "📦 Stock"
+          ],
+          "voz": "Ventas por día, por local y por vendedor: decide con datos, no con corazonadas."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "¿Sabes cuánto vendió tu negocio hoy… sin llamar a nadie? 📈\n\nSi para saberlo tienes que esperar el cuadre del día, estás decidiendo a ciegas. Con un panel de ventas a medida ves todo en vivo desde tu celular: ventas por local, por vendedor, productos más vendidos y alertas de stock.\n\n⚡ En KALLPA lo creamos en 7 días o menos.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta VENTAS y te escribimos.",
+      "hashtags": [
+        "#paneldeventas",
+        "#dashboard",
+        "#duenosdenegocio",
+        "#pymesperu",
+        "#softwareamedida",
+        "#transformaciondigital",
+        "#emprendedoresperu",
+        "#lima"
+      ]
+    },
+    {
+      "archivo": "2026-11-21-sabado",
+      "dia": "sábado",
+      "fecha": "2026-11-21",
+      "hora": "11:00",
+      "tema": "Un día sin app vs con app (antes/después)",
+      "palabra": "QUIERO",
+      "resaltar": [
+        "app",
+        "día",
+        "horas"
+      ],
+      "escenas": [
+        {
+          "tipo": "gancho",
+          "etiqueta": "⏰ Un día normal",
+          "titulo": "Tu día <span class=\"r\">sin app</span><br>vs. <span class=\"v\">con app</span>",
+          "emoji": "⚖️",
+          "voz": "Así es un día en tu negocio sin aplicación, y así es con una."
+        },
+        {
+          "tipo": "antesdespues",
+          "titulo": "La diferencia",
+          "antes": [
+            "Pedidos en cuaderno",
+            "Llamadas todo el día",
+            "Cuadre a medianoche"
+          ],
+          "despues": [
+            "Pedidos ordenados",
+            "Clientes atendidos 24/7",
+            "Reporte automático"
+          ],
+          "voz": "Sin app: cuaderno, llamadas y cuadre a medianoche. Con app: todo ordenado, clientes atendidos y reportes automáticos."
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Recuperas hasta",
+          "numero": 10,
+          "sufijo": " h",
+          "etiqueta": "a la semana <span class=\"y\">(estimado)</span>",
+          "voz": "Y recuperas hasta diez horas a la semana para hacer crecer tu negocio."
+        },
+        {
+          "tipo": "cta",
+          "voz": "¡Agenda tu reunión gratis! Toca el enlace de nuestro perfil."
+        }
+      ],
+      "caption": "Tu día sin app vs. tu día con app ⚖️\n\n❌ Sin app: pedidos en cuaderno, llamadas todo el día y cuadre a medianoche.\n✅ Con app: pedidos ordenados, clientes atendidos 24/7 y reportes automáticos.\n\nTiempo que vuelve a ser tuyo. ¿Con cuál te quedas?\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta QUIERO y te escribimos.",
+      "hashtags": [
+        "#antesydespues",
+        "#productividad",
+        "#appsparanegocios",
+        "#emprendedoresperu",
+        "#pymesperu",
+        "#automatizacion",
+        "#negociosperu",
+        "#kallpa"
+      ]
+    }
+  ]
+}

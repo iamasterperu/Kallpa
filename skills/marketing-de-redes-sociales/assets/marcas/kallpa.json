@@ -1,0 +1,48 @@
+{
+  "nombre": "KALLPA",
+  "inicial": "K",
+  "usuario": "@kallpa_iamaster",
+  "color1": "#22d3ee",
+  "color2": "#8b5cf6",
+  "fondo": "#070b18",
+  "acento": "#facc15",
+  "tema": "oscuro",
+  "correo": "iamasterperu@gmail.com",
+  "rubro": "Apps web, programas y software a medida para empresas, con automatizaciones e IA, listos en 7 días o menos",
+  "publico": "Dueños de pymes y empresas peruanas (clínicas, colegios, restaurantes, tiendas, ferreterías, constructoras, academias, distribuidoras)",
+  "oferta": "Reunión GRATIS + demo GRATIS de su app o programa; si le gusta, la compra. Precio cerrado, llave en mano.",
+  "cta_principal": "Agenda tu reunión GRATIS: toca el link de nuestro perfil",
+  "link": "https://kallpa.iamasterperu.workers.dev",
+  "tono": "Directo, cercano, peruano neutro, orientado a resultados; tutea al cliente",
+  "prohibido": [
+    "Precios en soles de los servicios",
+    "Cursos, Full Day o IAMASTER",
+    "Prometer resultados falsos o inventar testimonios"
+  ],
+  "metricool": {
+    "blogId": "7425657",
+    "red": "instagram",
+    "zona": "America/Lima"
+  },
+  "hosting": {
+    "tipo": "cloudflare_kv",
+    "cuenta": "e00bb6696bb9104516496040a6d2a999",
+    "kv": "7b626d98747c41aebe1afb513e7f81f4",
+    "prefijo": "soc:",
+    "base_url": "https://kallpa.iamasterperu.workers.dev/v/"
+  },
+  "calendario": {
+    "videos": {
+      "lunes": "19:00",
+      "miercoles": "19:00",
+      "viernes": "19:00",
+      "sabado": "11:00",
+      "domingo": "11:00"
+    },
+    "carruseles": {
+      "martes": "13:00",
+      "jueves": "13:00"
+    }
+  },
+  "primer_comentario": "👉 Agenda tu reunión gratis en el link de nuestro perfil @kallpa_iamaster 🚀"
+}

@@ -1,0 +1,28 @@
+{
+  "nombre": "IAMASTER",
+  "inicial": "IA",
+  "usuario": "@iamaster.oficial",
+  "color1": "#FF3D7F",
+  "color2": "#FF8A00",
+  "fondo": "#1E1433",
+  "acento": "#FFC93C",
+  "tema": "oscuro",
+  "correo": "iamasterperu@gmail.com",
+  "rubro": "Enseña inteligencia artificial práctica a emprendedores y trabajadores peruanos",
+  "publico": "Emprendedores, docentes y trabajadores peruanos que quieren usar IA",
+  "oferta": "Asesorías 1 a 1, Full Day de IA y recursos gratis",
+  "cta_principal": "Link en el perfil",
+  "link": "https://iamaster.iamasterperu.workers.dev",
+  "tono": "Cercano, motivador, educativo",
+  "prohibido": [
+    "Precios en carruseles y descripciones"
+  ],
+  "metricool": {
+    "blogId": "",
+    "red": "tiktok",
+    "zona": "America/Lima"
+  },
+  "hosting": {
+    "tipo": "ninguno"
+  }
+}
