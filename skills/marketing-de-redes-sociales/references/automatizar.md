@@ -15,10 +15,14 @@ los Reels 9:16 (y carruseles 4:5 si el perfil los incluye) de la SEMANA SIGUIENT
 2) Si ya hay publicaciones para esas fechas en el historial o en Metricool, no crees nada nuevo: solo verifica.
 3) Escribe los planes, genera con scripts/video.py y scripts/carrusel.py, revisa fotogramas, sube y arma
    metricool.json con scripts/publicar.py, y programa cada pieza con createScheduledPost.
-4) Actualiza el historial (y la galería si existe), haz commit y push.
+4) Actualiza el historial (y la galería si existe), haz commit y push SOLO de planes, historial y galería:
+   nunca subas al repositorio los .mp4, .jpg ni .srt generados (ocupan espacio; viven en Metricool y en el KV 60 días).
 5) Termina con un resumen corto en español: días, horas, temas, links y si quedó todo programado o qué falta.
 No hagas preguntas: decide tú.
 ```
 
 ## KALLPA (ya configurado)
 Existe la tarea "Reels semanales KALLPA" (sábados 7:37, Lima) con el calendario lunes, miércoles y viernes 19:00, y sábado y domingo 11:00. Usa la fábrica del repo (`fabrica/`), que es la misma de este skill.
+
+## Archivos generados
+Los videos e imágenes NO se guardan en el repositorio (el .gitignore los excluye). Si la persona conecta una carpeta de su PC (Remote Control en la app de escritorio de Claude) o Google Drive, guárdalos ahí; si no, se quedan solo en Metricool.

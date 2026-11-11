@@ -4,3 +4,9 @@ node_modules/
 iamaster-redes/pruebas/*.mp4
 iamaster-redes/pruebas/*.jpg
 iamaster-redes/pruebas/*.srt
+# Videos e imágenes generados para redes: NO se guardan en el repositorio (ocupan espacio).
+iamaster-redes/**/*.mp4
+iamaster-redes/**/*.jpg
+iamaster-redes/**/*.srt
+iamaster-redes/**/*.wav
+fabrica/salida/
