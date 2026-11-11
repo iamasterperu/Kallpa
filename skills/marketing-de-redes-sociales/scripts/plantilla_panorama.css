@@ -87,3 +87,10 @@ body{font-family:IN,sans-serif;color:var(--tx)}
 .noche .pregunta{color:#CBBFD9}
 .noche .tag{background:linear-gradient(90deg,var(--c1),var(--c2))}
 .filas,.ops,.cmp,.prompt{max-width:100%!important}
+/* celular con app (portada que cruza al slide 2) */
+.tel{width:520px;padding:34px 26px 30px;border-radius:64px;background:#0b1020;border:14px solid #1f2a44;box-shadow:0 50px 90px -30px rgba(0,0,0,.6);z-index:7;transform:rotate(6deg)}
+.tf-h{font-family:ID;font-weight:800;font-size:34px;color:#fff;margin:0 0 18px 6px}
+.tf-f{display:flex;gap:16px;align-items:center;background:#151c33;border-radius:22px;padding:18px 18px;margin-top:12px}
+.tf-f i{font-style:normal;flex:none;width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:30px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.tf-f b{display:block;font-family:ID;font-weight:800;font-size:27px;color:#fff}.tf-f span{font-family:IN;font-weight:600;font-size:21px;color:#94a3b8}
+#lienzo.noche .over{color:color-mix(in srgb,var(--c1) 70%,#fff)}

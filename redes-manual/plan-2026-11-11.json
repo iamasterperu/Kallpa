@@ -1,0 +1,215 @@
+{
+ "carruseles": [
+  {
+   "archivo": "kallpa-senales-app",
+   "tema": "5 señales de que tu negocio ya necesita su propia app",
+   "palabra": "APP",
+   "tema_visual": "noche",
+   "marca_visual": {
+    "logo": "K",
+    "nombre": "KALLPA",
+    "c1": "#22d3ee",
+    "c2": "#8b5cf6",
+    "noche": "#070b18",
+    "oferta_titulo": "ASÍ TRABAJAMOS · SIN RIESGO",
+    "oferta": [
+     "Reunión GRATIS de 30 min",
+     "Demo GRATIS de tu app",
+     "Si te gusta, la compras"
+    ]
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "Dueños de negocio",
+     "titulo": "¿Tu negocio|ya necesita",
+     "acento": "su propia app?",
+     "texto": "Si te pasan *2 o más* de estas 5 señales, la respuesta es sí.",
+     "telefono": {
+      "titulo": "📱 Mi negocio",
+      "arriba": 700,
+      "filas": [
+       [
+        "🧾",
+        "Pedidos",
+        "todos en un solo lugar"
+       ],
+       [
+        "📦",
+        "Stock",
+        "al día, sin Excel"
+       ],
+       [
+        "📊",
+        "Ventas de hoy",
+        "desde tu celular"
+       ]
+      ]
+     }
+    },
+    {
+     "tipo": "juego",
+     "over": "Señales 1, 2 y 3",
+     "titulo": "¿Te",
+     "acento": "suena?",
+     "opciones": [
+      "Los pedidos se te pierden entre chats de WhatsApp",
+      "Tu stock vive en un Excel que nadie actualiza",
+      "Para saber cuánto vendiste tienes que llamar a alguien"
+     ],
+     "tam": 110,
+     "texto": "La 1 es la más común: *cada chat perdido es una venta perdida*."
+    },
+    {
+     "tipo": "juego",
+     "over": "Señales 4 y 5",
+     "titulo": "Y",
+     "acento": "estas dos…",
+     "inicio": 4,
+     "opciones": [
+      "Repites las mismas tareas todos los días a mano",
+      "Tu equipo pierde horas buscando información"
+     ],
+     "tam": 110,
+     "texto": "Cada hora repetida es una hora que *no estás vendiendo*."
+    },
+    {
+     "tipo": "comparacion",
+     "over": "La diferencia",
+     "titulo": "Antes vs",
+     "acento": "con tu app.",
+     "antes": {
+      "titulo": "Hoy",
+      "items": [
+       "Chats, cuadernos y Excel",
+       "Errores y pedidos perdidos",
+       "Tú pendiente de todo"
+      ]
+     },
+     "despues": {
+      "titulo": "Con tu app",
+      "items": [
+       "Todo en un solo lugar",
+       "Avisos y reportes automáticos",
+       "Tu negocio avanza sin ti"
+      ]
+     }
+    },
+    {
+     "tipo": "cta",
+     "over": "¿Te pasaron 2 o más?",
+     "titulo": "Te mostramos",
+     "acento": "tu app gratis.",
+     "boton": "📅 Agenda tu reunión GRATIS · link del perfil",
+     "pregunta": "¿Cuántas señales te pasan? Comenta el número o APP 👇"
+    }
+   ],
+   "caption": "¿Tu negocio ya necesita su propia app? 📱\n\nSi te pasan 2 o más de estas señales, la respuesta es sí:\n1️⃣ Pedidos perdidos entre chats\n2️⃣ Stock en un Excel desactualizado\n3️⃣ No sabes cuánto vendiste hoy\n4️⃣ Tareas repetidas a mano\n5️⃣ Tu equipo pierde horas buscando información\n\nEn KALLPA creamos tu app a medida en 7 días o menos. Primero conversamos y te mostramos una demo, ambas GRATIS. Si te gusta, la compras.\n\n👉 Agenda tu reunión GRATIS en el link de nuestro perfil.\n💬 O comenta APP y te escribimos.",
+   "hashtags": [
+    "#appsparaempresas",
+    "#softwareamedida",
+    "#transformaciondigital",
+    "#pymesperu",
+    "#emprendedoresperu",
+    "#negociosperu",
+    "#automatizacion",
+    "#lima"
+   ]
+  },
+  {
+   "archivo": "iamaster-estilo",
+   "tema": "Haz que la IA escriba como tú",
+   "palabra": "ESTILO",
+   "tema_visual": "crema",
+   "cruza": {
+    "img": "cuerda",
+    "entre": 4,
+    "alto": 480,
+    "arriba": 560
+   },
+   "slides": [
+    {
+     "tipo": "portada",
+     "tag": "El truco que nadie usa",
+     "titulo": "¿La IA te escribe|como",
+     "acento": "robot?",
+     "texto": "Enséñale a escribir *como tú* en 3 pasos. Guárdalo.",
+     "mascota": "piensa",
+     "nota": [
+      "“En el dinámico mundo…”",
+      "“Sin lugar a dudas…”",
+      "“Potencia tu negocio…”",
+      "…¡nadie habla así! 😩"
+     ]
+    },
+    {
+     "tipo": "prompt",
+     "over": "Paso 1 · Tu voz",
+     "titulo": "Enséñale",
+     "acento": "tu estilo.",
+     "prompts": [
+      {
+       "titulo": "Mi forma de escribir",
+       "texto": "Te voy a pegar 3 mensajes que yo escribí. Analiza mi tono, mis palabras y el largo de mis frases, y descríbeme mi estilo en 5 puntos: [pega tus 3 textos]"
+      }
+     ],
+     "tip": "Usa mensajes reales: WhatsApp, posts o correos tuyos."
+    },
+    {
+     "tipo": "prompt",
+     "over": "Paso 2 · Sin frases de robot",
+     "titulo": "Prohíbele",
+     "acento": "lo genérico.",
+     "prompts": [
+      {
+       "titulo": "Lista negra",
+       "texto": "Desde ahora escribe con mi estilo. Prohibido usar: “en el dinámico mundo”, “sin lugar a dudas”, “potencia”, “descubre”. Frases cortas, como hablo en Perú."
+      }
+     ],
+     "inicio": 2
+    },
+    {
+     "tipo": "comparacion",
+     "over": "Paso 3 · Compara",
+     "titulo": "Antes vs",
+     "acento": "después.",
+     "antes": {
+      "titulo": "Robot",
+      "items": [
+       "“Descubre nuestras deliciosas tortas artesanales”",
+       "Largo y frío",
+       "Nadie responde"
+      ]
+     },
+     "despues": {
+      "titulo": "Tu estilo",
+      "items": [
+       "“¿Antojo? 🎂 Hoy salió la de chocolate”",
+       "Corto y cercano",
+       "Te escriben al toque"
+      ]
+     }
+    },
+    {
+     "tipo": "cta",
+     "over": "¿Lo quieres listo?",
+     "titulo": "Tu IA,",
+     "acento": "con tu voz.",
+     "regalo": "los 2 prompts",
+     "pregunta": "¿Qué frase de robot odias más? Te leo 👇"
+    }
+   ],
+   "caption": "¿La IA te escribe como robot? 🤖\n\n“En el dinámico mundo…”, “Sin lugar a dudas…”: nadie habla así. Enséñale a escribir como TÚ en 3 pasos:\n1️⃣ Pásale 3 mensajes tuyos y que describa tu estilo\n2️⃣ Prohíbele las frases genéricas\n3️⃣ Compara y ajusta\n\n📌 Guárdalo para tu próximo post.\n💬 Comenta ESTILO y te paso los 2 prompts.\n👉 Más tips y cursos en el link del perfil.",
+   "hashtags": [
+    "#inteligenciaartificial",
+    "#chatgpt",
+    "#prompts",
+    "#tipsdeia",
+    "#emprendedoresperu",
+    "#marketingdigital",
+    "#copywriting",
+    "#aprendeia"
+   ]
+  }
+ ]
+}
