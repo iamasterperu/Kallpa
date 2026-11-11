@@ -1,0 +1,154 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="file:///home/user/kallpa/skills/marketing-de-redes-sociales/scripts/plantilla_panorama.css">
+<link rel="stylesheet" href="file:///home/user/kallpa/redes-manual/pro.css">
+<style>
+#lienzo{width:5400px;--c1:#22d3ee;--c2:#8b5cf6;--noche:#070b18;--tx:#fff;--soft:#B8C2DC;
+ background:radial-gradient(900px 700px at 300px 200px,#0e1a3a,transparent),radial-gradient(1100px 800px at 2700px 1300px,#1a1240,transparent),radial-gradient(900px 700px at 4900px 300px,#0c2238,transparent),#070b18}
+.over{color:#67e8f9}
+.tag.c{background:linear-gradient(90deg,var(--c1),var(--c2));color:#06101f}
+.mk{background:linear-gradient(135deg,var(--c1),var(--c2))}
+.it{background:linear-gradient(90deg,#22d3ee,#a78bfa)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.phone{position:absolute;z-index:8;width:470px;height:900px;border-radius:66px;background:#0b1020;border:14px solid #1f2a44;box-shadow:0 60px 120px -30px rgba(34,211,238,.45);padding:34px 24px;transform:rotate(7deg);overflow:hidden}
+.phone .top{display:flex;justify-content:space-between;color:#fff;font-family:ID;font-weight:800;font-size:30px;margin:0 6px 20px}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:12px}.kp div{background:#151c33;border-radius:20px;padding:16px;color:#94a3b8;font-family:IN;font-weight:600;font-size:19px}.kp b{display:block;color:#fff;font-family:ID;font-size:34px;margin-top:4px}
+.bars{display:flex;align-items:flex-end;gap:12px;height:200px;margin-top:16px;background:#151c33;border-radius:20px;padding:18px}.bars i{flex:1;border-radius:9px 9px 0 0;background:linear-gradient(180deg,var(--c1),var(--c2))}
+.row{display:flex;gap:12px;align-items:center;margin-top:12px;background:#151c33;border-radius:18px;padding:14px;color:#fff;font-family:IN;font-weight:700;font-size:21px}.row em{font-style:normal;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(34,211,238,.15)}
+.senal{display:flex;gap:24px;align-items:center;padding:26px 28px;border-radius:30px;margin-top:20px;width:860px}
+.senal .n{flex:none;width:86px;height:86px;border-radius:24px;display:grid;place-items:center;font-family:ID;font-weight:900;font-size:46px;color:#06101f;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 14px 30px -10px rgba(34,211,238,.6)}
+.senal b{display:block;font-family:ID;font-weight:800;font-size:34px;color:#fff;line-height:1.15}.senal span{font-family:IN;font-weight:600;font-size:24px;color:#B8C2DC}
+.chat{position:absolute;z-index:6;width:470px;border-radius:34px;padding:22px;background:#0f1730;border:1.5px solid rgba(255,255,255,.12);box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.chat .h{display:flex;gap:12px;align-items:center;color:#fff;font-family:ID;font-weight:800;font-size:24px;margin-bottom:12px}
+.chat .h i{font-style:normal;width:44px;height:44px;border-radius:50%;background:#25D366;display:grid;place-items:center}
+.msg{background:#1c2541;color:#E2E8F0;border-radius:20px 20px 20px 6px;padding:12px 16px;font-family:IN;font-weight:600;font-size:21px;margin-top:10px;width:fit-content;max-width:90%}
+.badge{position:absolute;z-index:9;background:#ef4444;color:#fff;font-family:ID;font-weight:900;font-size:30px;padding:10px 18px;border-radius:999px;box-shadow:0 12px 30px -8px rgba(239,68,68,.8)}
+.xls{position:absolute;z-index:6;width:380px;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);transform:rotate(-5deg)}
+.xls .bar{background:#1D7A45;color:#fff;font-family:IN;font-weight:700;font-size:20px;padding:12px 18px}
+.xls table{width:100%;border-collapse:collapse;font-family:IN;font-weight:600;font-size:19px;color:#333}.xls td{border:1px solid #e5e5e5;padding:8px 10px}.xls .err{color:#dc2626;font-weight:800;background:#fee2e2}
+.loop{position:absolute;z-index:5;width:430px;height:430px;border-radius:50%;border:16px dashed rgba(167,139,250,.55)}
+.paso{display:flex;gap:22px;align-items:center}
+.cmpcol{position:absolute;z-index:6;width:440px;border-radius:34px;padding:30px}
+.cmpcol h5{font-family:ID;font-weight:900;font-size:36px;margin-bottom:18px}
+.ci2{display:flex;gap:14px;align-items:center;font-family:IN;font-weight:700;font-size:25px;line-height:1.3;margin-top:16px}
+.ci2 i{flex:none;font-style:normal;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px}
+.ruta{position:absolute;z-index:6;display:flex;gap:20px;align-items:center;width:800px;padding:22px 26px;border-radius:28px}
+.ruta b{flex:none;width:70px;height:70px;border-radius:50%;display:grid;place-items:center;font-family:ID;font-weight:900;font-size:34px;color:#06101f;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.ruta strong{display:block;font-family:ID;font-weight:800;font-size:32px;color:#fff}.ruta span{font-family:IN;font-weight:600;font-size:22px;color:#B8C2DC}
+.pill{background:linear-gradient(90deg,var(--c1),var(--c2));color:#06101f}
+</style></head><body><div id="lienzo" class="noche">
+<div class="grid-bg"></div>
+<!-- luces -->
+<div class="luz" style="background:#22d3ee;left:620px;top:-220px;width:700px;height:620px;opacity:.28"></div>
+<div class="luz" style="background:#8b5cf6;left:1500px;top:900px;width:800px;height:700px;opacity:.32"></div>
+<div class="luz" style="background:#22d3ee;left:2700px;top:-200px;width:700px;height:600px;opacity:.22"></div>
+<div class="luz" style="background:#8b5cf6;left:3700px;top:950px;width:800px;height:700px;opacity:.3"></div>
+<div class="luz" style="background:#22d3ee;left:4700px;top:600px;width:700px;height:700px;opacity:.25"></div>
+<!-- número gigante en contorno -->
+<div class="outline" style="left:1500px;top:330px;font-size:1250px">5</div>
+<div class="outline" style="left:3880px;top:600px;font-size:780px;-webkit-text-stroke-color:rgba(139,92,246,.25)">app</div>
+<!-- cinta brillante continua -->
+<svg class="abs" style="left:0;top:0;z-index:3" width="5400" height="1440"><defs><linearGradient id="cg" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="10"/></filter></defs>
+ <path d="M-40 1290 C 400 1180 700 1400 1100 1300 S 1800 1150 2200 1290 S 3000 1420 3300 1300 S 4000 1160 4400 1290 S 5100 1380 5460 1250" stroke="url(#cg)" stroke-width="26" fill="none" opacity=".55" filter="url(#glow)"/>
+ <path d="M-40 1290 C 400 1180 700 1400 1100 1300 S 1800 1150 2200 1290 S 3000 1420 3300 1300 S 4000 1160 4400 1290 S 5100 1380 5460 1250" stroke="url(#cg)" stroke-width="9" fill="none"/>
+ <path d="M-40 1335 C 400 1225 700 1445 1100 1345 S 1800 1195 2200 1335 S 3000 1465 3300 1345 S 4000 1205 4400 1335 S 5100 1425 5460 1295" stroke="#fff" stroke-width="2" fill="none" opacity=".25"/></svg>
+<!-- esferas -->
+<div class="esfera a" style="left:930px;top:150px;width:110px;height:110px"></div>
+<div class="esfera b" style="left:1010px;top:1110px;width:150px;height:150px"></div>
+<div class="esfera a" style="left:2120px;top:1080px;width:120px;height:120px"></div>
+<div class="esfera b" style="left:3180px;top:230px;width:96px;height:96px"></div>
+<div class="esfera a" style="left:4250px;top:1150px;width:120px;height:120px"></div>
+<div class="esfera b" style="left:5150px;top:420px;width:80px;height:80px"></div>
+<div class="anillo" style="left:860px;top:560px;width:620px;height:620px"></div>
+<div class="chispa a" style="left:610px;top:640px"></div><div class="chispa w" style="left:1950px;top:200px;width:30px;height:30px"></div>
+<div class="chispa" style="left:2990px;top:1030px"></div><div class="chispa a" style="left:4120px;top:240px;width:34px;height:34px"></div><div class="chispa w" style="left:5250px;top:1000px;width:30px;height:30px"></div>
+
+<!-- cabeceras -->
+<div class="cab" style="left:70px"><div class="marca" style="color:#fff"><div class="mk">K</div>KALLPA</div><div class="cont">01 / 05</div></div>
+<div class="cab" style="left:1150px"><div class="marca" style="color:#fff"><div class="mk">K</div>KALLPA</div><div class="cont">02 / 05</div></div>
+<div class="cab" style="left:2230px"><div class="marca" style="color:#fff"><div class="mk">K</div>KALLPA</div><div class="cont">03 / 05</div></div>
+<div class="cab" style="left:3310px"><div class="marca" style="color:#fff"><div class="mk">K</div>KALLPA</div><div class="cont">04 / 05</div></div>
+<div class="cab" style="left:4390px"><div class="marca" style="color:#fff"><div class="mk">K</div>KALLPA</div><div class="cont">05 / 05</div></div>
+
+<!-- S1 -->
+<div class="abs" style="left:70px;top:190px;z-index:10">
+ <span class="tag c">Dueños de negocio</span>
+ <div class="h" style="font-size:108px;margin-top:30px">¿Tu negocio<br>ya necesita</div>
+ <div class="it" style="font-size:112px;margin-top:4px">su propia app?</div>
+ <div class="p" style="margin-top:28px;width:600px;color:#B8C2DC">Si te pasan <b style="color:#fff">2 o más</b> de estas 5 señales, la respuesta es <b style="color:#67e8f9">sí</b>.</div>
+</div>
+<div class="phone" style="left:780px;top:640px">
+ <div class="top"><span>📱 Mi negocio</span><span style="color:#67e8f9">●</span></div>
+ <div class="kp"><div>Pedidos hoy<b>✓ Al día</b></div><div>Stock<b>✓ Ok</b></div></div>
+ <div class="bars"><i style="height:40%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:80%"></i><i style="height:100%"></i></div>
+ <div class="row"><em>🧾</em>Pedidos en un solo lugar</div>
+ <div class="row"><em>📦</em>Inventario automático</div>
+ <div class="row"><em>📊</em>Reportes al instante</div>
+</div>
+<div class="noti" style="left:420px;top:900px"><i>🔔</i><div>Nuevo pedido<small>registrado solo</small></div></div>
+<div class="noti" style="left:1000px;top:1210px"><i>✅</i><div>Stock actualizado<small>sin tocar Excel</small></div></div>
+<div class="abs" style="left:70px;top:1130px;z-index:10"><span class="pastilla">Desliza <b style="color:#67e8f9">→</b></span></div>
+
+<!-- S2 -->
+<div class="abs" style="left:1400px;top:190px;z-index:10;width:620px">
+ <div class="over">Señales 1, 2 y 3</div>
+ <div class="h" style="font-size:104px;margin-top:14px">¿Te <span class="it" style="font-size:118px">suena?</span></div>
+</div>
+<div class="abs" style="left:1330px;top:400px;z-index:10">
+ <div class="senal glass" style="width:720px"><div class="n">1</div><div><b>Pedidos perdidos</b><span>entre chats de WhatsApp</span></div></div>
+ <div class="senal glass" style="width:720px"><div class="n">2</div><div><b>Stock en un Excel</b><span>que nadie actualiza</span></div></div>
+ <div class="senal glass" style="width:720px"><div class="n">3</div><div><b>¿Cuánto vendí hoy?</b><span>y tienes que llamar a alguien</span></div></div>
+</div>
+<div class="chat" style="left:1350px;top:920px;transform:rotate(-4deg)"><div class="h"><i>💬</i>WhatsApp</div>
+ <div class="msg">¿Me confirmas mi pedido? 🙏</div><div class="msg">¿Ya salió lo de ayer?</div><div class="msg">Mándame la lista otra vez…</div></div>
+<div class="badge" style="left:1760px;top:890px">+47</div>
+<div class="xls" style="left:1720px;top:1050px;width:330px"><div class="bar">📗 stock_final_v3.xlsx</div><table><tr><td>Producto</td><td>Stock</td></tr><tr><td>Cemento</td><td class="err">#REF!</td></tr><tr><td>Fierro</td><td class="err">¿?</td></tr></table></div>
+
+<!-- S3 -->
+<div class="abs" style="left:2230px;top:190px;z-index:10">
+ <div class="over">Señales 4 y 5</div>
+ <div class="h" style="font-size:104px;margin-top:14px">Y estas</div>
+ <div class="it" style="font-size:124px">dos…</div>
+</div>
+<div class="abs" style="left:2230px;top:560px;z-index:10">
+ <div class="senal glass" style="width:800px"><div class="n">4</div><div><b>Las mismas tareas</b><span>todos los días, a mano</span></div></div>
+ <div class="senal glass" style="width:800px"><div class="n">5</div><div><b>Horas buscando datos</b><span>en cuadernos, chats y archivos</span></div></div>
+</div>
+<div class="loop" style="left:2560px;top:930px"></div>
+<div class="abs" style="left:2585px;top:1010px;z-index:7;width:380px;text-align:center;font-family:ID;font-weight:900;font-size:44px;color:#fff;line-height:1.2">copiar<br><span style="color:#67e8f9">pegar</span><br>repetir 🔁</div>
+<div class="sticker" style="left:2930px;top:960px;background:#facc15;color:#111;transform:rotate(8deg)">⏰ ¡Otra vez!</div>
+
+<!-- S4 -->
+<div class="abs" style="left:3310px;top:190px;z-index:10">
+ <div class="over">La diferencia</div>
+ <div class="h" style="font-size:104px;margin-top:14px">Hoy vs</div>
+ <div class="it" style="font-size:124px">con tu app.</div>
+</div>
+<div class="cmpcol" style="left:3310px;top:560px;background:#fff;color:#0f172a;transform:rotate(-2deg)">
+ <h5>😩 Hoy</h5>
+ <div class="ci2"><i style="background:#fee2e2">📓</i>Cuadernos y Excel</div>
+ <div class="ci2"><i style="background:#fee2e2">💬</i>Pedidos en 10 chats</div>
+ <div class="ci2"><i style="background:#fee2e2">🔥</i>Tú pendiente de todo</div>
+ <div class="ci2"><i style="background:#fee2e2">❌</i>Errores que cuestan</div>
+</div>
+<div class="cmpcol glass" style="left:3790px;top:610px;transform:rotate(2deg);border-color:rgba(34,211,238,.5)">
+ <h5 style="color:#fff">🚀 Con tu app</h5>
+ <div class="ci2" style="color:#fff"><i style="background:rgba(34,211,238,.2)">📱</i>Todo en un solo lugar</div>
+ <div class="ci2" style="color:#fff"><i style="background:rgba(34,211,238,.2)">⚡</i>Avisos automáticos</div>
+ <div class="ci2" style="color:#fff"><i style="background:rgba(34,211,238,.2)">📊</i>Reportes al instante</div>
+ <div class="ci2" style="color:#fff"><i style="background:rgba(34,211,238,.2)">😎</i>Tu negocio avanza</div>
+</div>
+<svg class="flecha" style="left:3660px;top:1080px" width="300" height="160"><path d="M10 40 C 90 160, 200 150, 270 60" stroke="#67e8f9" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="2 18"/><path d="M245 50 L280 55 L268 90" stroke="#67e8f9" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+<!-- S5 -->
+<div class="abs" style="left:4460px;top:190px;z-index:10">
+ <div class="over">¿Te pasaron 2 o más?</div>
+ <div class="h" style="font-size:100px;margin-top:14px">Te mostramos</div>
+ <div class="it" style="font-size:118px">tu app gratis.</div>
+</div>
+<svg class="abs" style="left:4495px;top:600px;z-index:5" width="20" height="360"><line x1="10" y1="0" x2="10" y2="360" stroke="#67e8f9" stroke-width="5" stroke-dasharray="3 14" stroke-linecap="round"/></svg>
+<div class="ruta glass" style="left:4470px;top:540px"><b>1</b><div><strong>Reunión GRATIS</strong><span>30 minutos, conversamos de tu negocio</span></div></div>
+<div class="ruta glass" style="left:4470px;top:690px"><b>2</b><div><strong>Demo GRATIS</strong><span>ves tu app funcionando</span></div></div>
+<div class="ruta glass" style="left:4470px;top:840px;border-color:rgba(34,211,238,.6)"><b>3</b><div><strong>Si te gusta, la compras</strong><span>lista en 7 días o menos</span></div></div>
+<div class="abs" style="left:4470px;top:1020px;z-index:10"><span class="pill" style="font-size:34px">📅 Agenda tu reunión GRATIS</span></div>
+<div class="abs pregunta" style="left:4470px;top:1140px;z-index:10;color:#B8C2DC;font-size:26px">👆 Toca el link de nuestro perfil · o comenta <b style="color:#fff">APP</b></div>
+<div class="sticker" style="left:5020px;top:1000px;background:linear-gradient(135deg,#22d3ee,#8b5cf6);color:#06101f;transform:rotate(9deg)">SIN RIESGO</div>
+</div></body></html>

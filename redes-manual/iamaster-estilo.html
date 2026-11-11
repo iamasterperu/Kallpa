@@ -1,0 +1,134 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="file:///home/user/kallpa/skills/marketing-de-redes-sociales/scripts/plantilla_panorama.css">
+<link rel="stylesheet" href="file:///home/user/kallpa/redes-manual/pro.css">
+<style>
+#lienzo{width:5400px;background:linear-gradient(100deg,#FFF4EE 0%,#FFE9F1 30%,#FFF1E2 55%,#FFE9F1 78%,#FFF4EE 100%)}
+.outline{-webkit-text-stroke:3px rgba(255,61,127,.16)}
+.ia-chat{position:absolute;z-index:6;width:600px;border-radius:34px;background:#fff;box-shadow:0 40px 80px -30px rgba(30,20,51,.45);padding:24px 26px;transform:rotate(4deg)}
+.ia-chat .h{display:flex;gap:12px;align-items:center;font-family:ID;font-weight:800;font-size:24px;color:#1E1433;margin-bottom:14px}
+.ia-chat .h i{font-style:normal;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#1E1433;color:#fff;font-size:22px}
+.ia-chat p{font-family:IN;font-weight:600;font-size:25px;line-height:1.55;color:#4A3D55}
+mark{background:#FFE58A;color:#1E1433;border-radius:6px;padding:0 6px;text-decoration:line-through;text-decoration-color:#E2445C;text-decoration-thickness:4px}
+.fuente{position:absolute;z-index:6;width:270px;border-radius:22px;background:#fff;padding:18px 20px;box-shadow:0 24px 50px -24px rgba(30,20,51,.45);font-family:IN;font-weight:600;font-size:20px;color:#4A3D55;line-height:1.4}
+.fuente b{display:block;font-family:ID;font-weight:800;font-size:22px;color:#1E1433;margin-bottom:6px}
+.adn{position:absolute;z-index:6;width:420px;border-radius:30px;background:#1E1433;color:#fff;padding:26px;box-shadow:0 40px 80px -30px rgba(30,20,51,.6)}
+.adn h6{font-family:IN;font-weight:700;font-size:19px;letter-spacing:.14em;color:#FFB36B;margin-bottom:14px}
+.chip{display:inline-block;font-family:IN;font-weight:700;font-size:22px;padding:10px 16px;border-radius:999px;margin:6px 6px 0 0;background:rgba(255,255,255,.1)}
+.chip.on{background:linear-gradient(90deg,var(--c1),var(--c2))}
+.postit{position:absolute;z-index:6;width:250px;height:230px;padding:24px 22px;font-family:'Comic Sans MS','Segoe Print',cursive;font-size:25px;line-height:1.35;color:#3b2f1a;box-shadow:0 26px 40px -20px rgba(30,20,51,.5)}
+.postit s{text-decoration-color:#E2445C;text-decoration-thickness:4px}
+.sello{position:absolute;z-index:8;font-family:ID;font-weight:900;font-size:56px;color:#E2445C;border:7px solid #E2445C;border-radius:18px;padding:8px 24px;transform:rotate(-12deg);opacity:.9;letter-spacing:.04em}
+.ig{position:absolute;z-index:6;width:440px;border-radius:30px;background:#fff;box-shadow:0 40px 80px -30px rgba(30,20,51,.5);overflow:hidden}
+.ig .u{display:flex;gap:12px;align-items:center;padding:16px 18px;font-family:IN;font-weight:700;font-size:21px;color:#1E1433}
+.ig .u i{font-style:normal;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#FF3D7F,#FF8A00);display:grid;place-items:center;color:#fff;font-size:20px}
+.ig .img{height:250px;display:grid;place-items:center;font-size:120px}
+.ig .acc{padding:12px 18px 0;font-size:30px;letter-spacing:10px}
+.ig .cap{padding:8px 18px 22px;font-family:IN;font-weight:600;font-size:22px;line-height:1.45;color:#4A3D55}
+.ig .cap b{color:#1E1433}
+.etq{position:absolute;z-index:9;font-family:ID;font-weight:900;font-size:30px;padding:12px 22px;border-radius:999px;color:#fff}
+.prompt{width:820px}
+</style></head><body><div id="lienzo">
+<div class="dots-bg"></div>
+<div class="luz r" style="left:700px;top:-250px;width:700px;height:620px;opacity:.35"></div>
+<div class="luz n" style="left:-200px;top:1000px;width:700px;height:600px;opacity:.35"></div>
+<div class="luz y" style="left:1800px;top:1000px;width:700px;height:600px;opacity:.35"></div>
+<div class="luz r" style="left:2900px;top:-250px;width:700px;height:600px;opacity:.3"></div>
+<div class="luz n" style="left:3800px;top:1000px;width:700px;height:600px;opacity:.35"></div>
+<div class="luz r" style="left:4900px;top:200px;width:600px;height:600px;opacity:.3"></div>
+<div class="outline it2" style="left:380px;top:1010px;font-size:420px">robot</div>
+<div class="outline" style="left:2560px;top:1000px;font-size:520px">NO</div>
+<div class="outline it2" style="left:3700px;top:1020px;font-size:420px">tú</div>
+<!-- cinta continua -->
+<svg class="abs" style="left:0;top:0;z-index:3" width="5400" height="1440"><defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#FF3D7F"/><stop offset=".5" stop-color="#FF8A00"/><stop offset="1" stop-color="#FF3D7F"/></linearGradient><filter id="gl"><feGaussianBlur stdDeviation="9"/></filter></defs>
+ <path d="M-40 1300 C 400 1200 700 1410 1100 1310 S 1800 1170 2200 1300 S 3000 1420 3300 1310 S 4000 1180 4400 1300 S 5100 1380 5460 1260" stroke="url(#g2)" stroke-width="24" fill="none" opacity=".35" filter="url(#gl)"/>
+ <path d="M-40 1300 C 400 1200 700 1410 1100 1310 S 1800 1170 2200 1300 S 3000 1420 3300 1310 S 4000 1180 4400 1300 S 5100 1380 5460 1260" stroke="url(#g2)" stroke-width="10" fill="none"/>
+ <path d="M0 0" stroke="#1E1433" stroke-width="5" stroke-dasharray="2 14" stroke-linecap="round" fill="none"/></svg>
+<!-- esferas y chispas -->
+<div class="esfera a" style="--c1:#FF3D7F;left:960px;top:150px;width:100px;height:100px"></div>
+<div class="esfera b" style="--c2:#FF8A00;left:2110px;top:300px;width:90px;height:90px"></div>
+<div class="esfera y" style="left:3200px;top:1120px;width:120px;height:120px"></div>
+<div class="esfera a" style="--c1:#FF3D7F;left:4280px;top:180px;width:110px;height:110px"></div>
+<div class="chispa a" style="--c1:#FF3D7F;left:640px;top:610px"></div><div class="chispa y" style="left:1980px;top:1120px"></div>
+<div class="chispa" style="left:2980px;top:190px;width:34px;height:34px"></div><div class="chispa a" style="--c1:#FF3D7F;left:4100px;top:1100px"></div><div class="chispa y" style="left:5230px;top:900px;width:34px;height:34px"></div>
+
+<!-- cabeceras -->
+<div class="cab" style="left:70px"><div class="marca"><div class="mk">IA</div>MASTER</div><div class="cont">01 / 05</div></div>
+<div class="cab" style="left:1150px"><div class="marca"><div class="mk">IA</div>MASTER</div><div class="cont">02 / 05</div></div>
+<div class="cab" style="left:2230px"><div class="marca"><div class="mk">IA</div>MASTER</div><div class="cont">03 / 05</div></div>
+<div class="cab" style="left:3310px"><div class="marca"><div class="mk">IA</div>MASTER</div><div class="cont">04 / 05</div></div>
+<div class="cab" style="left:4390px"><div class="marca"><div class="mk">IA</div>MASTER</div><div class="cont">05 / 05</div></div>
+
+<!-- S1 -->
+<div class="abs" style="left:70px;top:190px;z-index:10">
+ <span class="tag c">El truco que nadie usa</span>
+ <div class="h" style="font-size:112px;margin-top:30px">¿La IA te<br>escribe como</div>
+ <div class="it" style="font-size:170px;margin-top:0">robot?</div>
+ <div class="p" style="margin-top:20px;width:560px">Enséñale a escribir <b>como tú</b> en 3 pasos. Guárdalo 📌</div>
+</div>
+<div class="ia-chat" style="left:500px;top:820px;width:580px"><div class="h"><i>✦</i>Respuesta de la IA</div>
+ <p><mark>En el dinámico mundo</mark> de hoy, nuestras tortas artesanales <mark>sin lugar a dudas</mark> te harán vivir una experiencia única. <mark>¡Potencia</mark> tus celebraciones y <mark>descubre</mark> el sabor…</p></div>
+<div class="sticker" style="left:440px;top:770px;background:#1E1433;color:#fff;transform:rotate(-10deg)">🤖 Modo robot</div>
+<img class="masc" src="file:///home/user/kallpa/skills/marketing-de-redes-sociales/assets/mascotas/iamaster/piensa.png" style="left:90px;top:820px;height:440px">
+<div class="abs" style="left:800px;top:1235px;z-index:10"><span class="desliza">Desliza <b>→</b></span></div>
+
+<!-- S2 -->
+<div class="abs" style="left:1150px;top:190px;z-index:10">
+ <div class="over">Paso 1 · Tu voz</div>
+ <div class="h" style="font-size:100px;margin-top:14px">Enséñale</div>
+ <div class="it" style="font-size:124px">tu estilo.</div>
+</div>
+<div class="abs prompt" style="left:1150px;top:500px;width:840px">
+ <div class="ph"><span>PROMPT 01 · COPIAR</span><i>COPIAR</i></div>
+ <p>Te voy a pegar 3 mensajes que yo escribí. Analiza mi tono, mis palabras y el largo de mis frases, y descríbeme mi estilo en 5 puntos: <u>[pega tus 3 textos]</u></p>
+</div>
+<div class="fuente" style="left:1250px;top:840px;transform:rotate(-5deg)"><b>💬 WhatsApp</b>“¡Hola, vecina! Hoy salió la de fresa 🍓”</div>
+<div class="fuente" style="left:1290px;top:1030px;transform:rotate(3deg)"><b>📸 Mi post</b>“Hecho a mano, como en casa ❤️”</div>
+<svg class="abs" style="left:1500px;top:930px;z-index:7" width="200" height="140"><path d="M10 70 C 70 10, 120 130, 180 60" stroke="#FF3D7F" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="2 14"/><path d="M158 48 L184 58 L170 84" stroke="#FF3D7F" stroke-width="7" fill="none" stroke-linecap="round"/></svg>
+<div class="adn" style="left:1660px;top:880px;width:380px"><h6>EL ADN DE TU ESTILO</h6>
+ <span class="chip on">Cercano</span><span class="chip">Frases cortas</span><span class="chip on">1-2 emojis</span><span class="chip">Peruano</span><span class="chip on">Directo</span></div>
+
+<!-- S3 -->
+<div class="abs" style="left:2230px;top:190px;z-index:10">
+ <div class="over">Paso 2 · Cero frases de robot</div>
+ <div class="h" style="font-size:100px;margin-top:14px">Prohíbele</div>
+ <div class="it" style="font-size:124px">lo genérico.</div>
+</div>
+<div class="abs prompt" style="left:2230px;top:500px;width:840px">
+ <div class="ph"><span>PROMPT 02 · COPIAR</span><i>COPIAR</i></div>
+ <p>Desde ahora escribe con mi estilo. Prohibido usar: “en el dinámico mundo”, “sin lugar a dudas”, “potencia”, “descubre”. Frases cortas, como hablo en Perú.</p>
+</div>
+<div class="postit" style="left:2260px;top:860px;background:#FFE58A;transform:rotate(-6deg)"><s>“En el dinámico mundo…”</s></div>
+<div class="postit" style="left:2540px;top:900px;background:#FFC7DA;transform:rotate(4deg)"><s>“Sin lugar a dudas…”</s></div>
+<div class="postit" style="left:2810px;top:850px;background:#FFD7AE;transform:rotate(-3deg)"><s>“¡Potencia tu negocio!”</s></div>
+<div class="sello" style="left:2520px;top:1110px">PROHIBIDO</div>
+
+<!-- S4 -->
+<div class="abs" style="left:3310px;top:190px;z-index:10">
+ <div class="over">Paso 3 · Compara</div>
+ <div class="h" style="font-size:100px;margin-top:14px">Antes vs</div>
+ <div class="it" style="font-size:124px">después.</div>
+</div>
+<div class="ig" style="left:3330px;top:520px;transform:rotate(-4deg)"><div class="u"><i>🎂</i>tu_pasteleria</div><div class="img" style="background:#F1E7E3;filter:grayscale(.6)">🎂</div><div class="acc">♡ 💬 ➤</div>
+ <div class="cap"><b>tu_pasteleria</b> Descubre nuestras deliciosas tortas artesanales que potenciarán tus celebraciones…</div></div>
+<div class="etq" style="left:3360px;top:470px;background:#6B5B73">🤖 Robot</div>
+<div class="ig" style="left:3790px;top:580px;transform:rotate(4deg);box-shadow:0 40px 90px -30px rgba(255,61,127,.6)"><div class="u"><i>🎂</i>tu_pasteleria</div><div class="img" style="background:linear-gradient(135deg,#FFD7E5,#FFE3C4)">🎂</div><div class="acc">❤️ 💬 ➤</div>
+ <div class="cap"><b>tu_pasteleria</b> ¿Antojo? 🍫 Hoy salió la de chocolate. Escríbeme y te la separo 👇</div></div>
+<div class="etq" style="left:3990px;top:530px;background:linear-gradient(90deg,#FF3D7F,#FF8A00)">✨ Tu estilo</div>
+
+<!-- S5 -->
+<div class="abs" style="left:4460px;top:190px;z-index:10">
+ <div class="over">¿Lo quieres listo?</div>
+ <div class="h" style="font-size:100px;margin-top:14px">Tu IA,</div>
+ <div class="it" style="font-size:124px">con tu voz.</div>
+</div>
+<div class="abs oferta" style="left:4460px;top:540px;width:600px">
+ <div class="ot">CURSOS GRABADOS · A TU RITMO · ACCESO DE POR VIDA</div>
+ <div class="curso on"><i>✓</i>Crea tu Web</div>
+ <div class="curso"><i>✓</i>Agente de voz + correo automático</div>
+ <div class="curso"><i>✓</i>Crea tu juego 2D</div>
+</div>
+<div class="abs" style="left:4460px;top:950px;z-index:10"><span class="pill">Comenta “ESTILO” y te paso los 2 prompts</span></div>
+<div class="abs pregunta" style="left:4460px;top:1070px;z-index:10;width:620px">¿Qué frase de robot odias más? Te leo 👇</div>
+<img class="masc" src="file:///home/user/kallpa/skills/marketing-de-redes-sociales/assets/mascotas/iamaster/sentado-cubo.png" style="left:5080px;top:480px;height:300px">
+<div class="sticker" style="left:5060px;top:800px;background:#FFC93C;color:#1E1433;transform:rotate(8deg)">📌 Guárdalo</div>
+</div></body></html>
